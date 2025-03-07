@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import CTA from "../Components/CTA";
+import CTAModal from "../Components/CTAModal";
 
 function Portfolio() {
   const [modalImageIndex, setModalImageIndex] = useState(null);
+
+  const [CTAModalIsOpen, setCTAModalIsOpen] = useState(false);
+  const openCTAModal = () => setCTAModalIsOpen(true);
+  const closeCTAModal = () => setCTAModalIsOpen(false);
 
   const projects = [
     { src: "/images/portfolio/resized/1.PNG", alt: "" },
@@ -199,7 +204,8 @@ function Portfolio() {
           </div>
         )}
       </div>
-      <CTA />
+      <CTA openModal={openCTAModal}/>
+      <CTAModal modalIsOpen={CTAModalIsOpen} closeModal={closeCTAModal} />
     </div>
   );
 }
