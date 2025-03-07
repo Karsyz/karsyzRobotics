@@ -10,7 +10,7 @@ function Contact() {
             Get in Touch
           </h2>
           <form
-            action="https://formsubmit.co/matt@karsyzrobotics.com" // Replace with your FormSubmit email
+            action="https://formsubmit.co/54f12137427d71214693554d8bca0d0a" // Replace with your FormSubmit email
             method="POST"
             className="space-y-6"
           >
@@ -62,7 +62,7 @@ function Contact() {
               />
             </div>
             {/* Hidden field for FormSubmit redirect */}
-            <input type="hidden" name="_next" value="https://your-site.com/thanks" />
+            {/* <input type="hidden" name="_next" value="https://karsyzrobotics.com" /> */}
             <button
               type="submit"
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
