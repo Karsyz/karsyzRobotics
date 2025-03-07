@@ -69,29 +69,31 @@ function Testimonials() {
         <h2 className="text-3xl font-bold text-gray-800">
           What Our Clients Say
         </h2>
-        <div className="flex flex-row justify-center h-[400px] w-full">
-          <div
-            className={`flex flex-col justify-between items-center w-full h-full max-w-2xl transition-transform duration-300 ease-in-out ${
-              animate
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-full opacity-0"
-            }`}
-          >
-            <div className="h-full flex flex-col justify-center">
-              <blockquote className="text-gray-600 italic my-6 text-3xl">
-                "{currentTestimonial.quote}"
-              </blockquote>
+        <div className="min-h-[400px] flex flex-col justify-center">
+          <div className="flex flex-row justify-center w-full">
+            <div
+              className={`flex flex-col justify-between items-center w-full h-full max-w-2xl transition-transform duration-300 ease-in-out ${
+                animate
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-full opacity-0"
+              }`}
+            >
+              <div className="h-full flex flex-col justify-center">
+                <blockquote className="text-gray-600 italic my-6 text-3xl text-justify sm:text-center">
+                  "{currentTestimonial.quote}"
+                </blockquote>
+              </div>
 
-            </div>
+              <div className="">
+                <p className="text-gray-800 font-semibold text-xl">
+                  {currentTestimonial.name}
+                </p>
 
-            <div className="">
-              <p className="text-gray-800 font-semibold text-xl">
-                {currentTestimonial.name}
-              </p>
+                <p className="text-gray-500 text-xl">
+                  {currentTestimonial.title}
+                </p>
+              </div>
 
-              <p className="text-gray-500 text-xl">
-                {currentTestimonial.title}
-              </p>
             </div>
           </div>
         </div>
