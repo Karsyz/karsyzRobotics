@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 
 function Navbar() {
@@ -78,19 +78,19 @@ function Navbar() {
         </Link>
 
         <div className="hidden md:flex space-x-6 items-center">
-          <NavLink
+          <Link
             to="/#contact"
             className={linkClass}
             onClick={handleContactClick} // Add smooth scroll handler
           >
             Contact
-          </NavLink>
-          <NavLink to="/portfolio" className={linkClass}>
+          </Link>
+          <Link to="/portfolio" className={linkClass}>
             Portfolio
-          </NavLink>
-          <NavLink to="/whiteboard" className={linkClass}>
+          </Link>
+          <Link to="/whiteboard" className={linkClass}>
             Whiteboard
-          </NavLink>
+          </Link>
 
           {isLoggedIn ? (
             <FiLogOut onClick={toggleLogin}  className="w-8 h-8 text-red-500"/>
@@ -152,27 +152,27 @@ function Navbar() {
               />
             </svg>
           </button>
-          <NavLink
+          <Link
             to="/#contact"
             className={linkClass}
             onClick={handleContactClick} // Add smooth scroll handler
           >
             Contact
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/portfolio"
             className={linkClass}
             onClick={toggleMobileMenu}
           >
             Portfolio
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/whiteboard"
             className={linkClass}
             onClick={toggleMobileMenu}
           >
             Whiteboard
-          </NavLink>
+          </Link>
           <button
             onClick={() => {
               toggleLogin();
