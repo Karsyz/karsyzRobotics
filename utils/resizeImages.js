@@ -1,4 +1,3 @@
-// utils/resizeImages.js
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -6,10 +5,11 @@ import sharp from 'sharp';
 
 async function resizeImages() {
     const __dirname = dirname(fileURLToPath(import.meta.url));
-    const dirPath = join(__dirname, '../public/images/portfolio');
-    const outputDir = join(__dirname, '../public/images/portfolio/resized');
+    console.log('__dirname:', __dirname); // Debug the resolved path
+    const dirPath = join(__dirname, '../public/images/models');
+    const outputDir = join(__dirname, '../public/images/models/resized');
     
-    await fs.mkdir(outputDir, { recursive: true }); // Create output folder
+    await fs.mkdir(outputDir, { recursive: true });
     
     try {
         const files = await fs.readdir(dirPath);
@@ -20,7 +20,7 @@ async function resizeImages() {
         
         for (const file of imageFiles) {
             const inputPath = join(dirPath, file);
-            const outputPath = join(outputDir, file); // Same name in new folder
+            const outputPath = join(outputDir, file);
             
             await sharp(inputPath)
                 .resize({ height: 600, withoutEnlargement: true })
