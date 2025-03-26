@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { FiLogIn, FiLogOut } from "react-icons/fi";
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { FiLogIn, FiLogOut } from 'react-icons/fi';
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,46 +19,46 @@ function Navbar() {
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, [isMobileMenuOpen]);
 
   // Smooth scroll to contact section if on index page
   const handleContactClick = (e) => {
-    if (location.pathname === "/") {
+    if (location.pathname === '/') {
       e.preventDefault();
-      const contactSection = document.getElementById("contact");
+      const contactSection = document.getElementById('contact');
       if (contactSection) {
-        contactSection.scrollIntoView({ behavior: "smooth" });
+        contactSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
     closeMobileMenu();
   };
 
   const handleRootClick = (e) => {
-    if (location.pathname === "/") {
+    if (location.pathname === '/') {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     closeMobileMenu();
   };
 
   useEffect(() => {
-    if (location.pathname === "/" && !location.hash) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (location.hash === "#contact") {
-      const contactSection = document.getElementById("contact");
+    if (location.pathname === '/' && !location.hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (location.hash === '#contact') {
+      const contactSection = document.getElementById('contact');
       if (contactSection) {
-        contactSection.scrollIntoView({ behavior: "smooth" });
+        contactSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
   }, [location.pathname, location.hash]);
 
   const linkClass = ({ isActive }) =>
     `hover:text-red-500 px-3 py-1 rounded-md transition duration-300 ${
-      isActive ? "" : "text-gray-300"
+      isActive ? '' : 'text-gray-300'
     }`;
 
   return (
@@ -77,7 +77,12 @@ function Navbar() {
           <span className="text-xl font-bold">Karsyz Robotics</span>
         </Link>
 
+
         <div className="hidden md:flex space-x-6 items-center">
+        <Link to="/models" className={linkClass}>
+            3D Models
+          </Link>
+
           <Link
             to="/#contact"
             className={linkClass}
@@ -93,9 +98,9 @@ function Navbar() {
           </Link>
 
           {isLoggedIn ? (
-            <FiLogOut onClick={toggleLogin}  className="w-8 h-8 text-red-500"/>
+            <FiLogOut onClick={toggleLogin} className="w-8 h-8 text-red-500" />
           ) : (
-            <FiLogIn onClick={toggleLogin} className="w-8 h-8 text-green-500"/>
+            <FiLogIn onClick={toggleLogin} className="w-8 h-8 text-green-500" />
           )}
 
           {/* <button
@@ -129,7 +134,7 @@ function Navbar() {
 
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-indigo-800 text-white transform ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out md:hidden z-50`}
       >
         <div className="flex flex-col p-6 space-y-6">
@@ -152,6 +157,15 @@ function Navbar() {
               />
             </svg>
           </button>
+
+          <Link
+            to="/models"
+            className={linkClass}
+            onClick={toggleMobileMenu} // Add smooth scroll handler
+          >
+            3D Models
+          </Link>
+
           <Link
             to="/#contact"
             className={linkClass}
@@ -180,7 +194,7 @@ function Navbar() {
             }}
             className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-left"
           >
-            {isLoggedIn ? "Logout" : "Login"}
+            {isLoggedIn ? 'Logout' : 'Login'}
           </button>
         </div>
       </div>

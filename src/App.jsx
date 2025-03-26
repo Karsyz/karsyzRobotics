@@ -9,6 +9,7 @@ import {
 import Index from './Pages/Index';
 import Whiteboard from './Pages/Whiteboard';
 import Portfolio from './Pages/Portfolio';
+import Models from './Pages/Models';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Index />} />
       <Route path="/whiteboard" element={<Whiteboard />} />
       <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/models" element={<Models />} />
     </>
   )
 );
