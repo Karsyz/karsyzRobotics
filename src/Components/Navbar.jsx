@@ -64,7 +64,7 @@ function Navbar() {
   return (
     <nav className="h-16 flex flex-row items-center bg-indigo-900 text-white py-4 px-6 fixed w-full top-0 z-50 shadow-lg">
       <div className="container mx-auto flex items-center justify-between">
-        <Link
+        {/* <Link
           to="/"
           className="flex items-center space-x-2"
           onClick={handleRootClick}
@@ -75,25 +75,32 @@ function Navbar() {
             className="w-10 h-10"
           />
           <span className="text-xl font-bold">Karsyz Robotics</span>
-        </Link>
-
+        </Link> */}
 
         <div className="hidden md:flex space-x-6 items-center">
-        <Link to="/models" className={linkClass}>
-            3D Models
+          <Link to="/fabpackstore" 
+          // className={linkClass}
+          >
+            Fab Pack Store
           </Link>
 
           <Link
             to="/#contact"
-            className={linkClass}
-            onClick={handleContactClick} // Add smooth scroll handler
+            // className={linkClass}
+            onClick={handleContactClick}
           >
             Contact
           </Link>
-          <Link to="/portfolio" className={linkClass}>
+          <Link
+            to="/portfolio"
+            // className={linkClass}
+          >
             Portfolio
           </Link>
-          <Link to="/whiteboard" className={linkClass}>
+          <Link
+            to="/whiteboard"
+            // className={linkClass}
+          >
             Whiteboard
           </Link>
 
@@ -158,7 +165,7 @@ function Navbar() {
             </svg>
           </button>
 
-          <Link
+          {/* <Link
             to="/models"
             className={linkClass}
             onClick={toggleMobileMenu} // Add smooth scroll handler
@@ -186,7 +193,7 @@ function Navbar() {
             onClick={toggleMobileMenu}
           >
             Whiteboard
-          </Link>
+          </Link> */}
           <button
             onClick={() => {
               toggleLogin();

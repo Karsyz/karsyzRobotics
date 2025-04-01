@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PPBuyItNowBtn from '../Components/PPBuyItNowBtn';
 
-function ProductModal({ modalViewId, models, closeModal }) {
+function ProductModal({ modalProductId, products, closeModal }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const selectedModel = models.find((item) => item.id === modalViewId);
+  const selectedModel = products.find((item) => item.id === modalProductId);
 
   if (!selectedModel) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 overflow-y-auto">
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 overflow-y-auto" onClick={closeModal}>
       {/* Close Button */}
       <button
         onClick={closeModal}
@@ -29,7 +29,10 @@ function ProductModal({ modalViewId, models, closeModal }) {
           />
         </svg>
       </button>
-      <div className="relative bg-white rounded-lg shadow-xl m-4 w-full max-w-5xl">
+      <div
+        className="relative bg-white rounded-lg shadow-xl m-4 w-full max-w-5xl"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Modal Content */}
         <div className="p-6 flex flex-col lg:flex-row gap-6">
           {/* Image Slideshow */}
