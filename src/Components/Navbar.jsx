@@ -59,6 +59,7 @@ function Navbar() {
   }, [location.pathname, location.hash]);
 
   const linkClass = ({ isActive }, targetHash = null) => {
+    console.log('location:', location, '........', 'isActive:', isActive);
     const baseClasses =
       'hover:text-green-400 font-semibold px-3 py-1 rounded-md transition duration-300';
     const isActiveWithHash = targetHash
@@ -114,7 +115,7 @@ function Navbar() {
           <NavLink to="/portfolio" className={linkClass}>
             Portfolio
           </NavLink>
-          
+
           <NavLink to="/whiteboard" className={linkClass}>
             Whiteboard
           </NavLink>
@@ -181,20 +182,41 @@ function Navbar() {
           </button>
 
           <NavLink
-            to="/models"
-            className={linkClass}
-            onClick={toggleMobileMenu} // Add smooth scroll handler
+            to="/"
+            onClick={(e) => {
+              handleHashNav('/');
+              handleRootClick;
+              toggleMobileMenu();
+            }}
+            className="flex items-center space-x-2"
           >
-            3D Models
+            <img
+              src="/images/karsyzLogo.svg"
+              alt="Karsyz Robotics Logo"
+              className="w-10 h-10"
+            />
+            <span className="text-xl font-bold">Karsyz Robotics</span>
           </NavLink>
 
           <NavLink
-            to="/#contact"
+            to="/fabpackstore"
             className={linkClass}
-            onClick={handleContactClick} // Add smooth scroll handler
+            onClick={toggleMobileMenu} // Add smooth scroll handler
+          >
+            Fab Pack Store
+          </NavLink>
+
+          <NavLink
+            to="#contact"
+            onClick={(e) => {
+              e.preventDefault(); // Prevent default NavLink behavior
+              handleHashNav('#contact');
+            }}
+            className={(props) => linkClass(props, '#contact')}
           >
             Contact
           </NavLink>
+
           <NavLink
             to="/portfolio"
             className={linkClass}
