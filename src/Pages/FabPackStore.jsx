@@ -52,8 +52,8 @@ function FabPackStore() {
                   <li>Clear, step-by-step instructions</li>
                   <li>STL Files for 3D Printing</li>
                   <li>3D Flat Patterns for sheet materials</li>
-                  <li>Detailed drawings</li>
                   <li>Sources for materials and tools</li>
+                  <li>Detailed drawings</li>
                   <li>Bill of materials</li>
                 </ul>
                 <p className="text-lg text-gray-700">
@@ -61,23 +61,21 @@ function FabPackStore() {
                   message to discuss your project.
                 </p>
               </div>
-              {/* <p className="text-lg text-gray-700 text-left">
-                Explore our collection of expertly designed 3D models, perfect
-                for 3D printing or other fabrication methods. Ideal for
-                hobbyists, makers, and designers, these packages often include
-                detailed drawings, clear instructions, and a bill of materials.
-                Need something unique? All models are customizable! Book a call
-                or send a message to discuss your project and make it your own!
-              </p> */}
             </div>
           </div>
         </section>
-        <section className="py-16 px-6">
+        <section className="pb-16 px-6">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {products.map((product, index) => (
-                <ProductCard key={product.id} product={product} openModal={openModal} />
-              ))}
+              {products
+                .filter((el) => el.published === true)
+                .map((product, index) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    openModal={openModal}
+                  />
+                ))}
             </div>
           </div>
         </section>

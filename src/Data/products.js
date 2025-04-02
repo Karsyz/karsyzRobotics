@@ -14,20 +14,20 @@ export const products = [
       },
     ],
     action: 'EQPT95CAUB4A8',
-    discount: 0,
+    published: true,
   },
   {
     id: 2,
-    name: '',
+    name: 'Stacking Organizer Bins',
     price: 10,
     headline: '',
     description: '',
     images: [
-      { imgSrc: '', imgAlt: '' },
+      { imgSrc: '/images/models/resized/2a.PNG', imgAlt: 'Stacking Organizer Bins assembly' },
       { imgSrc: '', imgAlt: '' },
     ],
     action: '',
-    discount: 0,
+    published: false,
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ export const products = [
       { imgSrc: '', imgAlt: '' },
     ],
     action: '',
-    discount: 0,
+    published: false,
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ export const products = [
       { imgSrc: '', imgAlt: '' },
     ],
     action: '',
-    discount: 0,
+    published: false,
   },
   {
     id: 5,
@@ -66,6 +66,6 @@ export const products = [
       { imgSrc: '', imgAlt: '' },
     ],
     action: '',
-    discount: 0,
+    published: false,
   },
 ];

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PPBuyItNowBtn from '../Components/PPBuyItNowBtn';
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function ProductModal({ modalProductId, products, closeModal }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -8,11 +9,11 @@ function ProductModal({ modalProductId, products, closeModal }) {
   if (!selectedModel) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 overflow-y-auto" onClick={closeModal}>
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex lg:items-center justify-center z-50 overflow-y-auto" onClick={closeModal}>
       {/* Close Button */}
       <button
         onClick={closeModal}
-        className="absolute top-4 right-4 bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition duration-300 z-10"
+        className="absolute top-6 right-6 lg:top-4 lg:right-4 bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition duration-300 z-10"
       >
         <svg
           className="w-6 h-6"
@@ -34,13 +35,13 @@ function ProductModal({ modalProductId, products, closeModal }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Content */}
-        <div className="p-6 flex flex-col lg:flex-row gap-6">
+        <div className="p-6 flex flex-col lg:flex-row gap-6 w-full">
           {/* Image Slideshow */}
-          <div className="relative lg:w-1/2">
+          <div className="relative lg:w-1/2 mx-auto">
             <img
               src={selectedModel.images[currentImageIndex].imgSrc}
               alt={selectedModel.images[currentImageIndex].imgAlt}
-              className="w-full h-[300px] sm:h-[400px] object-contain rounded-lg"
+              className="h-[300px] sm:h-[400px] object-contain rounded-lg"
             />
 
             {/* Navigation Arrows (shown only if multiple images) */}
@@ -52,9 +53,9 @@ function ProductModal({ modalProductId, products, closeModal }) {
                       prev === 0 ? selectedModel.images.length - 1 : prev - 1
                     )
                   }
-                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75"
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-600 bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75"
                 >
-                  ←
+                  <FaChevronLeft />
                 </button>
                 <button
                   onClick={() =>
@@ -62,12 +63,12 @@ function ProductModal({ modalProductId, products, closeModal }) {
                       prev === selectedModel.images.length - 1 ? 0 : prev + 1
                     )
                   }
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-600 bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75"
                 >
-                  →
+                  <FaChevronRight />
                 </button>
                 {/* Image Counter */}
-                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-gray-800 bg-opacity-50 text-white px-2 py-1 rounded-full text-sm">
+                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-gray-600 bg-opacity-50 text-white px-2 py-1 rounded-full text-sm">
                   {currentImageIndex + 1} / {selectedModel.images.length}
                 </div>
               </>

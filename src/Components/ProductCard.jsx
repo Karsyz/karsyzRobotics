@@ -1,23 +1,15 @@
 function ProductCard({ product, openModal }) {
-  const {
-    id,
-    name,
-    price,
-    images,
-    description,
-    inStock = true,
-    discount = 0,
-  } = product;
+  const { id, name, price, images, description, discount = 0 } = product;
 
   const discountedPrice =
     discount > 0 ? (price - (price * discount) / 100).toFixed(2) : null;
 
   return (
     <div
-      onClick={() => openModal(product.id)}
-      className="w-[300px] border border-gray-200 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 transition-transform duration-200"
+      onClick={() => openModal(id)}
+      className="w-full sm:w-[300px] border border-gray-200 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 transition-transform duration-200"
     >
-      <div className="relative w-full h-[300px]">
+      <div className="relative w-full aspect-square">
         <img
           src={images[0].imgSrc || 'https://placehold.co/300x300'}
           alt={images[0].imgAlt || 'zomg the pic is missing :('}
@@ -52,18 +44,6 @@ function ProductCard({ product, openModal }) {
             </span>
           )}
         </div>
-
-        {/* <button
-            onClick={() => openModal(product.id)}
-          className={`w-full py-2 rounded-md text-white transition-colors duration-200 ${
-            inStock
-              ? 'bg-blue-600 hover:bg-blue-700'
-              : 'bg-gray-400 cursor-not-allowed'
-          }`}
-          disabled={!inStock}
-        >
-          {inStock ? 'Add to Cart' : 'Out of Stock'}
-        </button> */}
       </div>
     </div>
   );

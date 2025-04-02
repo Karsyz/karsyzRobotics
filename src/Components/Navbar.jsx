@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const location = useLocation(); // Get current route
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
   const toggleLogin = () => setIsLoggedIn(!isLoggedIn);
+
+  const location = useLocation(); // Get current route
+  const navigate = useNavigate();
 
   // Close mobile menu on window resize
   useEffect(() => {
@@ -56,18 +58,34 @@ function Navbar() {
     }
   }, [location.pathname, location.hash]);
 
-  const linkClass = ({ isActive }) =>
-    `hover:text-red-500 px-3 py-1 rounded-md transition duration-300 ${
-      isActive ? '' : 'text-gray-300'
-    }`;
+  const linkClass = ({ isActive }, targetHash = null) => {
+    const baseClasses =
+      'hover:text-green-400 font-semibold px-3 py-1 rounded-md transition duration-300';
+    const isActiveWithHash = targetHash
+      ? isActive && location.hash === targetHash
+      : isActive;
+
+    return `${baseClasses} ${isActiveWithHash ? 'text-green-500' : ''}`.trim();
+  };
+
+  const handleHashNav = (hash) => {
+    if (location.pathname === '/') {
+      navigate(`${location.pathname}${hash}`, { replace: true });
+    } else {
+      navigate(`/${hash}`);
+    }
+  };
 
   return (
     <nav className="h-16 flex flex-row items-center bg-indigo-900 text-white py-4 px-6 fixed w-full top-0 z-50 shadow-lg">
       <div className="container mx-auto flex items-center justify-between">
-        {/* <Link
+        <NavLink
           to="/"
+          onClick={(e) => {
+            handleHashNav('/');
+            handleRootClick;
+          }}
           className="flex items-center space-x-2"
-          onClick={handleRootClick}
         >
           <img
             src="/images/karsyzLogo.svg"
@@ -75,34 +93,31 @@ function Navbar() {
             className="w-10 h-10"
           />
           <span className="text-xl font-bold">Karsyz Robotics</span>
-        </Link> */}
+        </NavLink>
 
         <div className="hidden md:flex space-x-6 items-center">
-          <Link to="/fabpackstore" 
-          // className={linkClass}
-          >
+          <NavLink to="/fabpackstore" className={linkClass}>
             Fab Pack Store
-          </Link>
+          </NavLink>
 
-          <Link
-            to="/#contact"
-            // className={linkClass}
-            onClick={handleContactClick}
+          <NavLink
+            to="#contact"
+            onClick={(e) => {
+              e.preventDefault(); // Prevent default NavLink behavior
+              handleHashNav('#contact');
+            }}
+            className={(props) => linkClass(props, '#contact')}
           >
             Contact
-          </Link>
-          <Link
-            to="/portfolio"
-            // className={linkClass}
-          >
+          </NavLink>
+
+          <NavLink to="/portfolio" className={linkClass}>
             Portfolio
-          </Link>
-          <Link
-            to="/whiteboard"
-            // className={linkClass}
-          >
+          </NavLink>
+          
+          <NavLink to="/whiteboard" className={linkClass}>
             Whiteboard
-          </Link>
+          </NavLink>
 
           {isLoggedIn ? (
             <FiLogOut onClick={toggleLogin} className="w-8 h-8 text-red-500" />
@@ -165,35 +180,35 @@ function Navbar() {
             </svg>
           </button>
 
-          {/* <Link
+          <NavLink
             to="/models"
             className={linkClass}
             onClick={toggleMobileMenu} // Add smooth scroll handler
           >
             3D Models
-          </Link>
+          </NavLink>
 
-          <Link
+          <NavLink
             to="/#contact"
             className={linkClass}
             onClick={handleContactClick} // Add smooth scroll handler
           >
             Contact
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/portfolio"
             className={linkClass}
             onClick={toggleMobileMenu}
           >
             Portfolio
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/whiteboard"
             className={linkClass}
             onClick={toggleMobileMenu}
           >
             Whiteboard
-          </Link> */}
+          </NavLink>
           <button
             onClick={() => {
               toggleLogin();
