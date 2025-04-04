@@ -1,10 +1,10 @@
 import { products } from '../Data/products.js';
 
 function FabPackStoreHero() {
-  // const [randomProductIndex, setRandomProductIndex] = useState(Math.floor(Math.random() * products.length))
-  const randProduct = products[Math.floor(Math.random() * products.length)];
+  const publishedProducts = products.filter((el) => el.published);
+  const randProduct =
+    publishedProducts[Math.floor(Math.random() * publishedProducts.length)];
   const randImage = randProduct.images[0];
-  console.log(randProduct, randImage);
 
   return (
     <section className="bg--800 text-slate-800 py-20 px-6">
@@ -32,13 +32,11 @@ function FabPackStoreHero() {
         {/* Image Section */}
         <div className="overflow-hidden">
           <img
-            src={'/images/models/resized/1a.PNG'}
+            src={randImage.imgSrc}
             alt={randImage.imgAlt}
             className="w-full h-full object-cover rounded-lg"
           />
-          <p className="w-full text-center mt-2">
-            Featured Pack
-          </p>
+          <p className="w-full text-center mt-2">Featured Pack</p>
         </div>
       </div>
     </section>

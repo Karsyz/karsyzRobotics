@@ -59,7 +59,6 @@ function Navbar() {
   }, [location.pathname, location.hash]);
 
   const linkClass = ({ isActive }, targetHash = null) => {
-    console.log('location:', location, '........', 'isActive:', isActive);
     const baseClasses =
       'hover:text-green-400 font-semibold px-3 py-1 rounded-md transition duration-300 whitespace-nowrap';
     const isActiveWithHash = targetHash

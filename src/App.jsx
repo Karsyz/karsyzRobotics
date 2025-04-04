@@ -23,7 +23,7 @@ const router = createBrowserRouter(
       <Route path="/fabpackstore" element={<FabPackStore />} />
 
       {/* product pages */}
-      {console.log(products.filter(el => el.published))}
+      {/* {console.log(products.filter(el => el.published))} */}
       {products.filter(el => el.published).map((product, ind) => {
         const slug = product.name.toLowerCase().split(' ').join('-').trim();
         if (!slug) return null; // Skip invalid slugs
