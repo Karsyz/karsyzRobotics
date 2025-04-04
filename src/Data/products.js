@@ -9,7 +9,7 @@ export const products = [
     images: [
       { imgSrc: '/images/models/resized/1a.PNG', imgAlt: 'dice tower' },
       { imgSrc: '/images/models/resized/1b.PNG', imgAlt: 'dice tower' },
-      { imgSrc: '/images/models/resized/1c.PNG', imgAlt: 'dice tower' }
+      { imgSrc: '/images/models/resized/1c.PNG', imgAlt: 'dice tower' },
     ],
     action: 'EQPT95CAUB4A8',
     published: true,
@@ -36,7 +36,7 @@ export const products = [
         imgAlt: 'Stacking Organizer Bins assembly All Parts',
       },
     ],
-    action: '',
+    action: '9Q5CH2GXCLP24',
     published: true,
   },
   {
