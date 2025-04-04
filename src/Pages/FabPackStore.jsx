@@ -6,13 +6,16 @@ import PPBuyItNowBtn from '../Components/PPBuyItNowBtn';
 import ProductModal from '../Components/ProductModal';
 import ProductCard from '../Components/ProductCard';
 import { products } from '../Data/products.js';
+import Breadcrumbs from '../Components/Breadcrumbs.jsx';
+import FabPackStoreHero from '../Components/FabPackStoreHero.jsx';
+import FabPackStoreOffering from '../Components/FabPackStoreOffering.jsx';
 
 function FabPackStore() {
   const [modalProductId, setModalProductId] = useState(null);
 
   useEffect(() => {
     const handleEsc = (event) => {
-      if (event.key === 'Escape' && modalProductId !== null) {
+      if (event.key === 'Escape' && modalProductId !== null) {  
         setModalProductId(null);
       }
     };
@@ -25,11 +28,15 @@ function FabPackStore() {
   const closeModal = () => setModalProductId(null);
 
   return (
-    <div className="min-h-screen bg-gray-100 font-sans">
+    <div className="min-h-screen bg-white font-sans">
       <Navbar />
+      <Breadcrumbs />
       <div className="pt-16">
         {/* Offset for fixed navbar */}
-        <section className="py-16 px-6 bg-gray-100">
+        <FabPackStoreHero />
+        <FabPackStoreOffering />
+
+        {/* <section className="py-16 px-6 bg-gray-100">
           <div className="container mx-auto">
             <div className="max-w-2xl">
               <h1 className="text-4xl font-bold text-gray-800 mb-4 text-left">
@@ -63,19 +70,28 @@ function FabPackStore() {
               </div>
             </div>
           </div>
-        </section>
-        <section className="pb-16 px-6">
+        </section> */}
+
+        <section className="py-16 px-6">
+          <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center w-full">
+            Available Fab Packs:
+          </h2>
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center gap-y-10">
               {products
                 .filter((el) => el.published === true)
-                .map((product, index) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    openModal={openModal}
-                  />
-                ))}
+                .map((product, index, filteredProducts) => {
+                  const totalItems = filteredProducts.length;
+                  const isOverflowItem = index >= 3; // Items beyond the first row (5 items)
+                  return (
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      openModal={openModal}
+                      className={isOverflowItem ? 'col-start-2' : ''}
+                    />
+                  );
+                })}
             </div>
           </div>
         </section>

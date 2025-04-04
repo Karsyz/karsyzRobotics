@@ -61,7 +61,7 @@ function Navbar() {
   const linkClass = ({ isActive }, targetHash = null) => {
     console.log('location:', location, '........', 'isActive:', isActive);
     const baseClasses =
-      'hover:text-green-400 font-semibold px-3 py-1 rounded-md transition duration-300';
+      'hover:text-green-400 font-semibold px-3 py-1 rounded-md transition duration-300 whitespace-nowrap';
     const isActiveWithHash = targetHash
       ? isActive && location.hash === targetHash
       : isActive;
@@ -78,8 +78,8 @@ function Navbar() {
   };
 
   return (
-    <nav className="h-16 flex flex-row items-center bg-indigo-900 text-white py-4 px-6 fixed w-full top-0 z-50 shadow-lg">
-      <div className="container mx-auto flex items-center justify-between">
+    <nav className="h-16 flex flex-row items-center justify-center bg-indigo-900 text-white py-4 px-6 fixed w-full top-0 shadow-lg z-50">
+      <div className="container flex items-center justify-between">
         <NavLink
           to="/"
           onClick={(e) => {
@@ -93,10 +93,12 @@ function Navbar() {
             alt="Karsyz Robotics Logo"
             className="w-10 h-10"
           />
-          <span className="text-xl font-bold">Karsyz Robotics</span>
+          <span className="text-xl font-bold whitespace-nowrap">
+            Karsyz Robotics
+          </span>
         </NavLink>
 
-        <div className="hidden md:flex space-x-6 items-center">
+        <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
           <NavLink to="/fabpackstore" className={linkClass}>
             Fab Pack Store
           </NavLink>

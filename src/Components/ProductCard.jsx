@@ -1,49 +1,80 @@
-function ProductCard({ product, openModal }) {
-  const { id, name, price, images, description, discount = 0 } = product;
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-  const discountedPrice =
-    discount > 0 ? (price - (price * discount) / 100).toFixed(2) : null;
+function ProductCard({ product, openModal }) {
+  const { id, name, price, images, description } = product;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    let interval;
+    const startScrolling = () => {
+      interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 1000);
+    };
+    const stopScrolling = () => clearInterval(interval);
+
+    const card = document.querySelector(`#product-card-${id}`);
+    if (card) {
+      card.addEventListener('mouseenter', startScrolling);
+      card.addEventListener('mouseleave', () => {
+        stopScrolling();
+        setCurrentImageIndex(0);
+      });
+    }
+
+    return () => {
+      if (card) {
+        card.removeEventListener('mouseenter', startScrolling);
+        card.removeEventListener('mouseleave', stopScrolling);
+      }
+      clearInterval(interval);
+    };
+  }, [id, images.length]);
 
   return (
     <div
-      onClick={() => openModal(id)}
-      className="w-full sm:w-[300px] border border-gray-200 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 transition-transform duration-200"
+      id={`product-card-${id}`}
+      onClick={() =>
+        navigate(
+          `/fabpackstore/${product.name
+            .toLowerCase()
+            .split(' ')
+            .join('-')
+            .trim()}`
+        )
+      }
+      className="relative w-full sm:w-[300px] border border-gray-200 rounded-lg overflow-hidden shadow-md hover:-translate-y-1 transition-transform duration-200 cursor-pointer group"
     >
-      <div className="relative w-full aspect-square">
+      <div className="relative w-full sm:w-[300px] h-[400px] sm:h-[300px] overflow-hidden">
         <img
-          src={images[0].imgSrc || 'https://placehold.co/300x300'}
-          alt={images[0].imgAlt || 'zomg the pic is missing :('}
-          className="w-full h-full object-cover"
+          src={
+            images[currentImageIndex].imgSrc || 'https://placehold.co/300x300'
+          }
+          alt={images[currentImageIndex].imgAlt || 'zomg the pic is missing :('}
+          className="w-full h-full object-cover transition-opacity duration-300"
         />
-        {discount > 0 && (
-          <span className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
-            -{discount}%
-          </span>
-        )}
       </div>
 
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800 mb-2">{name}</h3>
-        <p className="text-sm text-gray-600 mb-4 h-10 overflow-hidden">
+        <span className="text-xl font-bold text-gray-800">
+          ${price.toFixed(2)}
+        </span>
+        <h3 className="text-lg font-semibold text-gray-800 my-2">{name}</h3>
+        <p className="text-sm text-gray-600 mb-4 w-full line-clamp-3">
           {description}
         </p>
-
-        <div className="mb-4">
-          {discount > 0 ? (
-            <div className="flex items-center gap-2">
-              <span className="text-xl font-bold text-red-500">
-                ${discountedPrice}
-              </span>
-              <span className="text-base text-gray-500 line-through">
-                ${price.toFixed(2)}
-              </span>
-            </div>
-          ) : (
-            <span className="text-xl font-bold text-gray-800">
-              ${price.toFixed(2)}
-            </span>
-          )}
-        </div>
+        <span
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 hidden group-hover:block text-lg font-semibold text-red-500"
+          onClick={(e) => {
+            e.stopPropagation();
+            openModal(id);
+          }}
+        >
+          Quick View
+        </span>
       </div>
     </div>
   );
