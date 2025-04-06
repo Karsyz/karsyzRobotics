@@ -12,11 +12,13 @@ import Portfolio from './Pages/Portfolio';
 import FabPackStore from './Pages/FabPackStore';
 import { products } from './Data/products';
 import ProductPage from './Pages/ProductPage';
+import Thanks from './Pages/Thanks'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Index />} />
+      <Route path="/thanks" element={<Thanks />} />
       <Route path="/whiteboard" element={<Whiteboard />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/asdf" element={<ProductPage product={products[0]} />} />
