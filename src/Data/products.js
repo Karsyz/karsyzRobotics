@@ -37,6 +37,7 @@ export const products = [
       },
     ],
     action: '9Q5CH2GXCLP24',
+    // action: '8QN2ASS3HRQAY', //sandbox link
     published: true,
   },
   {

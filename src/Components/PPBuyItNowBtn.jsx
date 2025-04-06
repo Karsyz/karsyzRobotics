@@ -4,6 +4,7 @@ const PPBuyItNowBtn = ({action}) => {
       {/* PayPal Form */}
       <form
         action={`https://www.paypal.com/ncp/payment/${action}`}
+        // action={`https://www.sandbox.paypal.com/ncp/payment/${action}`}
         method="post"
         target="_blank"
         className="grid justify-items-center gap-2 mt-6"

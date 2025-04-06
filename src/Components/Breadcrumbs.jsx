@@ -7,7 +7,7 @@ const Breadcrumbs = () => {
   const pathnames = location.pathname.split('/').filter((x) => x);
 
   return (
-    <nav className="flex mb-4 fixed top-0 left-0 z-40 bg-white pt-20 pl-4 pr-4 pb-3" aria-label="Breadcrumb">
+    <nav className="flex mb-4 fixed top-0 left-0 z-40 bg-white pt-20 pl-4 pr-4 pb-3 rounded-br-lg" aria-label="Breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">
         {/* Home breadcrumb */}
         <li className="inline-flex items-center">
