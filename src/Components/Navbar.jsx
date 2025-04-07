@@ -102,6 +102,10 @@ function Navbar() {
             Fab Pack Store
           </NavLink>
 
+          <NavLink to="/freebies" className={linkClass}>
+            Freebies
+          </NavLink>
+
           <NavLink
             to="#contact"
             onClick={(e) => {

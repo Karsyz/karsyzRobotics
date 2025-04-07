@@ -13,6 +13,7 @@ import FabPackStore from './Pages/FabPackStore';
 import { products } from './Data/products';
 import ProductPage from './Pages/ProductPage';
 import Thanks from './Pages/Thanks'
+import Freebies from './Pages/Freebies'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/asdf" element={<ProductPage product={products[0]} />} />
       <Route path="/fabpackstore" element={<FabPackStore />} />
+      <Route path="/freebies" element={<Freebies />} />
 
       {/* product pages */}
       {/* {console.log(products.filter(el => el.published))} */}
