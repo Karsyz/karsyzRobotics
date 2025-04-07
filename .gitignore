@@ -23,3 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
+
+# Larger Image Files
+/public/images/freebies/*
+!/public/images/freebies/resized
+
+/public/images/models/*
+!/public/images/models/resized
