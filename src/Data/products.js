@@ -5,7 +5,7 @@ export const products = [
     price: 10,
     headline: '3D Print & Forge Your Tower of Chaos',
     description:
-      'Elevate your gaming experience with the Tower of Chaos - the ultimate dice tower for tabletop enthusiasts! This meticulously designed 3D model package includes STL files for all components, detailed fabrication drawings, and a complete parts list, making assembly a breeze. Crafted for chaos and precision, this tower ensures every roll is unpredictable yet perfectly executed. Download, print, and build your own Tower of Chaos - where every roll becomes an adventure!',
+      'Elevate your gaming experience with the Tower of Chaos - the ultimate dice tower for tabletop enthusiasts! This 3D model package includes STL and STP files for all components, fabrication drawings, and a parts list, making assembly a breeze. Crafted for chaos, this tower ensures every roll is unpredictable and perfectly executed. Download, print, and build your own Tower of Chaos',
     images: [
       { imgSrc: '/images/models/resized/1a.PNG', imgAlt: 'dice tower' },
       { imgSrc: '/images/models/resized/1b.PNG', imgAlt: 'dice tower' },
@@ -21,7 +21,7 @@ export const products = [
     headline:
       'Master Your Space with the StackSavvy Bin Organizer - The Ultimate Storage Solutionc',
     description:
-      'Transform clutter into order with the StackSavvy Bin Organizer, designed for efficiency and ease. This comprehensive 3D model package includes STL and STP files for all parts, dxf files for the flat patterns, detailed assembly instructions, and a bill of materials, making setup seamless. Download, print, and create your own StackSavvy Bin Organizer - where every space becomes perfectly organized!',
+      'Transform clutter into order with the StackSavvy Bin Organizer, designed for efficiency and ease. This comprehensive 3D model package includes STL and STP files for all parts, dxf files for flat sheet materials, and a bill of materials, making fabrication seamless. Download, print, and create your own Stacking Organizer Bins - where every space becomes perfectly organized!',
     images: [
       {
         imgSrc: '/images/models/resized/2a.PNG',

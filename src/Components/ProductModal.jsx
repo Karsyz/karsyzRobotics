@@ -84,7 +84,7 @@ function ProductModal({ modalProductId, products, closeModal }) {
 
           {/* Product Details */}
           <div className=" mt-4 lg:mt-0 lg:w-1/2">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+            <h2 className="text-xl font-bold text-gray-800 mb-2">
               ${selectedModel?.price}
             </h2>
             <h2 className="text-2xl font-bold text-gray-800">

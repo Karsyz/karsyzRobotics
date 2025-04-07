@@ -125,11 +125,11 @@ function Navbar() {
             Whiteboard
           </NavLink>
 
-          {isLoggedIn ? (
+          {/* {isLoggedIn ? (
             <FiLogOut onClick={toggleLogin} className="w-8 h-8 text-red-500" />
           ) : (
             <FiLogIn onClick={toggleLogin} className="w-8 h-8 text-green-500" />
-          )}
+          )} */}
 
           {/* <button
             onClick={toggleLogin}
@@ -165,6 +165,8 @@ function Navbar() {
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out md:hidden z-50`}
       >
+
+        {/* Mobile Nav Menu */}
         <div className="flex flex-col p-6 space-y-6">
           <button
             className="self-end text-white focus:outline-none"
@@ -193,14 +195,9 @@ function Navbar() {
               handleRootClick;
               toggleMobileMenu();
             }}
-            className="flex items-center space-x-2"
+            className={linkClass}
           >
-            <img
-              src="/images/karsyzLogo.svg"
-              alt="Karsyz Robotics Logo"
-              className="w-10 h-10"
-            />
-            <span className="text-xl font-bold">Karsyz Robotics</span>
+           Home
           </NavLink>
 
           <NavLink
@@ -209,6 +206,10 @@ function Navbar() {
             onClick={toggleMobileMenu} // Add smooth scroll handler
           >
             Fab Pack Store
+          </NavLink>
+
+          <NavLink to="/freebies" className={linkClass}>
+            Freebies
           </NavLink>
 
           <NavLink
@@ -236,7 +237,8 @@ function Navbar() {
           >
             Whiteboard
           </NavLink>
-          <button
+
+          {/* <button
             onClick={() => {
               toggleLogin();
               toggleMobileMenu();
@@ -244,7 +246,8 @@ function Navbar() {
             className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-left"
           >
             {isLoggedIn ? 'Logout' : 'Login'}
-          </button>
+          </button> */}
+
         </div>
       </div>
 

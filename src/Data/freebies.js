@@ -14,7 +14,7 @@ export const freebies = [
     name: 'Tart Tool',
     headline: 'A tool for making tarts easier',
     description:
-      'The Tart Tool is a 3D-printed kitchen essential that makes tart-making simple. Its circular press shapes pastry evenly in standard tins, with an ergonomic handle for ease of use. Designed to be easy to print, easy to clean, and durable, it ensures perfect tart shells every time!',
+      'The Tart Tool is a 3D-printed kitchen essential that makes tart-making simple. Its circular shape presses pastry evenly in standard tins, with an ergonomic handle for ease of use. Designed to be easy to print, easy to clean, and durable, it ensures perfect tart shells every time!',
     imgSrc: '/images/freebies/f2.PNG',
     imgAlt: 'Tart tool',
     href: '/freebies/tartTool.stl',
