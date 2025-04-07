@@ -13,13 +13,14 @@ function Freebies() {
       <Breadcrumbs />
       <div className="pt-16">
         <section className="py-16 px-6 ">
-          <div className='flex flex-col items-center mb-12'>
+          <div className="flex flex-col items-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 text-center w-full">
               Free Models
             </h2>
             <p>
               Clicking the cards below will download the stl file as well as
-              open an affiliate link to amazon in a new tab. Thanks for your support.
+              open an affiliate link to amazon in a new tab. Thanks for your
+              support.
             </p>
           </div>
           <div className="container mx-auto">
@@ -27,11 +28,15 @@ function Freebies() {
               {freebies.map((model) => {
                 return (
                   <a
-                    href={model.href}
-                    download={`/freebies/${model.href}`}
+                    href={`/freebies/${model.fileName}`}
+                    download={model.fileName}
                     key={model.id}
                     onClick={(e) => {
-                      window.open(model.affHref, '_blank', 'noopener,noreferrer');
+                      window.open(
+                        model.affHref,
+                        '_blank',
+                        'noopener,noreferrer'
+                      );
                     }}
                   >
                     <div
