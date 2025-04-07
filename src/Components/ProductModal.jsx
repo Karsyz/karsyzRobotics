@@ -3,6 +3,15 @@ import PPBuyItNowBtn from '../Components/PPBuyItNowBtn';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 
+import {
+  FaListOl,
+  FaCube,
+  FaShapes,
+  FaTools,
+  FaRulerCombined,
+  FaClipboardList,
+} from 'react-icons/fa';
+
 function ProductModal({ modalProductId, products, closeModal }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const selectedModel = products.find((item) => item.id === modalProductId);
@@ -94,6 +103,39 @@ function ProductModal({ modalProductId, products, closeModal }) {
               {selectedModel?.description ||
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
+
+                      <div className="text-center space-y-8 mt-8">
+                        {/* First Row: 4 Icons */}
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                          <div className="flex flex-col items-center  w-full">
+                            <FaCube className="w-12 h-12 mb-4 bg-transparent drop-shadow-md text-green-600" />
+                            <h3 className="text-md font-bold text-gray-800 mb-2 max-w-xs">
+                              STL/STEP Files for 3D Printing and Customizing
+                            </h3>
+                          </div>
+            
+                          <div className="flex flex-col items-center  w-full">
+                            <FaShapes className="w-12 h-12 mb-4 bg-transparent drop-shadow-md text-orange-500" />
+                            <h3 className="text-md font-bold text-gray-800 mb-2 max-w-xs">
+                              DXF Files for sheet materials
+                            </h3>
+                          </div>
+            
+                          <div className="flex flex-col items-center  w-full">
+                            <FaRulerCombined className="w-12 h-12 mb-4 bg-transparent drop-shadow-md text-purple-600" />
+                            <h3 className="text-md font-bold text-gray-800 mb-2 max-w-xs">
+                              Fabrication Drawings
+                            </h3>
+                          </div>
+            
+                          <div className="flex flex-col items-center  w-full">
+                            <FaClipboardList className="w-12 h-12 mb-4 bg-transparent drop-shadow-md text-red-500" />
+                            <h3 className="text-md font-bold text-gray-800 mb-2 max-w-xs">
+                              Bill of Materials
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
 
             <p className="text-center sm:static mt-8">
               <Link
