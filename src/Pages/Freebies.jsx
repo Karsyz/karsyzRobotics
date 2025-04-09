@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar.jsx';
-import ProductModal from '../Components/ProductModal.jsx';
-import ProductCard from '../Components/ProductCard.jsx';
-import { products } from '../Data/products.js';
 import Breadcrumbs from '../Components/Breadcrumbs.jsx';
 import { freebies } from '../Data/freebies.js';
+import { FaCoffee } from 'react-icons/fa';
+import { SiBuymeacoffee } from 'react-icons/si';
 
 function Freebies() {
   return (
@@ -17,10 +16,21 @@ function Freebies() {
             <h2 className="text-3xl font-bold text-gray-800 text-center w-full">
               Free Models
             </h2>
-            <p>
+            <p className="mt-4 max-w-xl text-sm">
               Clicking the cards below will download the stl file as well as
-              open an affiliate link to amazon in a new tab. Thanks for your
-              support.
+              open an affiliate link to a revelent product on amazon in a new
+              tab. Open in a new tab to download only. Thanks for your support
+              and enjoy!
+            </p>
+            <p className="text-white font-semibold text-lg bg-blue-400 px-6  py-3 rounded-xl flex items-center gap-4 mt-4 drop-shadow-md hover:-translate-y-1 transition-transform duration-200">
+              <a
+                href="https://www.paypal.com/donate/?hosted_button_id=NBQWEXK3LR82N"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Buy Me a Coffee
+              </a>
+              <SiBuymeacoffee className="w-6 h-6" />
             </p>
           </div>
           <div className="container mx-auto">
