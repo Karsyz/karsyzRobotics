@@ -40,7 +40,8 @@ function ProductPage({ product }) {
       { property: 'og:description', content: currentProduct.description },
       {
         property: 'og:image',
-        content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc || '/images/karsyzLogo.svg'}`,
+        // content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc || '/images/karsyzLogo.svg'}`,
+        content: 'https://karsyzrobotics.com/images/models/resized/3a.PNG',
       },
       {
         property: 'og:url',
