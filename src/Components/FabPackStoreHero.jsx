@@ -5,6 +5,11 @@ function FabPackStoreHero() {
   const randProduct =
     publishedProducts[Math.floor(Math.random() * publishedProducts.length)];
   const randImage = randProduct.images[0];
+  const randProductLink = `/fabpackstore/${randProduct.name
+    .toLowerCase()
+    .split(' ')
+    .join('-')
+    .trim()}`;
 
   return (
     <section className="bg--800 text-slate-800 py-20 px-6">
@@ -31,12 +36,14 @@ function FabPackStoreHero() {
         </div>
         {/* Image Section */}
         <div className="overflow-hidden">
-          <img
-            src={randImage.imgSrc}
-            alt={randImage.imgAlt}
-            className="w-full h-full object-cover rounded-lg"
-          />
-          <p className="w-full text-center mt-2">Featured Pack</p>
+          <a href={randProductLink}>
+            <img
+              src={randImage.imgSrc}
+              alt={randImage.imgAlt}
+              className="w-full h-full object-cover rounded-lg"
+            />
+            <p className="w-full text-center mt-2">Featured Pack</p>
+          </a>
         </div>
       </div>
     </section>
