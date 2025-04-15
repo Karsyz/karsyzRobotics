@@ -15,33 +15,24 @@ function ProductPage({ product }) {
 
   // Add meta tags for social sharing
   useEffect(() => {
-    // Fallback product data (optional, remove if product is always provided)
-    const fallbackProduct = {
-      name: 'Product Name',
-      headline: 'Default Product',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      images: [{ imgSrc: '/images/fallback.png', imgAlt: 'Fallback Image' }],
-      id: 0,
-    };
-
-    const currentProduct = product || fallbackProduct;
-    // const storeUrl = 'https://karsyzrobotics.com'
+    const currentProduct = product;
 
     // Define meta tags using product data
     const metaTags = [
+
       // Standard Meta Tags
       { name: 'title', content: currentProduct.name },
       { name: 'description', content: currentProduct.description },
+
       // Open Graph Meta Tags (for Facebook, LinkedIn, Discord, etc.)
       {
         property: 'og:title',
-        content: currentProduct.headline || currentProduct.name,
+        content: currentProduct.headline,
       },
       { property: 'og:description', content: currentProduct.description },
       {
         property: 'og:image',
-        content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc || '/images/karsyzLogo.svg'}`,
-        // content: 'https://karsyzrobotics.com/images/models/resized/3a.PNG',
+        content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc}`,
       },
       {
         property: 'og:url',
@@ -52,11 +43,12 @@ function ProductPage({ product }) {
       },
       { property: 'og:type', content: 'product' },
       { property: 'og:site_name', content: 'Karsyz Robotics' },
+
       // Twitter Card Meta Tags (for X)
       { name: 'twitter:card', content: 'summary_large_image' },
       {
         name: 'twitter:title',
-        content: currentProduct.headline || currentProduct.name,
+        content: currentProduct.headline,
       },
       {
         name: 'twitter:description',
@@ -67,14 +59,12 @@ function ProductPage({ product }) {
       },
       {
         name: 'twitter:image',
-        content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc || '/images/karsyzLogo.svg'}`,
+        content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc}`,
       },
     ];
 
-    // Set document title
     document.title = currentProduct.name;
 
-    // Add meta tags to <head>
     const createdTags = metaTags.map(({ name, property, content }) => {
       const meta = document.createElement('meta');
       if (name) meta.setAttribute('name', name);
@@ -84,11 +74,10 @@ function ProductPage({ product }) {
       return meta;
     });
 
-    // Cleanup tags on unmount or product change
     return () => {
       createdTags.forEach((tag) => document.head.removeChild(tag));
     };
-  }, [product]); // Re-run when product changes
+  }, [product]);
 
   return (
     <div className="bg-white flex flex-col justify-center">
