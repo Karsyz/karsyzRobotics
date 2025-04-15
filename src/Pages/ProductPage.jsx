@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import PPBuyItNowBtn from '../Components/PPBuyItNowBtn';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Navbar from '../Components/Navbar';
@@ -13,74 +14,57 @@ import {
 function ProductPage({ product }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Add meta tags for social sharing
-  useEffect(() => {
-    const currentProduct = product;
+  // Ensure image URL is valid with a fallback
+  const imageUrl = product.images[0]?.imgSrc
+    ? `https://karsyzrobotics.com${product.images[0].imgSrc}`
+    : 'https://karsyzrobotics.com/images/karsyzLogo.png';
 
-    // Define meta tags using product data
-    const metaTags = [
-
-      // Standard Meta Tags
-      { name: 'title', content: currentProduct.name },
-      { name: 'description', content: currentProduct.description },
-
-      // Open Graph Meta Tags (for Facebook, LinkedIn, Discord, etc.)
-      {
-        property: 'og:title',
-        content: currentProduct.headline,
-      },
-      { property: 'og:description', content: currentProduct.description },
-      {
-        property: 'og:image',
-        content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc}`,
-      },
-      {
-        property: 'og:url',
-        content: `https://karsyzrobotics.com/fabpackstore/${currentProduct.name
-          .toLowerCase()
-          .split(' ')
-          .join('-')}`,
-      },
-      { property: 'og:type', content: 'product' },
-      { property: 'og:site_name', content: 'Karsyz Robotics' },
-
-      // Twitter Card Meta Tags (for X)
-      { name: 'twitter:card', content: 'summary_large_image' },
-      {
-        name: 'twitter:title',
-        content: currentProduct.headline,
-      },
-      {
-        name: 'twitter:description',
-        content:
-          currentProduct.description.length > 200
-            ? `${currentProduct.description.substring(0, 197)}...`
-            : currentProduct.description,
-      },
-      {
-        name: 'twitter:image',
-        content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc}`,
-      },
-    ];
-
-    document.title = currentProduct.name;
-
-    const createdTags = metaTags.map(({ name, property, content }) => {
-      const meta = document.createElement('meta');
-      if (name) meta.setAttribute('name', name);
-      if (property) meta.setAttribute('property', property);
-      meta.setAttribute('content', content);
-      document.head.appendChild(meta);
-      return meta;
-    });
-
-    return () => {
-      createdTags.forEach((tag) => document.head.removeChild(tag));
-    };
-  }, [product]);
+  const imageWidth =
+    imageUrl === 'https://karsyzrobotics.com/images/karsyzLogo.png'
+      ? '630'
+      : '600';
 
   return (
     <div className="bg-white flex flex-col justify-center">
+      {/* Meta Tags with Helmet */}
+      <Helmet>
+        <title>{product.name}</title>
+        <meta name="description" content={product.description} />
+
+        {/* Open Graph Meta Tags (for Facebook, LinkedIn, Discord, etc.) */}
+        <meta property="og:title" content={product.headline} />
+        <meta property="og:description" content={product.description} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:width" content={imageWidth} />
+        <meta property="og:image:height" content="600" />
+        <meta
+          property="og:image:alt"
+          content={product.images[0]?.imgAlt || 'Karsyz Robotics product image'}
+        />
+        <meta
+          property="og:url"
+          content={`https://karsyzrobotics.com/fabpackstore/${product.name
+            .toLowerCase()
+            .split(' ')
+            .join('-')}`}
+        />
+        <meta property="og:type" content="product" />
+        <meta property="og:site_name" content="Karsyz Robotics" />
+
+        {/* Twitter Card Meta Tags (for X) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={product.headline} />
+        <meta
+          name="twitter:description"
+          content={
+            product.description.length > 200
+              ? `${product.description.substring(0, 197)}...`
+              : product.description
+          }
+        />
+        <meta name="twitter:image" content={imageUrl} />
+      </Helmet>
+
       <div>
         <Navbar />
         <Breadcrumbs />
