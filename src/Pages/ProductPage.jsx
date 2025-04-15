@@ -25,7 +25,7 @@ function ProductPage({ product }) {
     };
 
     const currentProduct = product || fallbackProduct;
-    const storeUrl = 'https://karsyzrobotics.com'
+    // const storeUrl = 'https://karsyzrobotics.com'
 
     // Define meta tags using product data
     const metaTags = [
@@ -40,11 +40,11 @@ function ProductPage({ product }) {
       { property: 'og:description', content: currentProduct.description },
       {
         property: 'og:image',
-        content: `${storeUrl}${currentProduct.images[0]?.imgSrc || '/images/karsyzLogo.svg'}`,
+        content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc || '/images/karsyzLogo.svg'}`,
       },
       {
         property: 'og:url',
-        content: `${storeUrl}/fabpackstore/${currentProduct.name
+        content: `https://karsyzrobotics.com/fabpackstore/${currentProduct.name
           .toLowerCase()
           .split(' ')
           .join('-')}`,
@@ -66,7 +66,7 @@ function ProductPage({ product }) {
       },
       {
         name: 'twitter:image',
-        content: `${storeUrl}${currentProduct.images[0]?.imgSrc || '/images/karsyzLogo.svg'}`,
+        content: `https://karsyzrobotics.com${currentProduct.images[0]?.imgSrc || '/images/karsyzLogo.svg'}`,
       },
     ];
 
