@@ -35,7 +35,7 @@ async function getImageFiles(dir, ignoreFolders = []) {
 
 async function resizeImages() {
     const baseDir = join(__dirname, '../public/images');
-    const ignoreFolders = ['portfolio']; // Example ignore list
+    const ignoreFolders = ['portfolio', 'obsolete']; 
 
     try {
         const imageFiles = await getImageFiles(baseDir, ignoreFolders);
