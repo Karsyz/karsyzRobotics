@@ -98,13 +98,13 @@ export const freebies = [
     affHref: 'https://amzn.to/43PXNPp',
   },
   // {
-  //   id: 3,
+  //   id: 10,
   //   name: '',
   //   headline: '',
   //   description: '',
   //   imgSrc: '/images/freebies/resized/.png',
   //   imgAlt: '',
   //   fileName: '.stl',
-  //   affHref: 'https://amzn.to/4j9tcB1',
+  //   affHref: '',
   // },
 ];

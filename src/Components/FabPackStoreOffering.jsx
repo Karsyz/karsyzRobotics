@@ -12,7 +12,7 @@ function FabPackStoreOffering() {
     <section className="px-6 pt-16 bg-slate-100">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-800">
-          Our Fab Packs Include:
+          Fab Packs Include:
         </h2>
         <div className="space-y-8">
           

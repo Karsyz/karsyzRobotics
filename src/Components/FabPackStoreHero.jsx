@@ -1,4 +1,5 @@
 import { products } from '../Data/products.js';
+import { Link } from 'react-router-dom';
 
 function FabPackStoreHero() {
   const publishedProducts = products.filter((el) => el.published);
@@ -11,6 +12,13 @@ function FabPackStoreHero() {
     .join('-')
     .trim()}`;
 
+  const handleScrollToFabPacks = () => {
+    const fabPacksSection = document.getElementById('fabpacks');
+    if (fabPacksSection) {
+      fabPacksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="bg--800 text-slate-800 py-20 px-6">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
@@ -20,29 +28,33 @@ function FabPackStoreHero() {
             Fab Pack Store
           </h1>
           <p className="text-lg md:text-xl mb-8 font-semibold">
-            All the info you need to complete your project!
+            Build Smarter with Premium 3D CAD Models
           </p>
-          <p className="text-lg text-gray-700 mb-4">
-            Explore expertly designed 3D models in our Premium Fabrication
-            Packs. Perfect for 3D printing and other fabrication methods. Ideal
-            for hobbyists, makers, and manufacturers.
+          <p className="mb-8">
+            Crafted by an industry expert, our Fabrication Packs deliver
+            ready-to-use STL, DXF, and STEP files for 3D printing, CNC
+            machining, woodworking, and metal fabrication. Save time, boost
+            precision, and bring your ideas to life—perfect for hobbyists,
+            makers, and small manufacturers.
           </p>
-          {/* <button
-            onClick={openModal}
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+          <button
+            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 font-semibold rounded-lg transition duration-300"
+            onClick={handleScrollToFabPacks}
           >
-            Book a call now to get started!
-          </button> */}
+            Browse Now or Grab a Free Sample Today!
+          </button>
         </div>
         {/* Image Section */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden relative">
           <a href={randProductLink}>
             <img
               src={randImage.imgSrc}
               alt={randImage.imgAlt}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg z-10"
             />
-            <p className="w-full text-center mt-2">Featured Pack</p>
+            <p className="absolute z-50 bottom-5 right-5 font-semibold">
+              Featured Fab Pack
+            </p>
           </a>
         </div>
       </div>

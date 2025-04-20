@@ -112,7 +112,9 @@ function ProductPage({ product }) {
           <div className="mt-4 lg:mt-0 px-4 flex flex-col">
             <div className="">
               <p className="text-xl font-bold text-gray-800 mb-1">
-                ${product?.price}
+              {product?.price !== 0
+                ? '$' + product?.price.toFixed(2)
+                : 'Free Sample'}
               </p>
               <h2 className="text-2xl font-bold text-gray-800">
                 {product?.name || 'Product Name'}
@@ -159,10 +161,25 @@ function ProductPage({ product }) {
 
       {/* Buy Button */}
       <div className="my-6 flex justify-center">
-        <PPBuyItNowBtn
+      {product?.price !== 0 ? (
+            <PPBuyItNowBtn
+              action={product.action}
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
+            />
+          ) : (
+            <a
+              className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 font-semibold rounded-lg transition duration-300"
+              href={`/samples/${product.fileName}`}
+              download={product.fileName}
+            >
+              Download Free Sample
+            </a>
+          )}
+
+        {/* <PPBuyItNowBtn
           action={product.action}
           className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
-        />
+        /> */}
       </div>
       
       {/* <iframe src="https://gmail914994.autodesk360.com/g/shares/SH286ddQT78850c0d8a435e308f0eefda3ec" width="100%" height="800px" frameborder="0" allowfullscreen></iframe> */}

@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: 'Tower of Chaos Dice Tower',
-    price: 10,
+    price: 0,
     headline: '3D Print & Forge Your Tower of Chaos',
     description:
       'Elevate your gaming experience with the Tower of Chaos - the ultimate dice tower for tabletop enthusiasts! This 3D model package includes STL and STP files for all components, fabrication drawings, and a parts list, making assembly a breeze. Crafted for chaos, this tower ensures every roll is unpredictable and perfectly executed. Download, print, and build your own Tower of Chaos!',
@@ -12,12 +12,13 @@ export const products = [
       { imgSrc: '/images/models/resized/1c.png', imgAlt: 'dice tower' },
     ],
     action: 'EQPT95CAUB4A8',
+    fileName: 'dice_tower.zip',
     published: true,
   },
   {
     id: 2,
     name: 'Stacking Organizer Bins',
-    price: 10,
+    price: 0,
     headline:
       'Master Your Space with Stacking Organizer Bins',
     description:
@@ -37,13 +38,13 @@ export const products = [
       },
     ],
     action: '9Q5CH2GXCLP24',
-    // action: '8QN2ASS3HRQAY', //sandbox link
+    fileName: 'hex_bins.zip',
     published: true,
   },
   {
     id: 3,
     name: 'Industrial Steel Laptop Stand',
-    price: 65,
+    price: 9.99,
     headline: 'Industrial Steel Laptop Stand - Built to Last',
     description: 'Elevate your workspace with this rugged, laser-cut 1/8" steel laptop stand, designed for durability and style. Featuring rubber pads for stability and laptop protection, it raises your device up to 8" for ergonomic comfort. Its sleek, industrial design and unique shape make it a standout. Purchase includes a complete design package with fabrication drawings, DXF files, and 3D models (STEP/STL). Want a bespoke creation? Book a consultation or send a message today!',
     images: [
@@ -52,6 +53,7 @@ export const products = [
       { imgSrc: '/images/models/resized/3c.png', imgAlt: 'Industrial Steel Laptop Stand' },
     ],
     action: 'P3Y2T6H7ZGL7J',
+    fileName: '',
     published: true,
   },
   {
@@ -65,6 +67,7 @@ export const products = [
       { imgSrc: '', imgAlt: '' },
     ],
     action: '',
+    fileName: '',
     published: false,
   },
   {
@@ -78,6 +81,7 @@ export const products = [
       { imgSrc: '', imgAlt: '' },
     ],
     action: '',
+    fileName: '',
     published: false,
   },
 ];

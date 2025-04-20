@@ -15,7 +15,7 @@ function FabPackStore() {
 
   useEffect(() => {
     const handleEsc = (event) => {
-      if (event.key === 'Escape' && modalProductId !== null) {  
+      if (event.key === 'Escape' && modalProductId !== null) {
         setModalProductId(null);
       }
     };
@@ -72,7 +72,7 @@ function FabPackStore() {
           </div>
         </section> */}
 
-        <section className="py-16 px-6">
+        <section id="fabpacks" className="py-16 px-6">
           <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center w-full">
             Available Fab Packs:
           </h2>

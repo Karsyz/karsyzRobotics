@@ -60,7 +60,7 @@ function ProductCard({ product, openModal }) {
 
       <div className="p-4">
         <span className="text-xl font-bold text-gray-800">
-          ${price.toFixed(2)}
+          {price !== 0 ? '$' + price.toFixed(2) : 'Free Sample'}
         </span>
         <h3 className="text-lg font-semibold text-gray-800 my-2">{name}</h3>
         <p className="text-sm text-gray-600 mb-4 w-full line-clamp-3">
