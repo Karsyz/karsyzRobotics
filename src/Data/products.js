@@ -99,14 +99,24 @@ export const products = [
   },
   {
     id: 6,
-    name: '',
+    name: 'Stainless Steel Shelf',
     price: 9.99,
-    headline: '',
-    description: '',
-    images: [{ imgSrc: '/images/models/resized/.png', imgAlt: '' }],
-    action: '',
+    headline: '36" Stainless Steel Shelf with Integral Brackets',
+    description:
+      'This 36" long x 12" deep stainless steel shelf features 10" integral side brackets and two 1/4" mounting holes for secure installation. The Fab Pack includes a 3D model in STL and STEP formats, DXF flat patterns for laser or waterjet cutting, and detailed drawings with flat pattern layouts for easy fabrication.',
+    images: [
+      {
+        imgSrc: '/images/models/resized/6a.png',
+        imgAlt: '36" Stainless Steel Shelf',
+      },
+      {
+        imgSrc: '/images/models/resized/6b.png',
+        imgAlt: '36" Stainless Steel Shelf',
+      },
+    ],
+    action: 'MJNWC9DXV46YC',
     fileName: '',
-    published: false,
+    published: true,
   },
   {
     id: 7,
