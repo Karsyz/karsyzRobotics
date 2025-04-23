@@ -19,8 +19,7 @@ export const products = [
     id: 2,
     name: 'Stacking Organizer Bins',
     price: 0,
-    headline:
-      'Master Your Space with Stacking Organizer Bins',
+    headline: 'Master Your Space with Stacking Organizer Bins',
     description:
       'Transform clutter into order with the StackSavvy Bin Organizer, designed for efficiency and ease. This comprehensive 3D model package includes STL and STP files for all parts, dxf files for flat sheet materials, and a bill of materials, making fabrication seamless. Download, print, and create your own Stacking Organizer Bins - where every space becomes perfectly organized!',
     images: [
@@ -46,11 +45,21 @@ export const products = [
     name: 'Industrial Steel Laptop Stand',
     price: 9.99,
     headline: 'Industrial Steel Laptop Stand - Built to Last',
-    description: 'Elevate your workspace with this rugged, laser-cut 1/8" steel laptop stand, designed for durability and style. Featuring rubber pads for stability and laptop protection, it raises your device up to 8" for ergonomic comfort. Its sleek, industrial design and unique shape make it a standout. Purchase includes a complete design package with fabrication drawings, DXF files, and 3D models (STEP/STL). Want a bespoke creation? Book a consultation or send a message today!',
+    description:
+      'Elevate your workspace with this rugged, laser-cut 1/8" steel laptop stand, designed for durability and style. Featuring rubber pads for stability and laptop protection, it raises your device up to 8" for ergonomic comfort. Its sleek, industrial design and unique shape make it a standout. Purchase includes a complete design package with fabrication drawings, DXF files, and 3D models (STEP/STL). Want a bespoke creation? Book a consultation or send a message today!',
     images: [
-      { imgSrc: '/images/models/resized/3a.png', imgAlt: 'Industrial Steel Laptop Stand' },
-      { imgSrc: '/images/models/resized/3b.png', imgAlt: 'Industrial Steel Laptop Stand' },
-      { imgSrc: '/images/models/resized/3c.png', imgAlt: 'Industrial Steel Laptop Stand' },
+      {
+        imgSrc: '/images/models/resized/3a.png',
+        imgAlt: 'Industrial Steel Laptop Stand',
+      },
+      {
+        imgSrc: '/images/models/resized/3b.png',
+        imgAlt: 'Industrial Steel Laptop Stand',
+      },
+      {
+        imgSrc: '/images/models/resized/3c.png',
+        imgAlt: 'Industrial Steel Laptop Stand',
+      },
     ],
     action: 'P3Y2T6H7ZGL7J',
     fileName: '',
@@ -60,8 +69,10 @@ export const products = [
     id: 4,
     name: 'Flat Pack Fire Pit',
     price: 9.99,
-    headline: '36" Steel Flat Pack Fire Pit Design - Blueprint for Camping Perfection',
-    description: 'Create your own portable fire pit with this 36" diameter, 10" deep flat pack fire pit design, engineered for a 45-lb steel build. This detailed blueprint is optimized for laser, waterjet, or manual fabrication, making it easy to craft a stylish, compact fire pit ideal for camping. Get the sleek, modern design for your next outdoor adventure—ready for you to bring to life!',
+    headline:
+      '36" Steel Flat Pack Fire Pit Design - Blueprint for Camping Perfection',
+    description:
+      'Create your own portable fire pit with this 36" diameter, 10" deep flat pack fire pit design, engineered for a 45-lb steel build. This detailed blueprint is optimized for laser, waterjet, or manual fabrication, making it easy to craft a stylish, compact fire pit ideal for camping. Get the sleek, modern design for your next outdoor adventure—ready for you to bring to life!',
     images: [
       { imgSrc: '/images/models/resized/4a.png', imgAlt: 'Flat Pack Fire Pit' },
     ],
@@ -71,17 +82,20 @@ export const products = [
   },
   {
     id: 5,
-    name: '',
+    name: 'Sheet Metal Tool Tray',
     price: 9.99,
-    headline: '',
-    description: '',
+    headline: 'Beginner-Friendly Sheet Metal Tool Tray Design with Hard Rivets',
+    description:
+      'Start your sheet metal projects with confidence using this beginner-friendly tool tray design, featuring hard rivets for a durable, professional finish. This compact blueprint is crafted for easy fabrication with basic sheet metal techniques, making it perfect for DIY newcomers and seasoned makers alike. Organize your tools in style with a sleek, sturdy tray you can build yourself. Download the fabrication plans now at karsyzrobotics.com/fabpackstore and get crafting!',
     images: [
-      { imgSrc: '', imgAlt: '' },
-      { imgSrc: '', imgAlt: '' },
+      {
+        imgSrc: '/images/models/resized/5a.png',
+        imgAlt: 'Sheet Metal Tool Tray',
+      },
     ],
-    action: '',
+    action: '72M4BFTQSK83C',
     fileName: '',
-    published: false,
+    published: true,
   },
   {
     id: 6,
@@ -89,10 +103,7 @@ export const products = [
     price: 9.99,
     headline: '',
     description: '',
-    images: [
-      { imgSrc: '', imgAlt: '' },
-      { imgSrc: '', imgAlt: '' },
-    ],
+    images: [{ imgSrc: '/images/models/resized/.png', imgAlt: '' }],
     action: '',
     fileName: '',
     published: false,
@@ -103,10 +114,7 @@ export const products = [
     price: 9.99,
     headline: '',
     description: '',
-    images: [
-      { imgSrc: '', imgAlt: '' },
-      { imgSrc: '', imgAlt: '' },
-    ],
+    images: [{ imgSrc: '/images/models/resized/.png', imgAlt: '' }],
     action: '',
     fileName: '',
     published: false,
@@ -117,10 +125,7 @@ export const products = [
     price: 9.99,
     headline: '',
     description: '',
-    images: [
-      { imgSrc: '', imgAlt: '' },
-      { imgSrc: '', imgAlt: '' },
-    ],
+    images: [{ imgSrc: '/images/models/resized/.png', imgAlt: '' }],
     action: '',
     fileName: '',
     published: false,
@@ -131,10 +136,7 @@ export const products = [
     price: 9.99,
     headline: '',
     description: '',
-    images: [
-      { imgSrc: '', imgAlt: '' },
-      { imgSrc: '', imgAlt: '' },
-    ],
+    images: [{ imgSrc: '/images/models/resized/.png', imgAlt: '' }],
     action: '',
     fileName: '',
     published: false,
@@ -145,10 +147,7 @@ export const products = [
     price: 9.99,
     headline: '',
     description: '',
-    images: [
-      { imgSrc: '', imgAlt: '' },
-      { imgSrc: '', imgAlt: '' },
-    ],
+    images: [{ imgSrc: '/images/models/resized/.png', imgAlt: '' }],
     action: '',
     fileName: '',
     published: false,
