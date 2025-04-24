@@ -10,6 +10,7 @@ import Index from './Pages/Index';
 import Whiteboard from './Pages/Whiteboard';
 import Portfolio from './Pages/Portfolio';
 import FabPackStore from './Pages/FabPackStore';
+import ModelStore from './Pages/ModelStore';
 import { products } from './Data/products';
 import ProductPage from './Pages/ProductPage';
 import Thanks from './Pages/Thanks'
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/asdf" element={<ProductPage product={products[0]} />} />
       <Route path="/fabpackstore" element={<FabPackStore />} />
+      <Route path="/modelstore" element={<ModelStore />} />
       <Route path="/freebies" element={<Freebies />} />
 
       {/* product pages */}

@@ -102,6 +102,10 @@ function Navbar() {
             Fab Pack Store
           </NavLink>
 
+          <NavLink to="/modelstore" className={linkClass}>
+            Model Store
+          </NavLink>
+
           <NavLink to="/freebies" className={linkClass}>
             Freebies
           </NavLink>
@@ -206,6 +210,10 @@ function Navbar() {
             onClick={toggleMobileMenu} // Add smooth scroll handler
           >
             Fab Pack Store
+          </NavLink>
+
+          <NavLink to="/modelstore" className={linkClass}>
+            Model Store
           </NavLink>
 
           <NavLink to="/freebies" className={linkClass}>

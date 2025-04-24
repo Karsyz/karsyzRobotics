@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../Components/Navbar';
-import ProductModal from '../Components/ProductModal';
-import ProductCard from '../Components/ProductCard';
+import Navbar from '../Components/Navbar.jsx';
+import ProductModal from '../Components/ProductModal.jsx';
+import ProductCard from '../Components/ProductCard.jsx';
 import { products } from '../Data/products.js';
 import Breadcrumbs from '../Components/Breadcrumbs.jsx';
 import StoreHero from '../Components/StoreHero.jsx';
 import StoreOffering from '../Components/StoreOffering.jsx';
 
-function FabPackStore() {
+function ModelStore() {
   const [modalProductId, setModalProductId] = useState(null);
 
   useEffect(() => {
@@ -33,19 +33,19 @@ function FabPackStore() {
 
         <StoreHero
           products={products}
-          storeTitle={'Fab Pack Store'}
+          storeTitle={'Model Store'}
           storeHeadline={'Build Smarter with Premium 3D CAD Models'}
           storeDescription={
             'Crafted by an industry expert, our Fabrication Packs deliver ready-to-use STL, DXF, and STEP files for 3D printing, CNC machining, woodworking, and metal fabrication. Save time, boost precision, and bring your ideas to life—perfect for hobbyists, makers, and small manufacturers.'
           }
-          storeCta={'Browse Now or Grab a Free Sample Today!'}
+          storeCta={'Browse Now'}
         />
 
-        <StoreOffering includedItems={[1, 2, 3, 4]} offerName={'Fab Packs'} />
+        <StoreOffering includedItems={[2, 5]} offerName={'Models'} />
 
-        <section id="products" className="py-16 px-6">
+        <section id="fabpacks" className="py-16 px-6">
           <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center w-full">
-            Available Fab Packs:
+            Available Models:
           </h2>
           <div className="container mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center gap-y-10">
@@ -80,4 +80,4 @@ function FabPackStore() {
   );
 }
 
-export default FabPackStore;
+export default ModelStore;
