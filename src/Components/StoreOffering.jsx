@@ -8,7 +8,7 @@ import {
   FaFile
 } from 'react-icons/fa';
 
-function StoreOffering({ includedItems, offerName }) {
+function StoreOffering({ includedItems, offerName, iconSize, textSize }) {
   return (
     <section className="px-6 pt-16 bg-slate-100">
       <div className="container mx-auto text-center">

@@ -1,0 +1,48 @@
+export const models = [
+  {
+    id: 1,
+    name: 'Adjustable Phone Stand',
+    price: 9.99,
+    headline: 'this is a headline standin headline',
+    description: 'Elevate your device with our sleek, adjustable phone stand. Crafted from durable aluminum, it offers 360° rotation and multi-angle tilt for perfect viewing during video calls, streaming, or browsing. Compact and portable, it’s compatible with all smartphones and tablets. Enhance your workspace or travel setup with style and stability.',
+    images: [{ imgSrc: 'https://placehold.co/600x600', imgAlt: '' }],
+    action: '',
+    fileName: '',
+    published: true,
+  },
+  {
+    id: 2,
+    name: '',
+    price: 9.99,
+    headline: '',
+    description: '',
+    images: [{ imgSrc: '/images/models/resized/.png', imgAlt: '' }],
+    action: '',
+    fileName: '',
+    published: false,
+  },
+  {
+    id: 3,
+    name: '',
+    price: 9.99,
+    headline: '',
+    description: '',
+    images: [{ imgSrc: '/images/models/resized/.png', imgAlt: '' }],
+    action: '',
+    fileName: '',
+    published: false,
+  },
+  {
+    id: 4,
+    name: '',
+    price: 9.99,
+    headline: '',
+    description: '',
+    images: [{ imgSrc: '/images/models/resized/.png', imgAlt: '' }],
+    action: '',
+    fileName: '',
+    published: false,
+  },
+];
+
+

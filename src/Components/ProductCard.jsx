@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function ProductCard({ product, openModal }) {
+function ProductCard({ product, openModal, routeName }) {
   const { id, name, price, images, description } = product;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -34,12 +34,17 @@ function ProductCard({ product, openModal }) {
     };
   }, [id, images.length]);
 
+  const getRoute = (productName) => {
+    const slug = productName.toLowerCase().split(' ').join('-').trim();
+    return `/${routeMap}store/${slug}`;
+  };
+
   return (
     <div
       id={`product-card-${id}`}
       onClick={() =>
         navigate(
-          `/fabpackstore/${product.name
+          `/${routeName}store/${product.name
             .toLowerCase()
             .split(' ')
             .join('-')

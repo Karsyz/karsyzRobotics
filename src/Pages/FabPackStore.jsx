@@ -60,6 +60,7 @@ function FabPackStore() {
                       product={product}
                       openModal={openModal}
                       className={isOverflowItem ? 'col-start-2' : ''}
+                      routeName={'fabpack'}
                     />
                   );
                 })}
@@ -73,6 +74,8 @@ function FabPackStore() {
             modalProductId={modalProductId}
             products={products}
             closeModal={closeModal}
+            includedItems={[1,2,3,4]}
+            routeName={'model'}
           />
         )}
       </div>
