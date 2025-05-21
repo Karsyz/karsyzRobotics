@@ -98,7 +98,7 @@ function Navbar() {
         </NavLink>
 
         <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
-          <NavLink to="/fabpackstore" className={linkClass}>
+          {/* <NavLink to="/fabpackstore" className={linkClass}>
             Fab Pack Store
           </NavLink>
 
@@ -108,7 +108,7 @@ function Navbar() {
 
           <NavLink to="/freebies" className={linkClass}>
             Freebies
-          </NavLink>
+          </NavLink> */}
 
           <NavLink
             to="#contact"
@@ -204,7 +204,7 @@ function Navbar() {
            Home
           </NavLink>
 
-          <NavLink
+          {/* <NavLink
             to="/fabpackstore"
             className={linkClass}
             onClick={toggleMobileMenu} // Add smooth scroll handler
@@ -218,7 +218,7 @@ function Navbar() {
 
           <NavLink to="/freebies" className={linkClass}>
             Freebies
-          </NavLink>
+          </NavLink> */}
 
           <NavLink
             to="#contact"
