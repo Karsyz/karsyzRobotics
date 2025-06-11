@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
 
 function Navbar() {
@@ -98,18 +98,6 @@ function Navbar() {
         </NavLink>
 
         <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
-          {/* <NavLink to="/fabpackstore" className={linkClass}>
-            Fab Pack Store
-          </NavLink>
-
-          <NavLink to="/modelstore" className={linkClass}>
-            Model Store
-          </NavLink>
-
-          <NavLink to="/freebies" className={linkClass}>
-            Freebies
-          </NavLink> */}
-
           <NavLink
             to="#contact"
             onClick={(e) => {
@@ -121,6 +109,14 @@ function Navbar() {
             Contact
           </NavLink>
 
+          <Link
+            to="https://guardrailworksheet.netlify.app"
+            target="_blank"
+            className={linkClass}
+          >
+            Guardrail Worksheet
+          </Link>
+
           <NavLink to="/portfolio" className={linkClass}>
             Portfolio
           </NavLink>
@@ -128,19 +124,6 @@ function Navbar() {
           <NavLink to="/whiteboard" className={linkClass}>
             Whiteboard
           </NavLink>
-
-          {/* {isLoggedIn ? (
-            <FiLogOut onClick={toggleLogin} className="w-8 h-8 text-red-500" />
-          ) : (
-            <FiLogIn onClick={toggleLogin} className="w-8 h-8 text-green-500" />
-          )} */}
-
-          {/* <button
-            onClick={toggleLogin}
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
-          >
-            {isLoggedIn ? "Logout" : "Login"}
-          </button> */}
         </div>
 
         <button
@@ -169,7 +152,6 @@ function Navbar() {
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out md:hidden z-50`}
       >
-
         {/* Mobile Nav Menu */}
         <div className="flex flex-col p-6 space-y-6">
           <button
@@ -201,24 +183,8 @@ function Navbar() {
             }}
             className={linkClass}
           >
-           Home
+            Home
           </NavLink>
-
-          {/* <NavLink
-            to="/fabpackstore"
-            className={linkClass}
-            onClick={toggleMobileMenu} // Add smooth scroll handler
-          >
-            Fab Pack Store
-          </NavLink>
-
-          <NavLink to="/modelstore" className={linkClass}>
-            Model Store
-          </NavLink>
-
-          <NavLink to="/freebies" className={linkClass}>
-            Freebies
-          </NavLink> */}
 
           <NavLink
             to="#contact"
@@ -246,16 +212,13 @@ function Navbar() {
             Whiteboard
           </NavLink>
 
-          {/* <button
-            onClick={() => {
-              toggleLogin();
-              toggleMobileMenu();
-            }}
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-left"
+          <Link
+            to="https://guardrailworksheet.netlify.app"
+            target="_blank"
+            className={linkClass + ''}
           >
-            {isLoggedIn ? 'Logout' : 'Login'}
-          </button> */}
-
+            Guardrail Worksheet
+          </Link>
         </div>
       </div>
 
