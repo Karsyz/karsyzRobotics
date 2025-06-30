@@ -93,17 +93,6 @@ function Portfolio() {
                 Precision CAD Solutions for Metal Fabrication: Streamlining Your
                 Workflow from Design to Done
               </h2>
-              {/* <p className="text-lg text-gray-700 text-left mb-2">
-                I work with metal fabrication businesses of all sizes to create
-                3D models, fabrication drawings, material ordering / cut lists,
-                cnc data, and more.
-              </p>
-              <p className="text-lg text-gray-700 text-left">
-                I specialize in transforming ideas into detailed 3D models and
-                CAD solutions, working on projects ranging from product
-                prototypes to architectural designs.
-              </p> */}
-
               <p className="text-lg text-gray-700 text-left mb-2">
                 I partner with metal fabrication shops of all sizes to create
                 precise 3D models, fabrication drawings, CNC data, and material
@@ -114,7 +103,7 @@ function Portfolio() {
                 With expertise in Autodesk Inventor, Fusion, and AutoCAD, I
                 specialize in custom CAD solutions for projects like metal
                 fabrications and weldments, product prototypes, structural and
-                misc steel, I create designs that save you time, prevent
+                misc steel. I create designs that save you time, prevent
                 mistakes, and get your projects done faster.
               </p>
             </div>
