@@ -11,9 +11,13 @@ function Portfolio() {
   const closeCTAModal = () => setCTAModalIsOpen(false);
 
   const projects = [
-    { src: '/images/portfolio/boatRailConcept.PNG', alt: '' },
-    // { src: '/images/portfolio/seatPlate1.png', alt: '' },
-    // { src: '/images/portfolio/1.png', alt: '' },
+    { src: '/images/portfolio/boatRailConcept.png', alt: '' },
+    { src: '/images/portfolio/drainTableAssy.png', alt: '' },
+    { src: '/images/portfolio/fishingHut1.png', alt: '' },
+    { src: '/images/portfolio/fishingHut2.png', alt: '' },
+    { src: '/images/portfolio/materialList.png', alt: '' },
+    { src: '/images/portfolio/rolledBeamDetails.png', alt: '' },
+    { src: '/images/portfolio/bigBeamDrawing.png', alt: '' },
     { src: '/images/portfolio/sample.png', alt: '' },
     { src: '/images/portfolio/progress1.png', alt: '' },
     {
@@ -28,19 +32,14 @@ function Portfolio() {
     { src: '/images/portfolio/2tray.png', alt: '' },
     { src: '/images/portfolio/3.png', alt: '' },
     { src: '/images/portfolio/1box.png', alt: '' },
-    // { src: '/images/portfolio/3d model verify.png', alt: '' },
     { src: '/images/portfolio/5.png', alt: '' },
     { src: '/images/portfolio/7.png', alt: '' },
-    // { src: '/images/portfolio/binFlag1.png', alt: '' },
     { src: '/images/portfolio/breakerActuator2.png', alt: '' },
     { src: '/images/portfolio/cheeseBuilding5.png', alt: '' },
-    // { src: '/images/portfolio/coverClamp.png', alt: '' },
     { src: '/images/portfolio/devilTailSign.png', alt: '' },
     { src: '/images/portfolio/exhaustTip.png', alt: '' },
     { src: '/images/portfolio/firePitVerify1.png', alt: '' },
     { src: '/images/portfolio/frontFrame.png', alt: '' },
-    { src: '/images/portfolio/guitar1.png', alt: '' },
-    // { src: '/images/portfolio/houseExample1.png', alt: '' },
     { src: '/images/portfolio/image-4.jpg', alt: '' },
     {
       src: '/images/portfolio/KurigTrayallYouNeedIsCoffee.png',
@@ -91,13 +90,32 @@ function Portfolio() {
                 Portfolio
               </h1>
               <h2 className="text-2xl text-gray-600 mb-6 text-left italic">
-                Turning Vision into Precision
+                Precision CAD Solutions for Metal Fabrication: Streamlining Your
+                Workflow from Design to Done
               </h2>
+              {/* <p className="text-lg text-gray-700 text-left mb-2">
+                I work with metal fabrication businesses of all sizes to create
+                3D models, fabrication drawings, material ordering / cut lists,
+                cnc data, and more.
+              </p>
               <p className="text-lg text-gray-700 text-left">
                 I specialize in transforming ideas into detailed 3D models and
                 CAD solutions, working on projects ranging from product
-                prototypes to architectural designs. My focus is on precision,
-                collaboration, and delivering results that exceed expectations.
+                prototypes to architectural designs.
+              </p> */}
+
+              <p className="text-lg text-gray-700 text-left mb-2">
+                I partner with metal fabrication shops of all sizes to create
+                precise 3D models, fabrication drawings, CNC data, and material
+                ordering / cut lists, streamlining your workflow from concept to
+                completion.
+              </p>
+              <p className="text-lg text-gray-700 text-left">
+                With expertise in Autodesk Inventor, Fusion, and AutoCAD, I
+                specialize in custom CAD solutions for projects like metal
+                fabrications and weldments, product prototypes, structural and
+                misc steel, I create designs that save you time, prevent
+                mistakes, and get your projects done faster.
               </p>
             </div>
           </div>
