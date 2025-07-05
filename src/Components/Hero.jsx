@@ -8,7 +8,7 @@ function Hero({ openModal }) {
             Bring your ideas to life
           </h1>
           <p className="text-lg md:text-xl mb-8">
-            with expert 3D modeling, 2D drafting, and Fusion 360 precision
+            with professional 3D modeling and drafting
           </p>
           <button
             onClick={openModal}
