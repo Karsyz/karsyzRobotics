@@ -1,67 +1,69 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+
+export function classHelper() {
+  return [...arguments].join(' ');
+}
 
 function Testimonials() {
   const testimonials = [
     {
       quote:
         "Wizards really do exist!!! He went above and beyond making resources and notes for me so that I don't create the same error in the future. You didn't try to squeeze extra money out of me and that kind of caliber is super rare these days. Once again, thank you so much for your help! 10/10 I would recommend his services!",
-      name: "T. Salmon",
-      title: "Engineer",
+      name: 'T. Salmon',
+      title: 'Engineer',
     },
     {
-      quote: "Great service, highly recommended!",
-      name: "Adrian",
-      title: "Project Manager",
-    },
-    {
-      quote:
-        "The support I received was fantastic. They took the time to explain everything clearly and resolved my issue quickly.",
-      name: "Alan M.",
-      title: "CAD Tech",
+      quote: 'Great service, highly recommended!',
+      name: 'Adrian',
+      title: 'Project Manager',
     },
     {
       quote:
-        "I was amazed by the dedication and expertise shown throughout the project. They provided detailed updates, answered all my questions patiently, and delivered exceptional results that exceeded my expectations. Truly a pleasure to work with!",
-      name: "Dan S.",
-      title: "CTO",
+        'The support I received was fantastic. They took the time to explain everything clearly and resolved my issue quickly.',
+      name: 'Alan M.',
+      title: 'CAD Tech',
     },
     {
-      quote: "Quick and reliable help.",
-      name: "Jean C.",
-      title: "Entrepreneur",
+      quote:
+        'I was amazed by the dedication and expertise shown throughout the project. They provided detailed updates, answered all my questions patiently, and delivered exceptional results that exceeded my expectations. Truly a pleasure to work with!',
+      name: 'Dan S.',
+      title: 'CTO',
+    },
+    {
+      quote: 'Quick and reliable help.',
+      name: 'Jean C.',
+      title: 'Entrepreneur',
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [animate, setAnimate] = useState(true);
 
   // Function to calculate interval based on word count
   const calculateInterval = (quote) => {
-    const wordCount = quote.split(/\s+/).length; // Split by whitespace and count words
-    const readingSpeed = 3.33; // Average words per second (200 wpm)
-    const baseTime = 5000; // Minimum 5 seconds base time
-    const readingTime = (wordCount / readingSpeed) * 1000; // Convert to milliseconds
-    return Math.max(baseTime, readingTime); // Ensure minimum of 2 seconds
+    const wordCount = quote.split(/\s+/).length;
+    const readingSpeed = 3.33;
+    const baseTime = 5000;
+    const readingTime = Math.ceil((wordCount / readingSpeed) * 1000);
+    return currentIndex === 0 || currentIndex === testimonialsPlus.length - 1
+      ? Math.max(baseTime / 2, readingTime / 2)
+      : Math.max(baseTime, readingTime);
   };
 
   // Timer to cycle testimonials
   useEffect(() => {
-    const currentTestimonial = testimonials[currentIndex];
+    const currentTestimonial = testimonialsPlus[currentIndex];
     const intervalTime = calculateInterval(currentTestimonial.quote);
-
     const interval = setInterval(() => {
-      setAnimate(false); // Reset animation
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-        setAnimate(true); // Trigger animation
-      }, 100); // Small delay before sliding in
-    }, intervalTime); // Dynamic interval based on quote length
+        setCurrentIndex((prev) => (prev + 1) % testimonialsPlus.length);
+      }, 100);
+    }, intervalTime);
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [currentIndex, testimonials.length]); // Add currentIndex as dependency
+    return () => clearInterval(interval);
+  }, [currentIndex, testimonials.length]);
 
-  // Get current testimonial
-  const currentTestimonial = testimonials[currentIndex];
+  const testimonialsPlus = [...testimonials, testimonials[0]];
+  const currentTestimonial = testimonialsPlus[currentIndex];
 
   return (
     <section className="py-16 px-6 bg-sky-100">
@@ -69,33 +71,29 @@ function Testimonials() {
         <h2 className="text-3xl font-bold text-gray-800">
           What Our Clients Say
         </h2>
-        <div className="min-h-[400px] flex flex-col justify-center">
-          <div className="flex flex-row justify-center w-full">
-            <div
-              className={`flex flex-col justify-between items-center w-full h-full max-w-2xl transition-transform duration-300 ease-in-out ${
-                animate
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-full opacity-0"
-              }`}
-            >
-              <div className="h-full flex flex-col justify-center">
-                <blockquote className="text-gray-600 italic my-6 text-3xl text-justify sm:text-center">
-                  "{currentTestimonial.quote}"
-                </blockquote>
-              </div>
 
-              <div className="">
-                <p className="text-gray-800 font-semibold text-xl">
-                  {currentTestimonial.name}
-                </p>
+        <div className="overflow-x-hidden">
+          <ul
+            className={classHelper(
+              'flex items-center -translate-x-full',
+              currentIndex === 0
+                ? 'transition-none'
+                : 'transition duration-1000'
+            )}
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {testimonialsPlus.map((testie) => {
+              return <li className="w-full shrink-0 p-10">{testie.quote}</li>;
+            })}
+          </ul>
+        </div>
 
-                <p className="text-gray-500 text-xl">
-                  {currentTestimonial.title}
-                </p>
-              </div>
+        <div className="">
+          <p className="text-gray-800 font-semibold text-xl">
+            {currentTestimonial.name}
+          </p>
 
-            </div>
-          </div>
+          <p className="text-gray-500 text-xl">{currentTestimonial.title}</p>
         </div>
       </div>
     </section>

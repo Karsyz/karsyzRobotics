@@ -1,4 +1,7 @@
-function Hero({ openModal }) {
+import { useModal } from '../Context/ModalContext';
+
+function Hero() {
+  const { openModal } = useModal();
   return (
     <section className="bg-indigo-900 text-white py-20 px-6">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -12,7 +15,7 @@ function Hero({ openModal }) {
           </p>
           <button
             onClick={openModal}
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 text-xl "
           >
             Book a call now to get started!
           </button>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { FiLogIn, FiLogOut } from 'react-icons/fi';
+import { FiLogIn, FiLogOut, FiExternalLink } from 'react-icons/fi';
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,24 +20,11 @@ function Navbar() {
         closeMobileMenu();
       }
     };
-
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, [isMobileMenuOpen]);
-
-  // Smooth scroll to contact section if on index page
-  const handleContactClick = (e) => {
-    if (location.pathname === '/') {
-      e.preventDefault();
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-    closeMobileMenu();
-  };
 
   const handleRootClick = (e) => {
     if (location.pathname === '/') {
@@ -58,16 +45,6 @@ function Navbar() {
     }
   }, [location.pathname, location.hash]);
 
-  const linkClass = ({ isActive }, targetHash = null) => {
-    const baseClasses =
-      'hover:text-green-400 font-semibold px-3 py-1 rounded-md transition duration-300 whitespace-nowrap';
-    const isActiveWithHash = targetHash
-      ? isActive && location.hash === targetHash
-      : isActive;
-
-    return `${baseClasses} ${isActiveWithHash ? 'text-green-500' : ''}`.trim();
-  };
-
   const handleHashNav = (hash) => {
     if (location.pathname === '/') {
       navigate(`${location.pathname}${hash}`, { replace: true });
@@ -79,14 +56,7 @@ function Navbar() {
   return (
     <nav className="h-16 flex flex-row items-center justify-center bg-indigo-900 text-white py-4 px-6 fixed w-full top-0 shadow-lg z-50">
       <div className="container flex items-center justify-between">
-        <NavLink
-          to="/"
-          onClick={(e) => {
-            handleHashNav('/');
-            handleRootClick;
-          }}
-          className="flex items-center space-x-2"
-        >
+        <NavLink to="/" className="flex items-center space-x-2">
           <img
             src="/images/karsyzLogo.svg"
             alt="Karsyz Robotics Logo"
@@ -97,33 +67,41 @@ function Navbar() {
           </span>
         </NavLink>
 
-        <div className="hidden md:flex space-x-4 lg:space-x-6 items-center">
+        <div className="hidden md:flex space-x-4 lg:space-x-6 items-center font-semibold">
           <NavLink
-            to="#contact"
-            onClick={(e) => {
-              e.preventDefault(); // Prevent default NavLink behavior
-              handleHashNav('#contact');
+            to="/"
+            style={{
+              color:
+                location.pathname === '/' &&
+                location.hash !== '#contact' &&
+                '#22c55e',
             }}
-            className={(props) => linkClass(props, '#contact')}
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/#contact"
+            style={{ color: location.hash === '#contact' && '#22c55e' }}
           >
             Contact
+          </NavLink>
+
+          <NavLink
+            to="/portfolio"
+            style={{ color: location.pathname === '/portfolio' && '#22c55e' }}
+          >
+            Portfolio
           </NavLink>
 
           <Link
             to="https://guardrailworksheet.netlify.app"
             target="_blank"
-            className={linkClass}
+            className="flex gap-2 items-center whitespace-nowrap"
           >
             Guardrail Worksheet
+            <FiExternalLink className="text-lg" />
           </Link>
-
-          <NavLink to="/portfolio" className={linkClass}>
-            Portfolio
-          </NavLink>
-
-          <NavLink to="/whiteboard" className={linkClass}>
-            Whiteboard
-          </NavLink>
         </div>
 
         <button
@@ -153,7 +131,7 @@ function Navbar() {
         } transition-transform duration-300 ease-in-out md:hidden z-50`}
       >
         {/* Mobile Nav Menu */}
-        <div className="flex flex-col p-6 space-y-6">
+        <div className="flex flex-col p-6 space-y-6 font-semibold">
           <button
             className="self-end text-white focus:outline-none"
             onClick={toggleMobileMenu}
@@ -176,48 +154,40 @@ function Navbar() {
 
           <NavLink
             to="/"
-            onClick={(e) => {
-              handleHashNav('/');
-              handleRootClick;
-              toggleMobileMenu();
+            onClick={toggleMobileMenu}
+            style={{
+              color:
+                location.pathname === '/' &&
+                location.hash !== '#contact' &&
+                '#22c55e',
             }}
-            className={linkClass}
           >
             Home
           </NavLink>
 
           <NavLink
-            to="#contact"
-            onClick={(e) => {
-              e.preventDefault(); // Prevent default NavLink behavior
-              handleHashNav('#contact');
-            }}
-            className={(props) => linkClass(props, '#contact')}
+            to="/#contact"
+            onClick={toggleMobileMenu}
+            style={{ color: location.hash === '#contact' && '#22c55e' }}
           >
             Contact
           </NavLink>
 
           <NavLink
             to="/portfolio"
-            className={linkClass}
             onClick={toggleMobileMenu}
+            style={{ color: location.pathname === '/portfolio' && '#22c55e' }}
           >
             Portfolio
-          </NavLink>
-          <NavLink
-            to="/whiteboard"
-            className={linkClass}
-            onClick={toggleMobileMenu}
-          >
-            Whiteboard
           </NavLink>
 
           <Link
             to="https://guardrailworksheet.netlify.app"
             target="_blank"
-            className={linkClass + ''}
+            className="flex gap-2 items-center whitespace-nowrap"
           >
             Guardrail Worksheet
+            <FiExternalLink className="text-lg" />
           </Link>
         </div>
       </div>

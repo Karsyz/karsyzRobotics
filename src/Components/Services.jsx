@@ -1,16 +1,16 @@
-import { FaCube, FaGlobe, FaRocket, FaMoneyBill } from "react-icons/fa";
+import { FaCube, FaGlobe, FaRocket, FaMoneyBill } from 'react-icons/fa';
 
 function Services() {
   return (
     <section className="py-16 px-6 bg-white">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-12">
+        <h2 className="text-4xl font-bold text-gray-800 mb-16">
           Our 3D Modeling Solutions
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Service 1: Precision 3D Modeling */}
-          <div className="flex flex-col items-center">
-            <FaCube className="w-24 h-24 mb-4 bg-transparent drop-shadow-md text-blue-600" />
+          <div className="flex flex-col items-center group hover:-translate-y-2 transition-all duration-100 px-4 py-6 rounded-md hover:shadow-md">
+            <FaCube className="w-24 h-24 mb-4 bg-transparent drop-shadow-md text-slate-800 group-hover:text-blue-600 duration-200" />
 
             <h3 className="text-xl font-bold text-gray-800 mb-2">
               Flawless 3D Models
@@ -21,8 +21,8 @@ function Services() {
           </div>
 
           {/* Service 2: Remote CAD Solutions */}
-          <div className="flex flex-col items-center">
-            <FaGlobe className="w-24 h-24 mb-4 bg-transparent drop-shadow-md text-green-600" />
+          <div className="flex flex-col items-center group hover:-translate-y-2 transition-all duration-100 px-4 py-6 rounded-md hover:shadow-md">
+            <FaGlobe className="w-24 h-24 mb-4 bg-transparent drop-shadow-md text-slate-800 group-hover:text-green-600 duration-200" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">
               Seamless Remote CAD
             </h3>
@@ -32,8 +32,8 @@ function Services() {
           </div>
 
           {/* Service 3: Fast Turnaround Times */}
-          <div className="flex flex-col items-center">
-            <FaRocket className="w-24 h-24 mb-4 bg-transparent drop-shadow-md text-orange-500" />
+          <div className="flex flex-col items-center group hover:-translate-y-2 transition-all duration-100 px-4 py-6 rounded-md hover:shadow-md">
+            <FaRocket className="w-24 h-24 mb-4 bg-transparent drop-shadow-md text-slate-800 group-hover:text-orange-500 duration-200" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">
               Rapid Delivery
             </h3>
@@ -43,8 +43,8 @@ function Services() {
           </div>
 
           {/* Service 4: Competitive Pricing */}
-          <div className="flex flex-col items-center">
-            <FaMoneyBill className="w-24 h-24 mb-4 bg-transparent drop-shadow-md text-yellow-500" />
+          <div className="flex flex-col items-center group hover:-translate-y-2 transition-all duration-100 px-4 py-6 rounded-md hover:shadow-md">
+            <FaMoneyBill className="w-24 h-24 mb-4 bg-transparent drop-shadow-md text-slate-800 group-hover:text-yellow-400/80 duration-200" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">
               Affordable Excellence
             </h3>
