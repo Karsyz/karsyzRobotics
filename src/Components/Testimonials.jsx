@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { classHelper } from '../Pages/Index';
 
-export function classHelper() {
-  return [...arguments].join(' ');
-}
 
 function Testimonials() {
   const testimonials = [
@@ -82,8 +80,8 @@ function Testimonials() {
             )}
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {testimonialsPlus.map((testie) => {
-              return <li className="w-full shrink-0 p-10">{testie.quote}</li>;
+            {testimonialsPlus.map((testie, ind) => {
+              return <li className="w-full shrink-0 p-10" key={ind}>{testie.quote}</li>;
             })}
           </ul>
         </div>

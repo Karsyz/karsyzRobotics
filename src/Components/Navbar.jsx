@@ -54,7 +54,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="h-16 flex flex-row items-center justify-center bg-indigo-900 text-white py-4 px-6 fixed w-full top-0 shadow-lg z-50">
+    <nav className="h-16 flex flex-row items-center justify-center bg-indigo-900 text-white py-4 px-6 fixed w-full top-0 shadow-lg z-10">
       <div className="container flex items-center justify-between">
         <NavLink to="/" className="flex items-center space-x-2">
           <img

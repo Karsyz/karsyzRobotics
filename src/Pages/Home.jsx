@@ -10,7 +10,7 @@ Modal.setAppElement('#root');
 
 function Home() {
   return (
-    <div className="">
+    <div className="w-screen">
       <Hero />
       <Services />
       <Testimonials />
