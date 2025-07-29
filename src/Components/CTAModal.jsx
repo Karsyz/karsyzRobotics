@@ -1,16 +1,21 @@
 import { useModal } from '../Context/ModalContext';
 import { classHelper } from '../Pages/Index';
+import EscapeKeyListener from "./EscapeKeyListener";
+
 
 const CTAModal = () => {
   const { closeModal, isOpen } = useModal();
 
   return (
+    
     <div
       className={classHelper(
         'fixed bg-black/60 z-20 w-full h-screen transition-opacity duration-100',
         isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       )}
+      onClick={closeModal}
     >
+      <EscapeKeyListener onEscape={closeModal} />
       <div className="relative flex flex-row justify-center items-center h-[95vh]">
         <div className="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 h-[85%] p-8 relative">
           <iframe
