@@ -13,7 +13,7 @@ function Home() {
       <Testimonials />
       <ValueProposition />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
