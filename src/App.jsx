@@ -9,6 +9,7 @@ import {
 import Index from './Pages/Index';
 import Portfolio from './Pages/Portfolio';
 import Home from './Pages/Home';
+import Blog from './Pages/Blog';
 import { ModalProvider } from './Context/ModalContext';
 
 const router = createBrowserRouter(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Index />}>
       <Route index element={<Home />} />
       <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/blog" element={<Blog />} />
     </Route>
   )
 );

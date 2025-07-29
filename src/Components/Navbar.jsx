@@ -10,7 +10,7 @@ function Navbar() {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
   const toggleLogin = () => setIsLoggedIn(!isLoggedIn);
 
-  const location = useLocation(); // Get current route
+  const location = useLocation();
   const navigate = useNavigate();
 
   // Close mobile menu on window resize
@@ -92,6 +92,13 @@ function Navbar() {
             style={{ color: location.pathname === '/portfolio' && '#22c55e' }}
           >
             Portfolio
+          </NavLink>
+
+          <NavLink
+            to="/blog"
+            style={{ color: location.pathname === '/blog' && '#22c55e' }}
+          >
+            Blog
           </NavLink>
 
           <Link
@@ -179,6 +186,13 @@ function Navbar() {
             style={{ color: location.pathname === '/portfolio' && '#22c55e' }}
           >
             Portfolio
+          </NavLink>
+
+          <NavLink
+            to="/blog"
+            style={{ color: location.pathname === '/blog' && '#22c55e' }}
+          >
+            Blog
           </NavLink>
 
           <Link

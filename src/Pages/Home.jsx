@@ -3,6 +3,7 @@ import Services from '../Components/Services';
 import Testimonials from '../Components/Testimonials';
 import ValueProposition from '../Components/ValueProposition';
 import Contact from '../Components/Contact';
+import Footer from '../Components/Footer';
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <Testimonials />
       <ValueProposition />
       <Contact />
+      <Footer />
     </div>
   );
 }
