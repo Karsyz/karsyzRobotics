@@ -2,15 +2,15 @@ import CTA from "./CTA";
 
 function ValueProposition() {
   return (
-    <section className="flex flex-col items-center w-full py-16 px-6 bg-white">
-      <h2 className="text-3xl font-bold text-gray-800 mb-6">
+    <section className="flex flex-col items-center w-full py-16 px-6 bg-gradient-to-b from-blue-100 to-white text-gray-900">
+      <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl  mb-6">
         What To Expect on the Call
       </h2>
-      <p className="text-gray-600 mb-4 font-semibold text-lg text-justify sm:text-center">
+      <p className="text-gray-900 mb-4 font-semibold text-lg text-justify sm:text-center">
         In just 10-15 minutes, we'll chat about your project and I'll offer
         <span className="text-blue-600"> practical insights</span> to help bring your designs to life.
       </p>
-      <ul className="max-w-md space-y-2 text-gray-500 list-inside dark:text-gray-400">
+      <ul className="max-w-md space-y-2 list-inside">
         <li className="flex flex-row gap-2">
           <div className="w-5">
             <svg
@@ -21,7 +21,7 @@ function ValueProposition() {
               <path d="M10 2l6 8-6 8-1.5-1.5L13 10 8.5 3.5 10 2z" />
             </svg>
           </div>
-          <p>A focused discussion about your project goals and needs</p>
+          <p className="text-gray-900">A focused discussion about your project goals and needs</p>
         </li>
 
         <li className="flex flex-row gap-2">

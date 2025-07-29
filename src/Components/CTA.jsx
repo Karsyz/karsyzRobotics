@@ -1,7 +1,7 @@
 import { useModal } from '../Context/ModalContext';
 import { classHelper } from '../Pages/Index';
 
-function CTA({background = 'bg-white', showHeading = true}) {
+function CTA({background = 'bg-transparent', showHeading = true}) {
   console.log(showHeading)
   const { openModal } = useModal();
   return (
@@ -13,7 +13,7 @@ function CTA({background = 'bg-white', showHeading = true}) {
       )}
       <button
         onClick={openModal}
-        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 cursor-pointer"
+        className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 cursor-pointer"
       >
         Book Your Call Now
       </button>

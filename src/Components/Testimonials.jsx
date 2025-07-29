@@ -64,9 +64,9 @@ function Testimonials() {
   const currentTestimonial = testimonialsPlus[currentIndex];
 
   return (
-    <section className="py-16 px-6 bg-sky-100">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800">
+    <section className="py-16 px-6 bg-white">
+      <div className="container mx-auto text-center bg-green-700/10 p-8 rounded-md">
+        <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
           What Our Clients Say
         </h2>
 
@@ -87,11 +87,11 @@ function Testimonials() {
         </div>
 
         <div className="">
-          <p className="text-gray-800 font-semibold text-xl">
+          <p className="text-gray-900 text-xl">
             {currentTestimonial.name}
           </p>
 
-          <p className="text-gray-500 text-xl">{currentTestimonial.title}</p>
+          <p className="text-gray-900 text-xl font-semibold">{currentTestimonial.title}</p>
         </div>
       </div>
     </section>

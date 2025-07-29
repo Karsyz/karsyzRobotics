@@ -2,9 +2,9 @@ import { FaCube, FaGlobe, FaRocket, FaMoneyBill } from 'react-icons/fa';
 
 function Services() {
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="pb-24 px-6 bg-gradient-to-b from-white to-blue-100">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-16">
+        <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl mb-24">
           Our 3D Modeling Solutions
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

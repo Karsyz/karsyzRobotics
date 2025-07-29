@@ -1,4 +1,5 @@
 import Hero from '../Components/Hero';
+import HeroV2 from '../Components/HeroV2';
 import Services from '../Components/Services';
 import Testimonials from '../Components/Testimonials';
 import ValueProposition from '../Components/ValueProposition';
@@ -8,7 +9,8 @@ import Footer from '../Components/Footer';
 function Home() {
   return (
     <div className="">
-      <Hero />
+      {/* <Hero /> */}
+      <HeroV2 />
       <Services />
       <Testimonials />
       <ValueProposition />
