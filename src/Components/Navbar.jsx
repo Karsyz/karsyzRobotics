@@ -80,12 +80,6 @@ function Navbar() {
             Home
           </NavLink>
 
-          <NavLink
-            to="/#contact"
-            style={{ color: location.hash === '#contact' && '#22c55e' }}
-          >
-            Contact
-          </NavLink>
 
           <NavLink
             to="/portfolio"
@@ -102,13 +96,20 @@ function Navbar() {
           </NavLink>
 
           <Link
-            to="https://guardrailworksheet.netlify.app"
+            to="https://guardraildesigner.netlify.app"
             target="_blank"
             className="flex gap-2 items-center whitespace-nowrap"
           >
-            Guardrail Worksheet
+            Guardrail Designer
             <FiExternalLink className="text-lg" />
           </Link>
+
+          <NavLink
+            to="/#contact"
+            style={{ color: location.hash === '#contact' && '#22c55e' }}
+          >
+            Contact
+          </NavLink>
         </div>
 
         <button
@@ -172,13 +173,6 @@ function Navbar() {
             Home
           </NavLink>
 
-          <NavLink
-            to="/#contact"
-            onClick={toggleMobileMenu}
-            style={{ color: location.hash === '#contact' && '#22c55e' }}
-          >
-            Contact
-          </NavLink>
 
           <NavLink
             to="/portfolio"
@@ -196,13 +190,21 @@ function Navbar() {
           </NavLink>
 
           <Link
-            to="https://guardrailworksheet.netlify.app"
+            to="https://guardraildesigner.netlify.app"
             target="_blank"
             className="flex gap-2 items-center whitespace-nowrap"
           >
-            Guardrail Worksheet
+            Guardrail Designer
             <FiExternalLink className="text-lg" />
           </Link>
+          
+          <NavLink
+            to="/#contact"
+            onClick={toggleMobileMenu}
+            style={{ color: location.hash === '#contact' && '#22c55e' }}
+          >
+            Contact
+          </NavLink>
         </div>
       </div>
 

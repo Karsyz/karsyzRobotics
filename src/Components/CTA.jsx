@@ -2,7 +2,6 @@ import { useModal } from '../Context/ModalContext';
 import { classHelper } from '../Pages/Index';
 
 function CTA({background = 'bg-transparent', showHeading = true}) {
-  console.log(showHeading)
   const { openModal } = useModal();
   return (
     <section className={classHelper('py-16 px-6 text-center', background)}>
