@@ -26,7 +26,6 @@ function ContactPage() {
                   </a>
                 </dd>
               </div>
-              {/* TODO(Matt): add phone number here once decided (SITE.phone in src/config/site.js). */}
               <div>
                 <dt className="inline font-semibold">Location: </dt>
                 {/* Approved copy: last paragraph of the About section. */}
