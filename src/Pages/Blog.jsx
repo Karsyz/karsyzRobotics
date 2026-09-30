@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { marked } from "marked";
+import Seo from "../Components/Seo";
 
 const BLOGS_API =
   "https://cdn.contentful.com/spaces/90yo4xaqjgi1/environments/master/entries?access_token=xtTWhpJqtCRgdLncDkzzUAKXDngwxNEyAosFDLT0B5U&content_type=blog&order=-sys.createdAt";
@@ -42,6 +43,7 @@ export default function BlogPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
+      <Seo path="/blog" />
       <h1 className="text-4xl font-bold mb-8">Blog</h1>
 
       <div className="space-y-12">
