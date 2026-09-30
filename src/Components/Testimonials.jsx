@@ -3,7 +3,6 @@
 // Only add testimonials Matt can verify. Never edit a quote except to trim with an ellipsis.
 const testimonials = [
   {"quote": "Karsy is a pro who is happy to keep going until the job is done right! Excellent work, brings real-world welding and fabrication experience to his layout and 3-d models. I bring all my projects to him!", "name": "metzmark via Fiverr", "title": "United States", "date": "2021-04-16"},
-  {"quote": "karsy rocks! He's obviously got a background in welding and fabrication so he understood what my project was about right off the bat. Excellent service, will be using again soon!", "name": "metzmark via Fiverr", "title": "United States", "date": "2020-01-30"},
   {"quote": "Karsy delivered way above what I expected. Very thorough and clever modifications to the design that will make assembly much easier and a better product all round for the end user. Will use again for my next project.", "name": "martinclay1964 via Fiverr", "title": "United States", "date": "2020-12-01"},
   {"quote": "This man is amazing. 2 dxfs created for me in less than 12 hours. One was extremely detailed it would’ve taken me a few days to nail.", "name": "mikemarine33 via Fiverr", "title": "United States", "date": "2020-02-06"},
   {"quote": "karsy0000001 does amazing work. This is my fifth project with him and I will continue to use him in the future. Highly recommend.", "name": "matthewdepippo via Fiverr", "title": "United States", "date": "2020-12-16"},
