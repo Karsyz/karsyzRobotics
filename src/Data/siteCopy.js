@@ -41,6 +41,10 @@ export const caseStudies = {
           src: '/images/portfolio/sixSpeedLockoutMount.png',
           alt: '3D printed T56/6060 transmission mount for a transmission jack, Six Speed Lockout',
         },
+        {
+          src: '/images/portfolio/sixSpeedLockoutMount2.png',
+          alt: 'Six Speed Lockout transmission mount, rear three-quarter view',
+        },
       ],
     },
   ],
