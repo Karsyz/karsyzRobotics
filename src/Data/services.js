@@ -62,6 +62,5 @@ export const deliverables = [
   { format: 'BOM', detail: 'Material, cut and parts lists' },
 ];
 
-// TODO(Matt): list the CAD/CAM software you actually use (e.g. names + versions).
-// Not stated anywhere in the existing site or blog, so it is left blank on purpose.
-export const software = [];
+// CAD software Matt currently works in (confirmed by Matt, 2026-09-29).
+export const software = ['Autodesk Fusion 360', 'Autodesk Inventor', 'AutoCAD'];
