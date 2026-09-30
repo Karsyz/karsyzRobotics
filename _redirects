@@ -5,9 +5,13 @@
 # dist/404.html, which Netlify serves with a real HTTP 404 status; it loads the
 # same app, which renders the styled "Page not found" page.
 #
+# Form POSTs (Netlify Forms, posted to /) are handled by Netlify before these
+# rules, and / itself is served by index.html with no rule.
+#
 # Keep in sync with ROUTES in src/config/site.js and the routes in src/App.jsx.
 /services   /services.html   200
 /portfolio  /portfolio.html  200
 /about      /about.html      200
 /contact    /contact.html    200
 /blog       /blog.html       200
+/thanks     /thanks.html     200

@@ -13,6 +13,7 @@ import Portfolio from './Pages/Portfolio';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Blog from './Pages/Blog';
+import Thanks from './Pages/Thanks';
 import NotFound from './Pages/NotFound';
 import { ModalProvider } from './Context/ModalContext';
 
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="blog" element={<Blog />} />
+      <Route path="thanks" element={<Thanks />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
