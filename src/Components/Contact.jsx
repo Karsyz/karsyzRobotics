@@ -1,4 +1,4 @@
-import React from 'react';
+import { SITE } from '../config/site';
 
 function Contact() {
   return (
@@ -6,9 +6,16 @@ function Contact() {
       <div className="flex flex-col lg:flex-row items-stretch gap-10">
         {/* Form (Left) */}
         <div className="lg:w-1/2 pb-16 px-6 flex flex-col justify-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-left mb-10">
+          <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-left mb-4">
             Get in Touch
           </h2>
+          <p className="mb-8 text-gray-700">
+            Use the form below or email{' '}
+            <a href={`mailto:${SITE.email}`} className="font-semibold text-indigo-700 underline">
+              {SITE.email}
+            </a>
+            .
+          </p>
           <form
             action="https://formsubmit.co/54f12137427d71214693554d8bca0d0a"
             method="POST"
@@ -83,8 +90,8 @@ function Contact() {
           </form>
         </div>
 
-        {/* Image (Right) - Hidden on Mobile */}
-        <div className="lg:block w-full lg:w-1/2 bg-[url('/images/contact.jpg')] bg-cover rounded-tl-lg" />
+        {/* Decorative image (right) - hidden on mobile */}
+        <div aria-hidden="true" className="hidden lg:block w-full lg:w-1/2 bg-[url('/images/contact.jpg')] bg-cover rounded-tl-lg" />
       </div>
     </section>
   );
