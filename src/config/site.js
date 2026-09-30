@@ -22,7 +22,7 @@ export const ROUTES = [
     file: 'index.html',
     title: 'Karsyz Robotics | Build-ready CAD for fab shops, machine shops & automation builders',
     description:
-      'Remote CAD and mechanical design from a former industrial robot programmer. 3D models, fabrication drawings, sheet metal, weldments, fixtures and DXF/STEP files that are practical to build. Sault Ste. Marie, ON.',
+      'Remote CAD and mechanical design from a multi-trade designer with 22 years in fixtures, steel detailing and robotic weld cells. 3D models, fabrication drawings, sheet metal, weldments, fixtures and DXF/STEP files that are practical to build. Sault Ste. Marie, ON.',
   },
   {
     path: '/services',
