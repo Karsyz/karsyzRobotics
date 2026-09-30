@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CTA from '../Components/CTA';
+import Seo from '../Components/Seo';
 import { v4 as uuidv4 } from 'uuid';
 
 const portfolioSections = [
@@ -11,19 +12,19 @@ const portfolioSections = [
     images: [
       {
         imgSrc: '/images/portfolio/trailerFrame.png',
-        imgAlt: 'Image of the drain table assembly',
+        imgAlt: 'Welded steel trailer frame 3D model',
       },
       {
         imgSrc: '/images/portfolio/drainTableAssy.png',
-        imgAlt: 'Image of the drain table assembly',
+        imgAlt: 'Fabrication drawing of a drain table assembly',
       },
       {
         imgSrc: '/images/portfolio/fishingHut1.png',
-        imgAlt: 'Image of the drain table assembly',
+        imgAlt: 'Fabrication drawing of an ice fishing hut frame',
       },
       {
         imgSrc: '/images/portfolio/fishingHut2.png',
-        imgAlt: 'Image of the drain table assembly',
+        imgAlt: 'Ice fishing hut frame 3D model',
       },
     ],
   },
@@ -34,8 +35,8 @@ const portfolioSections = [
       'Custom fabrication drawings and detailing for large-scale structural steel projects including beams, rolled sections, and material lists for buildings and outdoor structures like pergolas.',
     images: [
       {
-        imgSrc: '/images/portfolio/progress1.png',
-        imgAlt: 'Perogola',
+        imgSrc: '/images/portfolio/progress1.PNG',
+        imgAlt: 'Steel pergola frame 3D model',
       },
       {
         imgSrc: '/images/portfolio/rolledBeamDetails.png',
@@ -53,13 +54,13 @@ const portfolioSections = [
   },
   {
     id: uuidv4().slice(0, 8),
-    heading: 'Misc Steel - Stairs, Handrails, Gates, Fences, etc',
+    heading: 'Misc. Steel: Stairs, Handrails, Gates, Fences, etc.',
     description:
       'Concept development and fabrication-ready detailing for architectural and safety components such as custom stairs, guardrails, handrails, gates, and other miscellaneous steelwork.',
     images: [
       {
         imgSrc: '/images/portfolio/boatRailConcept.PNG',
-        imgAlt: 'Boat Guardrail Concept',
+        imgAlt: 'Boat guardrail concept',
       },
       {
         imgSrc: '/images/portfolio/centerStringerStair.png',
@@ -67,15 +68,15 @@ const portfolioSections = [
       },
       {
         imgSrc: '/images/portfolio/singleStringerStairDrawing.png',
-        imgAlt: 'Drawing of the center stringer stair made of steel',
+        imgAlt: 'Fabrication drawing of the steel center stringer stair',
       },
       {
         imgSrc: '/images/portfolio/guardRail.png',
-        imgAlt: 'Drawing of the center stringer stair made of steel',
+        imgAlt: 'Steel guardrail 3D model',
       },
       {
         imgSrc: '/images/portfolio/steelStairAndWallRail.png',
-        imgAlt: 'Drawing of the center stringer stair made of steel',
+        imgAlt: 'Steel stair with wall-mounted handrail 3D model',
       },
     ],
   },
@@ -86,36 +87,36 @@ const portfolioSections = [
       'Precision sheet metal designs for manufacturing components like enclosures, brackets, and custom hardware, optimized for bending, cutting, and CNC fabrication processes.',
     images: [
       {
-        imgSrc: '/images/portfolio/sample.png',
-        imgAlt: 'Image of the drain table assembly',
+        imgSrc: '/images/portfolio/sample.PNG',
+        imgAlt: 'Sheet metal shelf bracket with lightening holes',
       },
       {
         imgSrc: '/images/portfolio/mowerDeck.png',
-        imgAlt: 'Popsicle Tray',
+        imgAlt: 'Sheet metal mower deck 3D model',
       },
       {
-        imgSrc: '/images/portfolio/5.png',
+        imgSrc: '/images/portfolio/5.PNG',
         imgAlt: 'Electric car charger base',
       },
       {
-        imgSrc: '/images/portfolio/breakerActuator2.png',
+        imgSrc: '/images/portfolio/breakerActuator2.PNG',
         imgAlt: 'Circuit breaker actuator mechanism',
       },
       {
-        imgSrc: '/images/portfolio/exhaustTip.png',
+        imgSrc: '/images/portfolio/exhaustTip.PNG',
         imgAlt: 'Obnoxiously large exhaust tip',
       },
       {
         imgSrc: '/images/portfolio/offsetBracket.png',
-        imgAlt: 'Offset sheetmetal bracket',
+        imgAlt: 'Offset sheet metal bracket',
       },
       {
         imgSrc: '/images/portfolio/bcpFuelPumpBracket.png',
-        imgAlt: 'BCP fuel pump bracket for toyota mr2',
+        imgAlt: 'BCP fuel pump bracket for Toyota MR2',
       },
       {
         imgSrc: '/images/portfolio/fanShroud.png',
-        imgAlt: 'BCP fuel pump bracket for toyota mr2',
+        imgAlt: 'Sheet metal dual fan shroud',
       },
     ],
   },
@@ -126,7 +127,7 @@ const portfolioSections = [
       'Custom tooling, jigs, and mold components designed for manufacturing workflows and part consistency. Includes precision fixturing and mold flow considerations.',
     images: [
       {
-        imgSrc: '/images/portfolio/2.png',
+        imgSrc: '/images/portfolio/2.PNG',
         imgAlt: 'Flow channels of a mold',
       },
       {
@@ -142,19 +143,19 @@ const portfolioSections = [
       'Flat pattern designs for laser and waterjet cutting, including decorative signs, fuse strips, and flat-pack assemblies. Designed for efficient nesting and accurate downstream fabrication.',
     images: [
       {
-        imgSrc: '/images/portfolio/3DVerify.png',
-        imgAlt: 'Image of the drain table assembly',
+        imgSrc: '/images/portfolio/3DVerify.PNG',
+        imgAlt: 'Laser-cut medal hanger with runner silhouettes',
       },
       {
-        imgSrc: '/images/portfolio/3.png',
-        imgAlt: 'Battery fuse strip',
+        imgSrc: '/images/portfolio/3.PNG',
+        imgAlt: 'Battery fuse strip flat pattern with dimensions',
       },
       {
-        imgSrc: '/images/portfolio/devilTailSign.png',
-        imgAlt: 'Battery fuse strip',
+        imgSrc: '/images/portfolio/devilTailSign.PNG',
+        imgAlt: 'Wall-mounted sign bracket with devil-tail scroll',
       },
       {
-        imgSrc: '/images/portfolio/firePitVerify1.png',
+        imgSrc: '/images/portfolio/firePitVerify1.PNG',
         imgAlt: 'Flat pack fire pit',
       },
     ],
@@ -166,7 +167,7 @@ const portfolioSections = [
       'Functional and aesthetic 3D printed components for product customization, repairs, and prototyping. Includes branded accessories and replacement parts.',
     images: [
       {
-        imgSrc: '/images/portfolio/KurigTrayallYouNeedIsCoffee.png',
+        imgSrc: '/images/portfolio/KurigTrayallYouNeedIsCoffee.PNG',
         imgAlt: 'Stylized Keurig coffee machine tray',
       },
       {
@@ -183,32 +184,32 @@ const portfolioSections = [
       'A variety of mechanical designs and detailed assemblies, ranging from consumer products to industrial components. Includes energy systems, sports equipment, and automated tooling parts.',
     images: [
       {
-        imgSrc: '/images/portfolio/10.png',
+        imgSrc: '/images/portfolio/10.PNG',
         imgAlt: 'Small shipping container with battery energy storage',
       },
       {
-        imgSrc: '/images/portfolio/1box.png',
+        imgSrc: '/images/portfolio/1box.PNG',
         imgAlt: 'Billet humidor',
       },
       {
-        imgSrc: '/images/portfolio/7.png',
+        imgSrc: '/images/portfolio/7.PNG',
         imgAlt: 'Electric car charging cable support clamp',
       },
       {
-        imgSrc: '/images/portfolio/frontFrame.png',
+        imgSrc: '/images/portfolio/frontFrame.PNG',
         imgAlt: 'Bicycle frame',
       },
       {
-        imgSrc: '/images/portfolio/mechDesignStuff.png',
+        imgSrc: '/images/portfolio/mechDesignStuff.PNG',
         imgAlt: 'Fuel pump assembly',
       },
       {
-        imgSrc: '/images/portfolio/noTipBevelVerify1.png',
+        imgSrc: '/images/portfolio/noTipBevelVerify1.PNG',
         imgAlt: 'Precision arrow head',
       },
       {
-        imgSrc: '/images/portfolio/roboBroom3.png',
-        imgAlt: 'Mechanical assembly',
+        imgSrc: '/images/portfolio/roboBroom3.PNG',
+        imgAlt: 'Mechanical linkage assembly on aluminum extrusion',
       },
     ],
   },
@@ -252,6 +253,7 @@ function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
+      <Seo path="/portfolio" />
       <div className=" pb-16">
         <section className="pt-10 px-6 bg-gray-100">
           <div className="container mx-auto">
@@ -259,17 +261,17 @@ function Portfolio() {
               <h1 className="text-4xl font-bold text-gray-800 mb-4 text-left">
                 Portfolio
               </h1>
-              <p className="text-base text-gray-000 text-left mb-2">
+              <p className="text-base text-gray-700 text-left mb-2">
                 I'm interested in all kinds of manufacturing, but my heart is in
                 metal fabrication.
               </p>
-              <p className="text-base text-gray-000 text-left mb-2">
-                I support metal fabrication shops of all sizes to create precise
+              <p className="text-base text-gray-700 text-left mb-2">
+                I support metal fabrication shops of all sizes with precise
                 3D models, fabrication drawings, CNC data, and material ordering
                 / cut lists, streamlining your workflow from concept to
                 completion.
               </p>
-              <p className="text-base text-gray-000 text-left mb-2">
+              <p className="text-base text-gray-700 text-left mb-2">
                 Here is some of the work I have done.
               </p>
             </div>
@@ -293,6 +295,7 @@ function Portfolio() {
                           key={ind}
                           src={imgSrc}
                           alt={imgAlt}
+                          loading="lazy"
                           className="bg-white w-full h-[300px] object-contain rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer"
                           onClick={() => openImageModal(images, ind)}
                         />
@@ -324,7 +327,6 @@ function Portfolio() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fırs
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
