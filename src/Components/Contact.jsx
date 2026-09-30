@@ -105,20 +105,6 @@ function Contact() {
             </div>
             <div>
               <label
-                htmlFor="phone"
-                className="block text-gray-700 font-medium mb-2"
-              >
-                Phone Number (Optional)
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-            </div>
-            <div>
-              <label
                 htmlFor="message"
                 className="block text-gray-700 font-medium mb-2"
               >

@@ -18,25 +18,25 @@ const portfolioSections = [
     id: uuidv4().slice(0, 8),
     heading: 'Weldments and Frames',
     description:
-      'Design and detailing of welded structures and support frames used in mobile trailers, tables, and enclosures. This includes complex assemblies that require precision for structural integrity and on-site fabrication.',
+      'Design and detailing of welded structures and support frames for mobile trailers, tables, and enclosures, including complex assemblies that need to be accurate for structural integrity and fit-up during fabrication.',
     images: [
       {
-        imgSrc: '/images/portfolio/trailerFrame.png',
+        imgSrc: '/images/portfolio/trailerFrame.webp',
         imgAlt: 'Welded steel trailer frame 3D model',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/drainTableAssy.png',
+        imgSrc: '/images/portfolio/drainTableAssy.webp',
         imgAlt: 'Fabrication drawing of a drain table assembly',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/fishingHut1.png',
+        imgSrc: '/images/portfolio/fishingHut1.webp',
         imgAlt: 'Fabrication drawing of an ice fishing hut frame',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/fishingHut2.png',
+        imgSrc: '/images/portfolio/fishingHut2.webp',
         imgAlt: 'Ice fishing hut frame 3D model',
         fit: 'contain',
       },
@@ -46,26 +46,26 @@ const portfolioSections = [
     id: uuidv4().slice(0, 8),
     heading: 'Structural Steel',
     description:
-      'Custom fabrication drawings and detailing for large-scale structural steel projects including beams, rolled sections, and material lists for buildings and outdoor structures like pergolas.',
+      'Custom fabrication drawings and detailing for large-scale structural steel projects, including beams, rolled sections, and material lists for buildings and outdoor structures like pergolas.',
     images: [
       {
-        imgSrc: '/images/portfolio/progress1.PNG',
+        imgSrc: '/images/portfolio/progress1.webp',
         imgAlt: 'Steel pergola frame 3D model',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/rolledBeamDetails.png',
-        imgAlt: 'A fabrication drawing of a rolled HSS beam',
+        imgSrc: '/images/portfolio/rolledBeamDetails.webp',
+        imgAlt: 'Fabrication drawing of a rolled (curved) steel beam for a pergola',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/bigBeamDrawing.png',
-        imgAlt: 'A fabrication drawing of a large steel beam',
+        imgSrc: '/images/portfolio/bigBeamDrawing.webp',
+        imgAlt: 'Fabrication drawing of a steel pergola beam',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/materialList.png',
-        imgAlt: 'A material list',
+        imgSrc: '/images/portfolio/materialList.webp',
+        imgAlt: 'Material list for a steel pergola',
         fit: 'contain',
       },
     ],
@@ -77,47 +77,47 @@ const portfolioSections = [
       'Precision sheet metal designs for manufacturing components like enclosures, brackets, and custom hardware, optimized for bending, cutting, and CNC fabrication processes.',
     images: [
       {
-        imgSrc: '/images/portfolio/sample.PNG',
+        imgSrc: '/images/portfolio/sample.webp',
         imgAlt: 'Sheet metal shelf bracket with lightening holes',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/mowerDeck.png',
+        imgSrc: '/images/portfolio/mowerDeck.webp',
         imgAlt: 'Sheet metal mower deck 3D model',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/5.PNG',
-        imgAlt: 'Electric car charger base',
+        imgSrc: '/images/portfolio/5.webp',
+        imgAlt: 'Sheet metal base for an electric car charger',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/breakerActuator2.PNG',
+        imgSrc: '/images/portfolio/breakerActuator2.webp',
         imgAlt: 'Circuit breaker actuator mechanism',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/offsetBracket.png',
+        imgSrc: '/images/portfolio/offsetBracket.webp',
         imgAlt: 'Offset sheet metal bracket',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/fanShroud.png',
+        imgSrc: '/images/portfolio/fanShroud.webp',
         imgAlt: 'Sheet metal dual fan shroud',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/sheetMetalTrays.png',
+        imgSrc: '/images/portfolio/sheetMetalTrays.webp',
         imgAlt: 'Set of four nesting formed sheet metal trays',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/sheetMetalHangingRack.png',
+        imgSrc: '/images/portfolio/sheetMetalHangingRack.webp',
         imgAlt: 'Laser-cut and formed sheet metal hanging rack',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/perforatedSheetMetalStand.png',
+        imgSrc: '/images/portfolio/perforatedSheetMetalStand.webp',
         imgAlt: 'Formed sheet metal stand with hex-perforated top',
       },
     ],
@@ -126,15 +126,15 @@ const portfolioSections = [
     id: uuidv4().slice(0, 8),
     heading: 'Jigs, Fixtures, Molds, Tools',
     description:
-      'Custom tooling, jigs, and mold components designed for manufacturing workflows and part consistency. Includes precision fixturing and mold flow considerations.',
+      'Custom tooling, jigs, and mold components designed for production and part-to-part consistency, including precision fixturing and mold flow considerations.',
     images: [
       {
-        imgSrc: '/images/portfolio/2.PNG',
-        imgAlt: 'Flow channels of a mold',
+        imgSrc: '/images/portfolio/2.webp',
+        imgAlt: 'Mold cavity with flow channels, 3D model',
       },
       {
-        imgSrc: '/images/portfolio/image-4.jpg',
-        imgAlt: 'Deburring fixture',
+        imgSrc: '/images/portfolio/image-4.webp',
+        imgAlt: 'Deburring fixture 3D model',
         position: '40% 50%',
       },
     ],
@@ -148,26 +148,26 @@ const portfolioSections = [
       'Concept development and fabrication-ready detailing for architectural and safety components such as custom stairs, guardrails, handrails, gates, and other miscellaneous steelwork.',
     images: [
       {
-        imgSrc: '/images/portfolio/boatRailConcept.PNG',
-        imgAlt: 'Boat guardrail concept',
+        imgSrc: '/images/portfolio/boatRailConcept.webp',
+        imgAlt: 'Concept render of a tubular boat guardrail',
       },
       {
-        imgSrc: '/images/portfolio/centerStringerStair.png',
-        imgAlt: 'Center stringer stair made of steel',
+        imgSrc: '/images/portfolio/centerStringerStair.webp',
+        imgAlt: 'Steel center stringer stair 3D model',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/singleStringerStairDrawing.png',
+        imgSrc: '/images/portfolio/singleStringerStairDrawing.webp',
         imgAlt: 'Fabrication drawing of the steel center stringer stair',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/guardRail.png',
+        imgSrc: '/images/portfolio/guardRail.webp',
         imgAlt: 'Steel guardrail 3D model',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/steelStairAndWallRail.png',
+        imgSrc: '/images/portfolio/steelStairAndWallRail.webp',
         imgAlt: 'Steel stair with wall-mounted handrail 3D model',
         fit: 'contain',
       },
@@ -180,23 +180,23 @@ const portfolioSections = [
       'Flat pattern designs for laser and waterjet cutting, including decorative signs, fuse strips, and flat-pack assemblies. Designed for efficient nesting and accurate downstream fabrication.',
     images: [
       {
-        imgSrc: '/images/portfolio/3DVerify.PNG',
+        imgSrc: '/images/portfolio/3DVerify.webp',
         imgAlt: 'Laser-cut medal hanger with runner silhouettes',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/3.PNG',
+        imgSrc: '/images/portfolio/3.webp',
         imgAlt: 'Battery fuse strip flat pattern with dimensions',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/devilTailSign.PNG',
+        imgSrc: '/images/portfolio/devilTailSign.webp',
         imgAlt: 'Wall-mounted sign bracket with devil-tail scroll',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/firePitVerify1.PNG',
-        imgAlt: 'Flat pack fire pit',
+        imgSrc: '/images/portfolio/firePitVerify1.webp',
+        imgAlt: 'Flat-pack fire pit 3D model',
         fit: 'contain',
       },
     ],
@@ -205,20 +205,16 @@ const portfolioSections = [
     id: uuidv4().slice(0, 8),
     heading: '3D Printed Designs',
     description:
-      'Functional and aesthetic 3D printed components for product customization, repairs, and prototyping. Includes branded accessories and replacement parts.',
+      'Functional and decorative 3D printed components for product customization, repairs, and prototyping, including replacement parts.',
     images: [
       {
-        imgSrc: '/images/portfolio/111.png',
-        imgAlt: 'Shure headphone repair part',
+        imgSrc: '/images/portfolio/111.webp',
+        imgAlt: '3D printed replacement headband part for Shure headphones',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/printedHandle.png',
+        imgSrc: '/images/portfolio/printedHandle.webp',
         imgAlt: '3D printed handle with arched grip',
-      },
-      {
-        imgSrc: '/images/portfolio/spokedWheel.png',
-        imgAlt: '3D printed replacement mixing paddle for a Pampered Chef batter mixer',
       },
     ],
   },
@@ -226,49 +222,49 @@ const portfolioSections = [
     id: uuidv4().slice(0, 8),
     heading: 'Misc Parts and Assemblies',
     description:
-      'A variety of mechanical designs and detailed assemblies, ranging from consumer products to industrial components. Includes energy systems, sports equipment, and automated tooling parts.',
+      'A variety of mechanical designs and detailed assemblies, ranging from consumer products to industrial components, including energy systems, sports equipment, and automated tooling parts.',
     images: [
       {
-        imgSrc: '/images/portfolio/10.PNG',
-        imgAlt: 'Small shipping container with battery energy storage',
+        imgSrc: '/images/portfolio/10.webp',
+        imgAlt: 'Cutaway of a small shipping container fitted out for battery energy storage',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/7.PNG',
+        imgSrc: '/images/portfolio/7.webp',
         imgAlt: 'Electric car charging cable support clamp',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/roboBroom3.PNG',
+        imgSrc: '/images/portfolio/roboBroom3.webp',
         imgAlt: 'Mechanical linkage assembly on aluminum extrusion',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/KurigTrayallYouNeedIsCoffee.PNG',
-        imgAlt: 'Stylized Keurig coffee machine tray',
+        imgSrc: '/images/portfolio/KurigTrayallYouNeedIsCoffee.webp',
+        imgAlt: 'Custom tray for a Keurig coffee machine with raised lettering',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/exhaustTip.PNG',
-        imgAlt: 'Obnoxiously large exhaust tip',
+        imgSrc: '/images/portfolio/exhaustTip.webp',
+        imgAlt: 'Large custom exhaust tip with a diamond-pattern cutout sleeve',
       },
       {
-        imgSrc: '/images/portfolio/1box.PNG',
-        imgAlt: 'Billet humidor',
+        imgSrc: '/images/portfolio/1box.webp',
+        imgAlt: 'Billet humidor with a scroll-pattern lid',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/noTipBevelVerify1.PNG',
-        imgAlt: 'Precision arrow head',
+        imgSrc: '/images/portfolio/noTipBevelVerify1.webp',
+        imgAlt: 'Broadhead arrow tip with a threaded shank',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/frontFrame.PNG',
-        imgAlt: 'Bicycle frame',
+        imgSrc: '/images/portfolio/frontFrame.webp',
+        imgAlt: 'Tubular bicycle frame 3D model',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/foldingStandAssembly.png',
+        imgSrc: '/images/portfolio/foldingStandAssembly.webp',
         imgAlt: 'Folding sheet metal stand assembly with cam-lever clamps and rubber pads',
       },
     ],
@@ -322,17 +318,19 @@ function Portfolio() {
                 Portfolio
               </h1>
               <p className="text-base text-gray-700 text-left mb-2">
-                I'm interested in all kinds of manufacturing, but my heart is in
-                metal fabrication.
+                22 years in the shop: fixture design and some CNC programming at
+                a gauge and fixture shop, structural steel detailing, then
+                commissioning robotic weld cells for Ford, Tesla, Magna and
+                others. Since 2020 I&apos;ve done remote CAD for fab shops,
+                machine shops and automation builders.
               </p>
               <p className="text-base text-gray-700 text-left mb-2">
-                I support metal fabrication shops of all sizes with precise
-                3D models, fabrication drawings, CNC data, and material ordering
-                / cut lists, streamlining your workflow from concept to
-                completion.
+                Fabrication drawings, sheet metal, weldments, fixtures, DXF/STEP
+                files, and material and cut lists, drawn by someone who has seen
+                what happens on the floor when a part is hard to build.
               </p>
               <p className="text-base text-gray-700 text-left mb-2">
-                Here is some of the work I have done.
+                Here&apos;s some of that work.
               </p>
             </div>
           </div>

@@ -22,13 +22,13 @@ export const caseStudies = {
       // Paired by filename ("bcp...") and the BCP logo visible in both renders.
       images: [
         {
-          src: '/images/portfolio/mechDesignStuff.PNG',
+          src: '/images/portfolio/mechDesignStuff.webp',
           alt: 'Fuel sending unit assembly with machined billet top and formed sheet metal bracket, Border City Performance',
           // Square render in a 4:3 tile: bias the crop upward so the billet top stays whole.
           position: '50% 15%',
         },
         {
-          src: '/images/portfolio/bcpFuelPumpBracket.png',
+          src: '/images/portfolio/bcpFuelPumpBracket.webp',
           alt: 'Formed sheet metal fuel pump bracket, Border City Performance',
           // CAD render on white: contain on a white tile so nothing is cut off.
           fit: 'contain',
@@ -41,13 +41,13 @@ export const caseStudies = {
       body: "Six Speed Lockout had been using a shaped block of wood to support T56 and 6060-style transmissions during removal and transport. It worked, but it wasn't very secure. I reverse-engineered the block into CAD, refined the shape, and went through several 3D printed versions until I had a mount that holds the gearbox firmly on the jack and keeps it from tipping over whenever it's moved. Now it's repeatable and easy to reprint, and it can be adjusted for other cases.",
       images: [
         {
-          src: '/images/portfolio/sixSpeedLockoutMount.png',
+          src: '/images/portfolio/sixSpeedLockoutMount.webp',
           alt: '3D printed T56/6060 transmission mount for a transmission jack, Six Speed Lockout',
           // CAD render on white: contain on a white tile so nothing is cut off.
           fit: 'contain',
         },
         {
-          src: '/images/portfolio/sixSpeedLockoutMount2.png',
+          src: '/images/portfolio/sixSpeedLockoutMount2.webp',
           alt: 'Six Speed Lockout transmission mount, rear three-quarter view',
           // CAD render on white: contain on a white tile so nothing is cut off.
           fit: 'contain',
@@ -61,11 +61,11 @@ export const caseStudies = {
       body: 'A broken consumer part with no drawings or replacement available. I measured the original with calipers and a scale, modelled a one-for-one replacement, and redesigned the centre hub where it had failed so the load is spread out and the part is fully supported. The threaded connection prints in place with no insert. The first print fit and the part has been in daily use without issues since.',
       images: [
         {
-          src: '/images/portfolio/spokedWheel.png',
+          src: '/images/portfolio/spokedWheel.webp',
           alt: 'Reverse-engineered 3D printed replacement part with a reinforced centre hub',
         },
         {
-          src: '/images/portfolio/paddleInstalled.jpg',
+          src: '/images/portfolio/paddleInstalled.webp',
           alt: 'Printed replacement part installed on the original assembly',
           // Render on a white background: contain on a white tile so nothing is cut off.
           fit: 'contain',
@@ -101,7 +101,7 @@ export const fixturesTooling = {
   images: [
     // Full-frame render (no white background): cover. Subject sits left of
     // centre, so bias the crop that way.
-    { src: '/images/portfolio/image-4.jpg', alt: 'Deburring fixture', position: '40% 50%' },
+    { src: '/images/portfolio/image-4.webp', alt: 'Deburring fixture', position: '40% 50%' },
   ],
   imageTodo:
     'add the labelled "concept design" welding fixture and QC fixture images here.',
