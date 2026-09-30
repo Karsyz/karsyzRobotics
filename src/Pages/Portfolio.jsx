@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import CTA from '../Components/CTA';
 import Seo from '../Components/Seo';
+import CaseStudies from '../Components/CaseStudies';
 import { v4 as uuidv4 } from 'uuid';
 
+// Order per approved copy (2026-09-29): industrial work first (weldments,
+// structural steel, sheet metal, fixtures, case studies), hobby pieces last.
 const portfolioSections = [
   {
     id: uuidv4().slice(0, 8),
@@ -54,6 +57,55 @@ const portfolioSections = [
   },
   {
     id: uuidv4().slice(0, 8),
+    heading: 'Sheet Metal Parts',
+    description:
+      'Precision sheet metal designs for manufacturing components like enclosures, brackets, and custom hardware, optimized for bending, cutting, and CNC fabrication processes.',
+    images: [
+      {
+        imgSrc: '/images/portfolio/sample.PNG',
+        imgAlt: 'Sheet metal shelf bracket with lightening holes',
+      },
+      {
+        imgSrc: '/images/portfolio/mowerDeck.png',
+        imgAlt: 'Sheet metal mower deck 3D model',
+      },
+      {
+        imgSrc: '/images/portfolio/5.PNG',
+        imgAlt: 'Electric car charger base',
+      },
+      {
+        imgSrc: '/images/portfolio/breakerActuator2.PNG',
+        imgAlt: 'Circuit breaker actuator mechanism',
+      },
+      {
+        imgSrc: '/images/portfolio/offsetBracket.png',
+        imgAlt: 'Offset sheet metal bracket',
+      },
+      {
+        imgSrc: '/images/portfolio/fanShroud.png',
+        imgAlt: 'Sheet metal dual fan shroud',
+      },
+    ],
+  },
+  {
+    id: uuidv4().slice(0, 8),
+    heading: 'Jigs, Fixtures, Molds, Tools',
+    description:
+      'Custom tooling, jigs, and mold components designed for manufacturing workflows and part consistency. Includes precision fixturing and mold flow considerations.',
+    images: [
+      {
+        imgSrc: '/images/portfolio/2.PNG',
+        imgAlt: 'Flow channels of a mold',
+      },
+      {
+        imgSrc: '/images/portfolio/image-4.jpg',
+        imgAlt: 'Deburring fixture',
+      },
+    ],
+  },
+  { id: 'case-studies', component: 'caseStudies' },
+  {
+    id: uuidv4().slice(0, 8),
     heading: 'Misc. Steel: Stairs, Handrails, Gates, Fences, etc.',
     description:
       'Concept development and fabrication-ready detailing for architectural and safety components such as custom stairs, guardrails, handrails, gates, and other miscellaneous steelwork.',
@@ -77,62 +129,6 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/steelStairAndWallRail.png',
         imgAlt: 'Steel stair with wall-mounted handrail 3D model',
-      },
-    ],
-  },
-  {
-    id: uuidv4().slice(0, 8),
-    heading: 'Sheet Metal Parts',
-    description:
-      'Precision sheet metal designs for manufacturing components like enclosures, brackets, and custom hardware, optimized for bending, cutting, and CNC fabrication processes.',
-    images: [
-      {
-        imgSrc: '/images/portfolio/sample.PNG',
-        imgAlt: 'Sheet metal shelf bracket with lightening holes',
-      },
-      {
-        imgSrc: '/images/portfolio/mowerDeck.png',
-        imgAlt: 'Sheet metal mower deck 3D model',
-      },
-      {
-        imgSrc: '/images/portfolio/5.PNG',
-        imgAlt: 'Electric car charger base',
-      },
-      {
-        imgSrc: '/images/portfolio/breakerActuator2.PNG',
-        imgAlt: 'Circuit breaker actuator mechanism',
-      },
-      {
-        imgSrc: '/images/portfolio/exhaustTip.PNG',
-        imgAlt: 'Obnoxiously large exhaust tip',
-      },
-      {
-        imgSrc: '/images/portfolio/offsetBracket.png',
-        imgAlt: 'Offset sheet metal bracket',
-      },
-      {
-        imgSrc: '/images/portfolio/bcpFuelPumpBracket.png',
-        imgAlt: 'BCP fuel pump bracket for Toyota MR2',
-      },
-      {
-        imgSrc: '/images/portfolio/fanShroud.png',
-        imgAlt: 'Sheet metal dual fan shroud',
-      },
-    ],
-  },
-  {
-    id: uuidv4().slice(0, 8),
-    heading: 'Jigs, Fixtures, Molds, Tools',
-    description:
-      'Custom tooling, jigs, and mold components designed for manufacturing workflows and part consistency. Includes precision fixturing and mold flow considerations.',
-    images: [
-      {
-        imgSrc: '/images/portfolio/2.PNG',
-        imgAlt: 'Flow channels of a mold',
-      },
-      {
-        imgSrc: '/images/portfolio/image-4.jpg',
-        imgAlt: 'Deburring fixture',
       },
     ],
   },
@@ -167,16 +163,11 @@ const portfolioSections = [
       'Functional and aesthetic 3D printed components for product customization, repairs, and prototyping. Includes branded accessories and replacement parts.',
     images: [
       {
-        imgSrc: '/images/portfolio/KurigTrayallYouNeedIsCoffee.PNG',
-        imgAlt: 'Stylized Keurig coffee machine tray',
-      },
-      {
         imgSrc: '/images/portfolio/111.png',
         imgAlt: 'Shure headphone repair part',
       },
     ],
   },
-
   {
     id: uuidv4().slice(0, 8),
     heading: 'Misc Parts and Assemblies',
@@ -188,28 +179,38 @@ const portfolioSections = [
         imgAlt: 'Small shipping container with battery energy storage',
       },
       {
-        imgSrc: '/images/portfolio/1box.PNG',
-        imgAlt: 'Billet humidor',
-      },
-      {
         imgSrc: '/images/portfolio/7.PNG',
         imgAlt: 'Electric car charging cable support clamp',
       },
       {
-        imgSrc: '/images/portfolio/frontFrame.PNG',
-        imgAlt: 'Bicycle frame',
+        imgSrc: '/images/portfolio/roboBroom3.PNG',
+        imgAlt: 'Mechanical linkage assembly on aluminum extrusion',
+      },
+    ],
+  },
+  {
+    id: 'personal-projects',
+    heading: 'Personal projects',
+    images: [
+      {
+        imgSrc: '/images/portfolio/KurigTrayallYouNeedIsCoffee.PNG',
+        imgAlt: 'Stylized Keurig coffee machine tray',
       },
       {
-        imgSrc: '/images/portfolio/mechDesignStuff.PNG',
-        imgAlt: 'Fuel pump assembly',
+        imgSrc: '/images/portfolio/exhaustTip.PNG',
+        imgAlt: 'Obnoxiously large exhaust tip',
+      },
+      {
+        imgSrc: '/images/portfolio/1box.PNG',
+        imgAlt: 'Billet humidor',
       },
       {
         imgSrc: '/images/portfolio/noTipBevelVerify1.PNG',
         imgAlt: 'Precision arrow head',
       },
       {
-        imgSrc: '/images/portfolio/roboBroom3.PNG',
-        imgAlt: 'Mechanical linkage assembly on aluminum extrusion',
+        imgSrc: '/images/portfolio/frontFrame.PNG',
+        imgAlt: 'Bicycle frame',
       },
     ],
   },
@@ -280,11 +281,18 @@ function Portfolio() {
 
         <section className="px-6 w-full">
           <div className="container mx-auto w-full">
-            {portfolioSections.map(({ id, heading, description, images }) => {
+            {portfolioSections.map(({ id, component, heading, description, images }) => {
+              if (component === 'caseStudies') {
+                return <CaseStudies key={id} className="mt-16 w-full" />;
+              }
               return (
-                <div key={id} className="mt-10 w-full">
+                <div key={id} id={id} className="mt-10 w-full">
                   <h2 className="text-2xl font-semibold">{heading}</h2>
-                  <p className="mb-5 lg:max-w-[700px]">{description}</p>
+                  {description ? (
+                    <p className="mb-5 lg:max-w-[700px]">{description}</p>
+                  ) : (
+                    <div className="mb-5" />
+                  )}
                   <div
                     key={id}
                     className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
