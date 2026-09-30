@@ -1,220 +1,124 @@
-import React, { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { FiLogIn, FiLogOut, FiExternalLink } from 'react-icons/fi';
+import { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { FiExternalLink } from 'react-icons/fi';
+
+const navItems = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/services', label: 'Services' },
+  { to: '/portfolio', label: 'Portfolio' },
+  { to: '/about', label: 'About' },
+  { to: '/blog', label: 'Blog' },
+  { href: 'https://guardraildesigner.netlify.app', label: 'Guardrail Designer' },
+  { to: '/contact', label: 'Contact' },
+];
+
+const linkClass = ({ isActive }) =>
+  isActive ? 'text-green-400' : 'hover:text-green-300';
+
+function NavItems({ onNavigate }) {
+  return navItems.map((item) =>
+    item.href ? (
+      <li key={item.label}>
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 whitespace-nowrap hover:text-green-300"
+          onClick={onNavigate}
+        >
+          {item.label}
+          <FiExternalLink aria-hidden="true" className="text-lg" />
+          <span className="sr-only">(opens in a new tab)</span>
+        </a>
+      </li>
+    ) : (
+      <li key={item.to}>
+        <NavLink to={item.to} end={item.end} className={linkClass} onClick={onNavigate}>
+          {item.label}
+        </NavLink>
+      </li>
+    )
+  );
+}
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
-  const toggleLogin = () => setIsLoggedIn(!isLoggedIn);
-
   const location = useLocation();
-  const navigate = useNavigate();
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   // Close mobile menu on window resize
   useEffect(() => {
-    const handleResize = () => {
-      if (isMobileMenuOpen) {
-        closeMobileMenu();
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    if (!isMobileMenuOpen) return undefined;
+    window.addEventListener('resize', closeMobileMenu);
+    return () => window.removeEventListener('resize', closeMobileMenu);
   }, [isMobileMenuOpen]);
 
-  const handleRootClick = (e) => {
-    if (location.pathname === '/') {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    closeMobileMenu();
-  };
-
+  // Scroll to top on page change; scroll to anchors like /#contact.
   useEffect(() => {
-    if (location.pathname === '/' && !location.hash) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (location.hash === '#contact') {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (location.hash) {
+      document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0 });
     }
   }, [location.pathname, location.hash]);
 
-  const handleHashNav = (hash) => {
-    if (location.pathname === '/') {
-      navigate(`${location.pathname}${hash}`, { replace: true });
-    } else {
-      navigate(`/${hash}`);
-    }
-  };
-
   return (
-    <nav className="h-16 flex flex-row items-center justify-center bg-indigo-900 text-white py-4 px-6 fixed w-full top-0 shadow-lg z-10">
-      <div className="container flex items-center justify-between">
-        <NavLink to="/" className="flex items-center space-x-2">
-          <img
-            src="/images/karsyzLogo.svg"
-            alt="Karsyz Robotics Logo"
-            className="w-10 h-10"
-          />
-          <span className="text-xl font-bold whitespace-nowrap">
-            Karsyz Robotics
-          </span>
+    <header className="fixed top-0 z-10 w-full bg-indigo-900 text-white shadow-lg">
+      <nav aria-label="Main" className="container mx-auto flex h-16 items-center justify-between px-6">
+        <NavLink to="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
+          <img src="/images/karsyzLogo.svg" alt="" className="h-10 w-10" />
+          <span className="whitespace-nowrap text-xl font-bold">Karsyz Robotics</span>
         </NavLink>
 
-        <div className="hidden md:flex space-x-4 lg:space-x-6 items-center font-semibold">
-          <NavLink
-            to="/"
-            style={{
-              color:
-                location.pathname === '/' &&
-                location.hash !== '#contact' &&
-                '#22c55e',
-            }}
-          >
-            Home
-          </NavLink>
-
-
-          <NavLink
-            to="/portfolio"
-            style={{ color: location.pathname === '/portfolio' && '#22c55e' }}
-          >
-            Portfolio
-          </NavLink>
-
-          <NavLink
-            to="/blog"
-            style={{ color: location.pathname === '/blog' && '#22c55e' }}
-          >
-            Blog
-          </NavLink>
-
-          <Link
-            to="https://guardraildesigner.netlify.app"
-            target="_blank"
-            className="flex gap-2 items-center whitespace-nowrap"
-          >
-            Guardrail Designer
-            <FiExternalLink className="text-lg" />
-          </Link>
-
-          <NavLink
-            to="/#contact"
-            style={{ color: location.hash === '#contact' && '#22c55e' }}
-          >
-            Contact
-          </NavLink>
-        </div>
+        <ul className="hidden items-center space-x-5 font-semibold lg:flex">
+          <NavItems />
+        </ul>
 
         <button
-          className="md:hidden text-white focus:outline-none"
-          onClick={toggleMobileMenu}
+          type="button"
+          className="text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white lg:hidden"
+          onClick={() => setIsMobileMenuOpen(true)}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
+          <span className="sr-only">Open menu</span>
+          <svg aria-hidden="true" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
         </button>
-      </div>
+      </nav>
 
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-indigo-800 text-white transform ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-300 ease-in-out md:hidden z-50`}
+        id="mobile-menu"
+        className={`fixed right-0 top-0 z-50 h-full w-64 transform bg-indigo-800 text-white transition-transform duration-300 ease-in-out lg:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : 'invisible translate-x-full'
+        }`}
       >
-        {/* Mobile Nav Menu */}
-        <div className="flex flex-col p-6 space-y-6 font-semibold">
+        <div className="flex flex-col space-y-6 p-6 font-semibold">
           <button
-            className="self-end text-white focus:outline-none"
-            onClick={toggleMobileMenu}
+            type="button"
+            className="self-end text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            onClick={closeMobileMenu}
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
+            <span className="sr-only">Close menu</span>
+            <svg aria-hidden="true" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-
-          <NavLink
-            to="/"
-            onClick={toggleMobileMenu}
-            style={{
-              color:
-                location.pathname === '/' &&
-                location.hash !== '#contact' &&
-                '#22c55e',
-            }}
-          >
-            Home
-          </NavLink>
-
-
-          <NavLink
-            to="/portfolio"
-            onClick={toggleMobileMenu}
-            style={{ color: location.pathname === '/portfolio' && '#22c55e' }}
-          >
-            Portfolio
-          </NavLink>
-
-          <NavLink
-            to="/blog"
-            style={{ color: location.pathname === '/blog' && '#22c55e' }}
-          >
-            Blog
-          </NavLink>
-
-          <Link
-            to="https://guardraildesigner.netlify.app"
-            target="_blank"
-            className="flex gap-2 items-center whitespace-nowrap"
-          >
-            Guardrail Designer
-            <FiExternalLink className="text-lg" />
-          </Link>
-          
-          <NavLink
-            to="/#contact"
-            onClick={toggleMobileMenu}
-            style={{ color: location.hash === '#contact' && '#22c55e' }}
-          >
-            Contact
-          </NavLink>
+          <ul className="flex flex-col space-y-6">
+            <NavItems onNavigate={closeMobileMenu} />
+          </ul>
         </div>
       </div>
 
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 md:hidden z-40"
-          onClick={toggleMobileMenu}
+          aria-hidden="true"
+          className="fixed inset-0 z-40 bg-black bg-opacity-50 lg:hidden"
+          onClick={closeMobileMenu}
         />
       )}
-    </nav>
+    </header>
   );
 }
 
