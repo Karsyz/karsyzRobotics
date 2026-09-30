@@ -3,7 +3,12 @@ import CTA from '../Components/CTA';
 import TodoNote from '../Components/TodoNote';
 import { SHOW_TODOS } from '../config/flags';
 import { ServiceGrid } from '../Components/Services';
-import { deliverables, software } from '../Data/services';
+import FixturesTooling from '../Components/FixturesTooling';
+import {
+  deliverables,
+  software,
+  clientSeatSoftware,
+} from '../Data/services';
 
 function ServicesPage() {
   return (
@@ -21,6 +26,10 @@ function ServicesPage() {
           <ServiceGrid headingLevel="h2" />
         </div>
       </section>
+
+      <div className="px-6 pt-16">
+        <FixturesTooling className="container mx-auto" />
+      </div>
 
       <section aria-labelledby="deliverables-heading" className="px-6 pt-16">
         <div className="container mx-auto">
@@ -49,18 +58,24 @@ function ServicesPage() {
                 Software
               </h2>
               {software.length > 0 ? (
-                <ul className="list-inside list-disc text-gray-700">
-                  {software.map((name) => (
-                    <li key={name}>{name}</li>
-                  ))}
-                </ul>
+                <dl className="space-y-3 text-gray-700">
+                  <div>
+                    <dt className="font-semibold text-gray-900">Main tools</dt>
+                    <dd>{software.join(', ')}</dd>
+                  </div>
+                  {clientSeatSoftware.length > 0 && (
+                    <div>
+                      <dt className="font-semibold text-gray-900">
+                        Can work on your seat of
+                      </dt>
+                      <dd>{clientSeatSoftware.join(', ')}</dd>
+                    </div>
+                  )}
+                </dl>
               ) : (
                 <TodoNote>
                   list the CAD/CAM software you use in{' '}
-                  <code>src/Data/services.js</code>. It isn&apos;t mentioned
-                  anywhere on the current site or blog, so it has been left
-                  blank rather than guessed. This section is hidden in
-                  production until it&apos;s filled in.
+                  <code>src/Data/services.js</code>.
                 </TodoNote>
               )}
             </div>
