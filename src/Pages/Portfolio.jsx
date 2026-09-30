@@ -184,6 +184,10 @@ const portfolioSections = [
         imgSrc: '/images/portfolio/printedHandle.png',
         imgAlt: '3D printed handle with arched grip',
       },
+      {
+        imgSrc: '/images/portfolio/spokedWheel.png',
+        imgAlt: '3D printed replacement spoked wheel for a Pampered Chef batter mixer',
+      },
     ],
   },
   {
@@ -227,10 +231,6 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/foldingStandAssembly.png',
         imgAlt: 'Folding sheet metal stand assembly with cam-lever clamps and rubber pads',
-      },
-      {
-        imgSrc: '/images/portfolio/spokedWheel.png',
-        imgAlt: 'Five-spoke wheel with grooved rim',
       },
     ],
   },
