@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import Seo from '../Components/Seo';
 import CTA from '../Components/CTA';
-import TodoNote from '../Components/TodoNote';
 import { SITE } from '../config/site';
 
 // Background facts below come from Matt's blog post "A Quick Introduction".
@@ -23,9 +22,7 @@ function About() {
         <div className="container mx-auto max-w-3xl">
           <h1 className="mb-6 text-4xl font-bold text-gray-900">About</h1>
 
-          {/* TODO(Matt): add a headshot or shop photo here. */}
-          <TodoNote>add a photo of yourself or your workspace for this page.</TodoNote>
-
+          {/* No personal photo by Matt's choice: the work speaks for itself. */}
           <div className="prose prose-lg mt-6 max-w-none">
             <p>
               I&apos;m Matt Kars (most people call me Karsy). I started Karsyz
