@@ -1,4 +1,3 @@
-import TodoNote from './TodoNote';
 
 const VIDEO_ID = 'KvGyzfMKS2g';
 
@@ -14,10 +13,10 @@ function FeatureScriptVideo({ className = '' }) {
         Custom Onshape FeatureScript
       </h2>
       <p className="mb-5 lg:max-w-[700px]">
-        A short film showing helixParting, a custom FeatureScript for Onshape.
+        A short film showing helixParting, a custom FeatureScript I wrote for
+        Onshape. It creates a helix or an ellipse around any 3D curve from the
+        parameters you set, then builds a cutting plane along it.
       </p>
-      {/* TODO(Matt): one or two sentences on what helixParting does. */}
-      <TodoNote>add a sentence or two on what the helixParting FeatureScript does.</TodoNote>
       {/* Padding-top 56.25% keeps a native 16:9 box at every width, so the embed never collapses. */}
       <div
         className="relative mt-4 w-full max-w-3xl overflow-hidden rounded-lg bg-black shadow-sm ring-1 ring-gray-900/5"
