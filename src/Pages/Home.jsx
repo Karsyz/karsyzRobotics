@@ -1,24 +1,20 @@
-import Hero from '../Components/Hero';
+import Seo from '../Components/Seo';
 import HeroV2 from '../Components/HeroV2';
 import Services from '../Components/Services';
 import Testimonials from '../Components/Testimonials';
 import ValueProposition from '../Components/ValueProposition';
 import Contact from '../Components/Contact';
-import Footer from '../Components/Footer';
-import BlogLatest from '../Components/BlogLatest';
 
 function Home() {
   return (
-    <div className="">
-      {/* <Hero /> */}
+    <>
+      <Seo path="/" />
       <HeroV2 />
       <Services />
-      {/* <BlogLatest />  */}
       <Testimonials />
       <ValueProposition />
       <Contact />
-      {/* <Footer /> */}
-    </div>
+    </>
   );
 }
 
