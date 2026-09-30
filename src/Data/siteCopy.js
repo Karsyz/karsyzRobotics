@@ -28,6 +28,8 @@ export const caseStudies = {
         {
           src: '/images/portfolio/bcpFuelPumpBracket.png',
           alt: 'Formed sheet metal fuel pump bracket, Border City Performance',
+          // Tall/busy image: show whole, don't crop.
+          fit: 'contain',
         },
       ],
     },
@@ -59,6 +61,8 @@ export const caseStudies = {
         {
           src: '/images/portfolio/paddleInstalled.jpg',
           alt: 'Printed replacement part installed on the original assembly',
+          // Tall/busy image: show whole, don't crop.
+          fit: 'contain',
         },
       ],
     },

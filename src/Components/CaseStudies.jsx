@@ -32,13 +32,13 @@ function CaseStudies({ headingLevel = 'h2', className = '' }) {
             </div>
             {images.length > 0 ? (
               <ul className="grid grid-cols-2 gap-4">
-                {images.map(({ src, alt }) => (
-                  <li key={src} className="rounded-lg bg-gray-50 p-2 ring-1 ring-gray-900/5">
+                {images.map(({ src, alt, fit }) => (
+                  <li key={src} className="overflow-hidden rounded-lg bg-white ring-1 ring-gray-900/5">
                     <img
                       src={src}
                       alt={alt}
                       loading="lazy"
-                      className="aspect-square w-full object-contain"
+                      className={`aspect-[4/3] h-full w-full ${fit === 'contain' ? 'object-contain p-2' : 'object-cover'}`}
                     />
                   </li>
                 ))}
