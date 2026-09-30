@@ -24,11 +24,13 @@ export const caseStudies = {
         {
           src: '/images/portfolio/mechDesignStuff.PNG',
           alt: 'Fuel sending unit assembly with machined billet top and formed sheet metal bracket, Border City Performance',
+          // Square render in a 4:3 tile: bias the crop upward so the billet top stays whole.
+          position: '50% 15%',
         },
         {
           src: '/images/portfolio/bcpFuelPumpBracket.png',
           alt: 'Formed sheet metal fuel pump bracket, Border City Performance',
-          // Tall/busy image: show whole, don't crop.
+          // CAD render on white: contain on a white tile so nothing is cut off.
           fit: 'contain',
         },
       ],
@@ -41,10 +43,14 @@ export const caseStudies = {
         {
           src: '/images/portfolio/sixSpeedLockoutMount.png',
           alt: '3D printed T56/6060 transmission mount for a transmission jack, Six Speed Lockout',
+          // CAD render on white: contain on a white tile so nothing is cut off.
+          fit: 'contain',
         },
         {
           src: '/images/portfolio/sixSpeedLockoutMount2.png',
           alt: 'Six Speed Lockout transmission mount, rear three-quarter view',
+          // CAD render on white: contain on a white tile so nothing is cut off.
+          fit: 'contain',
         },
       ],
     },
@@ -61,7 +67,7 @@ export const caseStudies = {
         {
           src: '/images/portfolio/paddleInstalled.jpg',
           alt: 'Printed replacement part installed on the original assembly',
-          // Tall/busy image: show whole, don't crop.
+          // Render on a white background: contain on a white tile so nothing is cut off.
           fit: 'contain',
         },
       ],
@@ -93,7 +99,9 @@ export const fixturesTooling = {
   ],
   // Existing image from the portfolio's Jigs/Fixtures section (per copy notes).
   images: [
-    { src: '/images/portfolio/image-4.jpg', alt: 'Deburring fixture' },
+    // Full-frame render (no white background): cover. Subject sits left of
+    // centre, so bias the crop that way.
+    { src: '/images/portfolio/image-4.jpg', alt: 'Deburring fixture', position: '40% 50%' },
   ],
   imageTodo:
     'add the labelled "concept design" welding fixture and QC fixture images here.',

@@ -2,13 +2,15 @@ import { SITE } from '../config/site';
 
 // Real on-site photos from Matt's robotics commissioning work. Shown as a
 // full-bleed grid; object-cover crops to fit without distorting.
+// `position` keeps the subject in frame where the tall cells crop a
+// landscape photo.
 const onsitePhotos = [
-  '/images/onsite/robotCell.jpg',
-  '/images/onsite/weldGun.jpg',
-  '/images/onsite/dispenseUnit.jpg',
-  '/images/onsite/smcGauge.jpg',
-  '/images/onsite/pendant.jpg',
-  '/images/onsite/compressedAir.jpg',
+  { src: '/images/onsite/robotCell.jpg', position: '45% 50%' },
+  { src: '/images/onsite/weldGun.jpg' },
+  { src: '/images/onsite/dispenseUnit.jpg' },
+  { src: '/images/onsite/smcGauge.jpg', position: '62% 50%' },
+  { src: '/images/onsite/pendant.jpg', position: '55% 50%' },
+  { src: '/images/onsite/compressedAir.jpg' },
 ];
 
 function Contact() {
@@ -103,9 +105,15 @@ function Contact() {
 
         {/* Decorative image (right) - hidden on mobile */}
         <ul aria-hidden="true" className="hidden lg:grid w-full lg:w-1/2 grid-cols-3 grid-rows-2 gap-1 bg-gray-900">
-          {onsitePhotos.map((src) => (
+          {onsitePhotos.map(({ src, position }) => (
             <li key={src} className="relative min-h-0 overflow-hidden">
-              <img src={src} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+              <img
+                src={src}
+                alt=""
+                loading="lazy"
+                style={position ? { objectPosition: position } : undefined}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
             </li>
           ))}
         </ul>
