@@ -36,8 +36,12 @@ export const caseStudies = {
       title: 'Transmission Removal & Transport Mount, Six Speed Lockout',
       body: "Six Speed Lockout had been using a shaped block of wood to support T56 and 6060-style transmissions during removal and transport. It worked, but it wasn't very secure. I reverse-engineered the block into CAD, refined the shape, and went through several 3D printed versions until I had a mount that holds the gearbox firmly on the jack and keeps it from tipping over whenever it's moved. Now it's repeatable and easy to reprint, and it can be adjusted for other cases.",
       // No existing portfolio image clearly matches this project.
-      images: [],
-      imageTodo: 'add an image of the Six Speed Lockout transmission mount (none of the existing portfolio images match it).',
+      images: [
+        {
+          src: '/images/portfolio/sixSpeedLockoutMount.png',
+          alt: '3D printed T56/6060 transmission mount for a transmission jack, Six Speed Lockout',
+        },
+      ],
     },
   ],
 };
