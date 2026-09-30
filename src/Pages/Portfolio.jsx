@@ -186,7 +186,7 @@ const portfolioSections = [
       },
       {
         imgSrc: '/images/portfolio/spokedWheel.png',
-        imgAlt: '3D printed replacement spoked wheel for a Pampered Chef batter mixer',
+        imgAlt: '3D printed replacement mixing paddle for a Pampered Chef batter mixer',
       },
     ],
   },

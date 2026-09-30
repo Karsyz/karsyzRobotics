@@ -35,7 +35,6 @@ export const caseStudies = {
       id: 'six-speed-lockout-transmission-mount',
       title: 'Transmission Removal & Transport Mount, Six Speed Lockout',
       body: "Six Speed Lockout had been using a shaped block of wood to support T56 and 6060-style transmissions during removal and transport. It worked, but it wasn't very secure. I reverse-engineered the block into CAD, refined the shape, and went through several 3D printed versions until I had a mount that holds the gearbox firmly on the jack and keeps it from tipping over whenever it's moved. Now it's repeatable and easy to reprint, and it can be adjusted for other cases.",
-      // No existing portfolio image clearly matches this project.
       images: [
         {
           src: '/images/portfolio/sixSpeedLockoutMount.png',
@@ -44,6 +43,18 @@ export const caseStudies = {
         {
           src: '/images/portfolio/sixSpeedLockoutMount2.png',
           alt: 'Six Speed Lockout transmission mount, rear three-quarter view',
+        },
+      ],
+    },
+    {
+      id: 'mixer-paddle-repair',
+      title: 'Replacement Mixing Paddle, Pampered Chef Batter Mixer',
+      // Approved by Matt 2026-09-30.
+      body: 'The mixing paddle on a Pampered Chef batter mixer broke at the centre hub. I reverse-engineered it with calipers and a scale and modelled a near one-for-one replacement. I also added material around the hub, where the original failed, so the stress is spread out and the part is fully captured. It threads straight onto the mixer with no insert. Printed in PLA, it fit on the first try and has worked without issues since.',
+      images: [
+        {
+          src: '/images/portfolio/spokedWheel.png',
+          alt: '3D printed replacement mixing paddle for a Pampered Chef batter mixer',
         },
       ],
     },
