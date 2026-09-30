@@ -19,7 +19,7 @@ export default function HeroV2() {
             Build-ready CAD for fab shops, machine shops and automation builders
           </h1>
           <p className="mt-4 text-xl font-medium text-indigo-700 sm:text-2xl">
-            From a former industrial robot programmer.
+            From a multi-trade designer with 22 years in fixtures, steel detailing and robotic weld cells.
           </p>
           <p className="mt-6 max-w-xl text-lg text-gray-600">
             3D models, fabrication drawings and DXF/STEP files designed to be
