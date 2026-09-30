@@ -59,6 +59,14 @@ export const ROUTES = [
     description:
       'Notes on fabrication, manufacturing, CAD and product prototyping from Matt Kars at Karsyz Robotics.',
   },
+  {
+    // Contact form confirmation page. Not in sitemap.xml; kept out of search.
+    path: '/thanks',
+    file: 'thanks.html',
+    title: 'Thanks for your message | Karsyz Robotics',
+    description: 'Your message has been sent to Karsyz Robotics.',
+    noindex: true,
+  },
 ];
 
 export const NOT_FOUND = {

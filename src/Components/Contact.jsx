@@ -1,4 +1,10 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SITE } from '../config/site';
+
+// Netlify Forms: this form's name and field names must match the hidden static
+// form in index.html, which is what Netlify's build-time form detection reads.
+const FORM_NAME = 'contact';
 
 // Real on-site photos from Matt's robotics commissioning work. Shown as a
 // full-bleed grid; object-cover crops to fit without distorting.
@@ -14,6 +20,27 @@ const onsitePhotos = [
 ];
 
 function Contact() {
+  const navigate = useNavigate();
+  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'error'
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setStatus('submitting');
+    const body = new URLSearchParams(new FormData(event.currentTarget)).toString();
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      });
+      if (!res.ok) throw new Error(`Form submit failed: HTTP ${res.status}`);
+      navigate('/thanks');
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
+    }
+  }
+
   return (
     <section id="contact" className="bg-white  md:pl-10">
       <div className="flex flex-col lg:flex-row items-stretch gap-10">
@@ -30,10 +57,22 @@ function Contact() {
             .
           </p>
           <form
-            action="https://formsubmit.co/54f12137427d71214693554d8bca0d0a"
+            name={FORM_NAME}
             method="POST"
+            data-netlify="true"
+            // Netlify-specific attribute, not a DOM property.
+            // eslint-disable-next-line react/no-unknown-property
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
             className="space-y-6"
           >
+            <input type="hidden" name="form-name" value={FORM_NAME} />
+            {/* Honeypot: hidden from people; bots that fill it are dropped by Netlify. */}
+            <p className="hidden" aria-hidden="true">
+              <label>
+                Don&apos;t fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+              </label>
+            </p>
             <div>
               <label
                 htmlFor="name"
@@ -93,12 +132,23 @@ function Contact() {
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
-            
+
+            {status === 'error' && (
+              <p role="alert" className="rounded-lg border border-red-300 bg-red-50 p-3 text-red-800">
+                Sorry, your message couldn&apos;t be sent. Please try again, or email{' '}
+                <a href={`mailto:${SITE.email}`} className="font-semibold underline">
+                  {SITE.email}
+                </a>
+                .
+              </p>
+            )}
+
             <button
               type="submit"
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+              disabled={status === 'submitting'}
+              className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
             >
-              Send Message
+              {status === 'submitting' ? 'Sending…' : 'Send Message'}
             </button>
           </form>
         </div>
