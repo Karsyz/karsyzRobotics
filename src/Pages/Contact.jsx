@@ -2,6 +2,7 @@ import Seo from '../Components/Seo';
 import ContactForm from '../Components/Contact';
 import { SITE } from '../config/site';
 import { useModal } from '../Context/ModalContext';
+import { about } from '../Data/siteCopy';
 
 function ContactPage() {
   const { openModal } = useModal();
@@ -28,7 +29,8 @@ function ContactPage() {
               {/* TODO(Matt): add phone number here once decided (SITE.phone in src/config/site.js). */}
               <div>
                 <dt className="inline font-semibold">Location: </dt>
-                <dd className="inline">{SITE.location} (working remotely with shops anywhere)</dd>
+                {/* Approved copy: last paragraph of the About section. */}
+                <dd className="inline">{about.paragraphs[3]}</dd>
               </div>
             </dl>
           </address>

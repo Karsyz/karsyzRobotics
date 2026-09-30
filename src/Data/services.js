@@ -62,5 +62,8 @@ export const deliverables = [
   { format: 'BOM', detail: 'Material, cut and parts lists' },
 ];
 
-// CAD software Matt currently works in (confirmed by Matt, 2026-09-29).
-export const software = ['Autodesk Fusion 360', 'Autodesk Inventor', 'AutoCAD'];
+// From the approved About copy (2026-09-29): "I work mainly in Onshape, plus
+// AutoCAD and Fusion 360, and I can work on your seat of SolidWorks, Inventor,
+// or Tekla."
+export const software = ['Onshape', 'AutoCAD', 'Fusion 360'];
+export const clientSeatSoftware = ['SolidWorks', 'Inventor', 'Tekla'];

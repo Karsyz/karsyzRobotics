@@ -29,21 +29,21 @@ export const ROUTES = [
     file: 'services.html',
     title: 'CAD & Mechanical Design Services | Karsyz Robotics',
     description:
-      '3D modelling, sheet metal, weldments and fabrication drawings, machined parts, 3D printed parts, and fixtures, jigs and end effectors. Deliverables in DWG, DXF, STEP and PDF.',
+      '3D modelling, sheet metal, weldments and fabrication drawings, machined parts, 3D printed parts, and production welding, QC and workholding fixtures and robot tooling. Deliverables in DWG, DXF, STEP and PDF.',
   },
   {
     path: '/portfolio',
     file: 'portfolio.html',
     title: 'Portfolio: Weldments, Sheet Metal, Structural & Misc Steel | Karsyz Robotics',
     description:
-      'Examples of CAD and fabrication detailing work: weldments and frames, structural steel, stairs and guardrails, sheet metal parts, jigs and fixtures, flat patterns and 3D printed parts.',
+      'Case studies and examples of CAD and fabrication detailing work: weldments and frames, structural steel, sheet metal, fixtures and tooling, stairs and guardrails, flat patterns and 3D printed parts.',
   },
   {
     path: '/about',
     file: 'about.html',
-    title: 'About Matt Kars | Karsyz Robotics',
+    title: 'About | Karsyz Robotics',
     description:
-      'Karsyz Robotics was started in 2014 by Matt Kars while programming industrial robots. Background in structural steel detailing, fixture design and metal fabrication.',
+      "22 years making sure what's on the drawing actually gets built: fixture design, structural steel detailing, and robotic welding cell commissioning. Based in Sault Ste. Marie, Ontario.",
   },
   {
     path: '/contact',
