@@ -62,8 +62,6 @@ export const deliverables = [
   { format: 'BOM', detail: 'Material, cut and parts lists' },
 ];
 
-// From the approved About copy (2026-09-29): "I work mainly in Onshape, plus
-// AutoCAD and Fusion 360, and I can work on your seat of SolidWorks, Inventor,
-// or Tekla."
-export const software = ['Onshape', 'AutoCAD', 'Fusion 360'];
-export const clientSeatSoftware = ['SolidWorks', 'Inventor', 'Tekla'];
+// Confirmed by Matt 2026-09-30: main tools are the ones he has access to now.
+export const software = ['Fusion 360', 'AutoCAD', 'Inventor'];
+export const clientSeatSoftware = ['Onshape', 'SolidWorks', 'Tekla'];

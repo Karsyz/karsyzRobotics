@@ -1,9 +1,8 @@
-import TodoNote from './TodoNote';
 import { fixturesTooling } from '../Data/siteCopy';
 
 /** Fixtures & Tooling section from the approved site copy. */
 function FixturesTooling({ className = '' }) {
-  const { heading, intro, items, images, imageTodo } = fixturesTooling;
+  const { heading, intro, items, images } = fixturesTooling;
   return (
     <section
       id="fixtures-tooling"
@@ -40,7 +39,7 @@ function FixturesTooling({ className = '' }) {
               </li>
             ))}
           </ul>
-          <TodoNote>{imageTodo}</TodoNote>
+          {/* Labelled fixture concept images get added to `images` in siteCopy.js. */}
         </div>
       </div>
     </section>

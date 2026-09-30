@@ -7,7 +7,7 @@ export const about = {
   paragraphs: [
     'I started in 2004 at a small gauge and fixture shop, detailing and designing fixtures and doing some CNC programming. From there I moved to structural steel detailing in Windsor, producing fabrication, erection, and submittal packages and supporting ironworkers on site. In 2014 I founded Karsyz Robotics and spent five years setting up, programming, and commissioning robotic welding and joining cells for Ford, Tesla, Magna, Centerline, Valiant TMS, Flex-N-Gate, and Kuka.',
     "That shop-floor time changed how I design. I've seen what happens when a part is hard to fixture, weld, or load, so the drawings I send are made to be built, not just to look good.",
-    'Today I do mechanical design and detailing for fab shops, machine builders, and product companies: 3D models, fabrication drawings, sheet metal, weldments, machine design, fixtures and workholding, and DXF/CNC data. I work mainly in Onshape, plus AutoCAD and Fusion 360, and I can work on your seat of SolidWorks, Inventor, or Tekla.',
+    'Today I do mechanical design and detailing for fab shops, machine builders, and product companies: 3D models, fabrication drawings, sheet metal, weldments, machine design, fixtures and workholding, and DXF/CNC data. I work mainly in Fusion 360, AutoCAD, and Inventor, and I can work on your seat of Onshape, SolidWorks, or Tekla.',
     'Based in Sault Ste. Marie, Ontario, working remotely with clients across North America.',
   ],
 };

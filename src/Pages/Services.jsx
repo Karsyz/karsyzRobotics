@@ -1,6 +1,5 @@
 import Seo from '../Components/Seo';
 import CTA from '../Components/CTA';
-import TodoNote from '../Components/TodoNote';
 import { SHOW_TODOS } from '../config/flags';
 import { ServiceGrid } from '../Components/Services';
 import FixturesTooling from '../Components/FixturesTooling';
@@ -72,12 +71,7 @@ function ServicesPage() {
                     </div>
                   )}
                 </dl>
-              ) : (
-                <TodoNote>
-                  list the CAD/CAM software you use in{' '}
-                  <code>src/Data/services.js</code>.
-                </TodoNote>
-              )}
+              ) : null}
             </div>
           </div>
         </section>
