@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CTA from '../Components/CTA';
 import Seo from '../Components/Seo';
 import CaseStudies from '../Components/CaseStudies';
+import FeatureScriptVideo from '../Components/FeatureScriptVideo';
 import { v4 as uuidv4 } from 'uuid';
 
 // Order per approved copy (2026-09-29): industrial work first (weldments,
@@ -115,6 +116,7 @@ const portfolioSections = [
       },
     ],
   },
+  { id: 'featurescript', component: 'featureScript' },
   { id: 'case-studies', component: 'caseStudies' },
   {
     id: uuidv4().slice(0, 8),
@@ -302,6 +304,9 @@ function Portfolio() {
             {portfolioSections.map(({ id, component, heading, description, images }) => {
               if (component === 'caseStudies') {
                 return <CaseStudies key={id} className="mt-16 w-full" />;
+              }
+              if (component === 'featureScript') {
+                return <FeatureScriptVideo key={id} className="mt-10 w-full" />;
               }
               return (
                 <div key={id} id={id} className="mt-10 w-full">
