@@ -1,5 +1,13 @@
-// Only testimonials Matt can verify word for word. Add new ones here as they come in.
+// Verbatim Fiverr reviews (fiverr.com/karsy0000001, recovered from Wayback Machine
+// snapshots and approved by Matt), plus T. Salmon, which Matt kept word for word.
+// Only add testimonials Matt can verify. Never edit a quote except to trim with an ellipsis.
 const testimonials = [
+  {"quote": "Karsy is a pro who is happy to keep going until the job is done right! Excellent work, brings real-world welding and fabrication experience to his layout and 3-d models. I bring all my projects to him!", "name": "metzmark via Fiverr", "title": "United States", "date": "2021-04-16"},
+  {"quote": "karsy rocks! He's obviously got a background in welding and fabrication so he understood what my project was about right off the bat. Excellent service, will be using again soon!", "name": "metzmark via Fiverr", "title": "United States", "date": "2020-01-30"},
+  {"quote": "Karsy delivered way above what I expected. Very thorough and clever modifications to the design that will make assembly much easier and a better product all round for the end user. Will use again for my next project.", "name": "martinclay1964 via Fiverr", "title": "United States", "date": "2020-12-01"},
+  {"quote": "This man is amazing. 2 dxfs created for me in less than 12 hours. One was extremely detailed it would’ve taken me a few days to nail.", "name": "mikemarine33 via Fiverr", "title": "United States", "date": "2020-02-06"},
+  {"quote": "karsy0000001 does amazing work. This is my fifth project with him and I will continue to use him in the future. Highly recommend.", "name": "matthewdepippo via Fiverr", "title": "United States", "date": "2020-12-16"},
+  {"quote": "karsy0000001 took the time to get me exactly what I needed, kept me in the loop the entire time. Some of the intricate areas of what I needed, he took the time to really understand what was needed so the final result was way better than expected. I'll definitely work with him again!", "name": "greeson1166 via Fiverr", "title": "United States", "date": "2021-05-14"},
   {
     quote:
       "Wizards really do exist!!! He went above and beyond making resources and notes for me so that I don't create the same error in the future. You didn't try to squeeze extra money out of me and that kind of caliber is super rare these days. Once again, thank you so much for your help! 10/10 I would recommend his services!",
@@ -20,16 +28,19 @@ function Testimonials() {
         >
           Client feedback
         </h2>
-        <ul className="mx-auto mt-8 grid max-w-3xl gap-8">
-          {testimonials.map(({ quote, name, title }) => (
-            <li key={name}>
+        <ul className="mx-auto mt-8 grid max-w-6xl gap-6 text-left md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map(({ quote, name, title, date }) => (
+            <li key={`${name}-${date ?? ''}`} className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-gray-900/5">
               <figure>
-                <blockquote className="text-lg text-gray-800">
+                <blockquote className="text-gray-800">
                   <p>&ldquo;{quote}&rdquo;</p>
                 </blockquote>
                 <figcaption className="mt-4">
-                  <span className="block text-xl text-gray-900">{name}</span>
-                  <span className="block text-xl font-semibold text-gray-900">{title}</span>
+                  <span className="block font-semibold text-gray-900">{name}</span>
+                  <span className="block text-sm text-gray-600">
+                    {title}
+                    {date ? ` · ${date.slice(0, 4)}` : ''}
+                  </span>
                 </figcaption>
               </figure>
             </li>
