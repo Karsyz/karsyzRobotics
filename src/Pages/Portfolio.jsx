@@ -186,12 +186,6 @@ const portfolioSections = [
         imgSrc: '/images/portfolio/roboBroom3.PNG',
         imgAlt: 'Mechanical linkage assembly on aluminum extrusion',
       },
-    ],
-  },
-  {
-    id: 'personal-projects',
-    heading: 'Personal projects',
-    images: [
       {
         imgSrc: '/images/portfolio/KurigTrayallYouNeedIsCoffee.PNG',
         imgAlt: 'Stylized Keurig coffee machine tray',
