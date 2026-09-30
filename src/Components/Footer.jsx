@@ -43,7 +43,6 @@ export default function Footer() {
                 {SITE.email}
               </a>
             </p>
-            {/* TODO(Matt): add phone number here if you want one listed (SITE.phone in src/config/site.js). */}
             <p>{SITE.location}, Canada</p>
           </address>
         </div>

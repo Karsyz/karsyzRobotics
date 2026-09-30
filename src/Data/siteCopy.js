@@ -48,13 +48,17 @@ export const caseStudies = {
     },
     {
       id: 'mixer-paddle-repair',
-      title: 'Replacement Mixing Paddle, Pampered Chef Batter Mixer',
-      // Approved by Matt 2026-09-30.
-      body: 'The mixing paddle on a Pampered Chef batter mixer broke at the centre hub. I reverse-engineered it with calipers and a scale and modelled a near one-for-one replacement. I also added material around the hub, where the original failed, so the stress is spread out and the part is fully captured. It threads straight onto the mixer with no insert. Printed in PLA, it fit on the first try and has worked without issues since.',
+      title: 'Reverse-Engineered Replacement Part with Failure Fix',
+      // Reworded version approved by Matt 2026-09-30.
+      body: 'A broken consumer part with no drawings or replacement available. I measured the original with calipers and a scale, modelled a one-for-one replacement, and redesigned the centre hub where it had failed so the load is spread out and the part is fully supported. The threaded connection prints in place with no insert. The first print fit and the part has been in daily use without issues since.',
       images: [
         {
           src: '/images/portfolio/spokedWheel.png',
-          alt: '3D printed replacement mixing paddle for a Pampered Chef batter mixer',
+          alt: 'Reverse-engineered 3D printed replacement part with a reinforced centre hub',
+        },
+        {
+          src: '/images/portfolio/paddleInstalled.jpg',
+          alt: 'Printed replacement part installed on the original assembly',
         },
       ],
     },

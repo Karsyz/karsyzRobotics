@@ -7,7 +7,7 @@ export const SITE = {
   name: 'Karsyz Robotics',
   url: 'https://karsyzrobotics.com',
   email: 'matt@karsyzrobotics.com',
-  // TODO(Matt): add a business phone number if you want one published.
+  // No public phone number by Matt's choice; contact is by email and the form.
   phone: null,
   location: 'Sault Ste. Marie, Ontario',
   ogImage: '/images/portfolio/trailerFrame.png',
