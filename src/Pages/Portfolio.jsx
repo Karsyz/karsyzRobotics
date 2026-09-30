@@ -85,6 +85,18 @@ const portfolioSections = [
         imgSrc: '/images/portfolio/fanShroud.png',
         imgAlt: 'Sheet metal dual fan shroud',
       },
+      {
+        imgSrc: '/images/portfolio/sheetMetalTrays.png',
+        imgAlt: 'Set of four nesting formed sheet metal trays',
+      },
+      {
+        imgSrc: '/images/portfolio/sheetMetalHangingRack.png',
+        imgAlt: 'Laser-cut and formed sheet metal hanging rack',
+      },
+      {
+        imgSrc: '/images/portfolio/perforatedSheetMetalStand.png',
+        imgAlt: 'Formed sheet metal stand with hex-perforated top',
+      },
     ],
   },
   {
@@ -166,6 +178,10 @@ const portfolioSections = [
         imgSrc: '/images/portfolio/111.png',
         imgAlt: 'Shure headphone repair part',
       },
+      {
+        imgSrc: '/images/portfolio/printedHandle.png',
+        imgAlt: '3D printed handle with arched grip',
+      },
     ],
   },
   {
@@ -205,6 +221,14 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/frontFrame.PNG',
         imgAlt: 'Bicycle frame',
+      },
+      {
+        imgSrc: '/images/portfolio/foldingStandAssembly.png',
+        imgAlt: 'Folding sheet metal stand assembly with cam-lever clamps and rubber pads',
+      },
+      {
+        imgSrc: '/images/portfolio/spokedWheel.png',
+        imgAlt: 'Five-spoke wheel with grooved rim',
       },
     ],
   },
