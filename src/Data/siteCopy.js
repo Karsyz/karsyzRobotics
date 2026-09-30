@@ -56,6 +56,10 @@ export const caseStudies = {
           src: '/images/portfolio/spokedWheel.png',
           alt: 'Reverse-engineered 3D printed replacement part with a reinforced centre hub',
         },
+        {
+          src: '/images/portfolio/paddleInstalled.jpg',
+          alt: 'Printed replacement part installed on the original assembly',
+        },
       ],
     },
   ],
