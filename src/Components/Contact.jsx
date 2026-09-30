@@ -91,7 +91,7 @@ function Contact() {
         </div>
 
         {/* Decorative image (right) - hidden on mobile */}
-        <div aria-hidden="true" className="hidden lg:block w-full lg:w-1/2 bg-[url('/images/contact.jpg')] bg-cover rounded-tl-lg" />
+        <div aria-hidden="true" className="hidden lg:block w-full lg:w-1/2 bg-[url('/images/shopCollage.jpg')] bg-cover bg-center rounded-tl-lg" />
       </div>
     </section>
   );
