@@ -1,4 +1,5 @@
 import TodoNote from './TodoNote';
+import ImageTile from './ImageTile';
 import { caseStudies } from '../Data/siteCopy';
 
 /** Case studies from the approved site copy. */
@@ -31,15 +32,12 @@ function CaseStudies({ headingLevel = 'h2', className = '' }) {
               <p className="text-gray-700">{body}</p>
             </div>
             {images.length > 0 ? (
-              <ul className="grid grid-cols-2 gap-4">
-                {images.map(({ src, alt }) => (
-                  <li key={src} className="rounded-lg bg-gray-50 p-2 ring-1 ring-gray-900/5">
-                    <img
-                      src={src}
-                      alt={alt}
-                      loading="lazy"
-                      className="aspect-square w-full object-contain"
-                    />
+              // self-start: tiles keep their 4:3 ratio instead of stretching
+              // to the height of the text column.
+              <ul className="grid grid-cols-2 gap-4 self-start">
+                {images.map(({ src, alt, fit, position }) => (
+                  <li key={src} className="overflow-hidden rounded-lg ring-1 ring-gray-900/5">
+                    <ImageTile src={src} alt={alt} fit={fit} position={position} />
                   </li>
                 ))}
               </ul>

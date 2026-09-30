@@ -3,8 +3,14 @@ import CTA from '../Components/CTA';
 import Seo from '../Components/Seo';
 import CaseStudies from '../Components/CaseStudies';
 import FeatureScriptVideo from '../Components/FeatureScriptVideo';
+import ImageTile from '../Components/ImageTile';
 import { v4 as uuidv4 } from 'uuid';
 
+// Images: every tile is 4:3 and fills its grid cell (see ImageTile).
+// `fit: 'contain'` marks CAD renders and drawings on a white background: they
+// are shown whole on a white tile so no part or dimension is cut off. The rest
+// (renders with a full-frame background) use the default cover fit.
+//
 // Order per approved copy (2026-09-29): industrial work first (weldments,
 // structural steel, sheet metal, fixtures, case studies), hobby pieces last.
 const portfolioSections = [
@@ -17,18 +23,22 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/trailerFrame.png',
         imgAlt: 'Welded steel trailer frame 3D model',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/drainTableAssy.png',
         imgAlt: 'Fabrication drawing of a drain table assembly',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/fishingHut1.png',
         imgAlt: 'Fabrication drawing of an ice fishing hut frame',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/fishingHut2.png',
         imgAlt: 'Ice fishing hut frame 3D model',
+        fit: 'contain',
       },
     ],
   },
@@ -41,18 +51,22 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/progress1.PNG',
         imgAlt: 'Steel pergola frame 3D model',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/rolledBeamDetails.png',
         imgAlt: 'A fabrication drawing of a rolled HSS beam',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/bigBeamDrawing.png',
         imgAlt: 'A fabrication drawing of a large steel beam',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/materialList.png',
         imgAlt: 'A material list',
+        fit: 'contain',
       },
     ],
   },
@@ -65,34 +79,42 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/sample.PNG',
         imgAlt: 'Sheet metal shelf bracket with lightening holes',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/mowerDeck.png',
         imgAlt: 'Sheet metal mower deck 3D model',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/5.PNG',
         imgAlt: 'Electric car charger base',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/breakerActuator2.PNG',
         imgAlt: 'Circuit breaker actuator mechanism',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/offsetBracket.png',
         imgAlt: 'Offset sheet metal bracket',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/fanShroud.png',
         imgAlt: 'Sheet metal dual fan shroud',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/sheetMetalTrays.png',
         imgAlt: 'Set of four nesting formed sheet metal trays',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/sheetMetalHangingRack.png',
         imgAlt: 'Laser-cut and formed sheet metal hanging rack',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/perforatedSheetMetalStand.png',
@@ -113,6 +135,7 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/image-4.jpg',
         imgAlt: 'Deburring fixture',
+        position: '40% 50%',
       },
     ],
   },
@@ -131,18 +154,22 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/centerStringerStair.png',
         imgAlt: 'Center stringer stair made of steel',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/singleStringerStairDrawing.png',
         imgAlt: 'Fabrication drawing of the steel center stringer stair',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/guardRail.png',
         imgAlt: 'Steel guardrail 3D model',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/steelStairAndWallRail.png',
         imgAlt: 'Steel stair with wall-mounted handrail 3D model',
+        fit: 'contain',
       },
     ],
   },
@@ -155,18 +182,22 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/3DVerify.PNG',
         imgAlt: 'Laser-cut medal hanger with runner silhouettes',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/3.PNG',
         imgAlt: 'Battery fuse strip flat pattern with dimensions',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/devilTailSign.PNG',
         imgAlt: 'Wall-mounted sign bracket with devil-tail scroll',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/firePitVerify1.PNG',
         imgAlt: 'Flat pack fire pit',
+        fit: 'contain',
       },
     ],
   },
@@ -179,6 +210,7 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/111.png',
         imgAlt: 'Shure headphone repair part',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/printedHandle.png',
@@ -199,18 +231,22 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/10.PNG',
         imgAlt: 'Small shipping container with battery energy storage',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/7.PNG',
         imgAlt: 'Electric car charging cable support clamp',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/roboBroom3.PNG',
         imgAlt: 'Mechanical linkage assembly on aluminum extrusion',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/KurigTrayallYouNeedIsCoffee.PNG',
         imgAlt: 'Stylized Keurig coffee machine tray',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/exhaustTip.PNG',
@@ -219,14 +255,17 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/1box.PNG',
         imgAlt: 'Billet humidor',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/noTipBevelVerify1.PNG',
         imgAlt: 'Precision arrow head',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/frontFrame.PNG',
         imgAlt: 'Bicycle frame',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/foldingStandAssembly.png',
@@ -320,18 +359,16 @@ function Portfolio() {
                     key={id}
                     className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
                   >
-                    {images.map(({ imgSrc, imgAlt }, ind) => {
-                      return (
-                        <img
-                          key={ind}
-                          src={imgSrc}
-                          alt={imgAlt}
-                          loading="lazy"
-                          className="bg-white w-full h-[300px] object-contain rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer"
-                          onClick={() => openImageModal(images, ind)}
-                        />
-                      );
-                    })}
+                    {images.map(({ imgSrc, imgAlt, fit, position }, ind) => (
+                      <button
+                        key={ind}
+                        type="button"
+                        onClick={() => openImageModal(images, ind)}
+                        className="block w-full overflow-hidden rounded-lg shadow-md ring-1 ring-gray-900/5 transition duration-300 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-600"
+                      >
+                        <ImageTile src={imgSrc} alt={imgAlt} fit={fit} position={position} />
+                      </button>
+                    ))}
                   </div>
                 </div>
               );
@@ -392,7 +429,7 @@ function Portfolio() {
               <img
                 src={modalImages[modalImageIndex].imgSrc}
                 alt={modalImages[modalImageIndex].imgAlt}
-                className="rounded-lg shadow-lg max-h-[800px] w-auto"
+                className="max-h-[85vh] max-w-full rounded-lg bg-white object-contain shadow-lg"
               />
 
               {/* Next Arrow */}

@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useModal } from '../Context/ModalContext';
+import ImageTile from './ImageTile';
 
+// All four are CAD renders on white: fit 'contain' on a white tile so the
+// whole part shows and the tile still reads as full.
 const heroImages = [
-  { src: '/images/portfolio/trailerFrame.png', alt: 'Welded trailer frame 3D model' },
-  { src: '/images/portfolio/mowerDeck.png', alt: 'Sheet metal mower deck 3D model' },
-  { src: '/images/portfolio/centerStringerStair.png', alt: 'Steel center stringer stair 3D model' },
-  { src: '/images/portfolio/bcpFuelPumpBracket.png', alt: 'Sheet metal fuel pump bracket 3D model' },
+  { src: '/images/portfolio/trailerFrame.png', alt: 'Welded trailer frame 3D model', fit: 'contain' },
+  { src: '/images/portfolio/mowerDeck.png', alt: 'Sheet metal mower deck 3D model', fit: 'contain' },
+  { src: '/images/portfolio/centerStringerStair.png', alt: 'Steel center stringer stair 3D model', fit: 'contain' },
+  { src: '/images/portfolio/bcpFuelPumpBracket.png', alt: 'Sheet metal fuel pump bracket 3D model', fit: 'contain' },
 ];
 
 export default function HeroV2() {
@@ -40,9 +43,9 @@ export default function HeroV2() {
         </div>
 
         <ul className="grid grid-cols-2 gap-4 sm:gap-6">
-          {heroImages.map(({ src, alt }) => (
-            <li key={src} className="rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/10">
-              <img src={src} alt={alt} className="aspect-[4/3] w-full object-contain" />
+          {heroImages.map(({ src, alt, fit }) => (
+            <li key={src} className="overflow-hidden rounded-xl shadow-lg ring-1 ring-gray-900/10">
+              <ImageTile src={src} alt={alt} fit={fit} loading="eager" />
             </li>
           ))}
         </ul>

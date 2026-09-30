@@ -1,3 +1,4 @@
+import ImageTile from './ImageTile';
 import { fixturesTooling } from '../Data/siteCopy';
 
 /** Fixtures & Tooling section from the approved site copy. */
@@ -27,15 +28,11 @@ function FixturesTooling({ className = '' }) {
           </ul>
         </div>
         <div className="space-y-4">
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {images.map(({ src, alt }) => (
-              <li key={src} className="rounded-lg bg-white p-2 shadow-sm ring-1 ring-gray-900/5">
-                <img
-                  src={src}
-                  alt={alt}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-contain"
-                />
+          {/* One image fills the whole column; two or more share a 2-up grid. */}
+          <ul className={`grid grid-cols-1 gap-4 ${images.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+            {images.map(({ src, alt, fit, position }) => (
+              <li key={src} className="overflow-hidden rounded-lg shadow-sm ring-1 ring-gray-900/5">
+                <ImageTile src={src} alt={alt} fit={fit} position={position} />
               </li>
             ))}
           </ul>

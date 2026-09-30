@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { marked } from "marked";
 import Seo from "../Components/Seo";
+import ImageTile from "../Components/ImageTile";
 
 const BLOGS_API =
   "https://cdn.contentful.com/spaces/90yo4xaqjgi1/environments/master/entries?access_token=xtTWhpJqtCRgdLncDkzzUAKXDngwxNEyAosFDLT0B5U&content_type=blog&order=-sys.createdAt";
@@ -68,10 +69,14 @@ export default function BlogPage() {
                 <>
                   {/* Show thumbnail if exists */}
                   {thumbnail && (
-                    <img
+                    // Thumbnails are CAD renders on white: fixed 16:9 tile,
+                    // shown whole (contain) on white so nothing is cut off.
+                    <ImageTile
                       src={thumbnail}
                       alt="Post thumbnail"
-                      className="mb-4 w-full max-h-64 object-cover rounded-md drop-shadow-sm"
+                      fit="contain"
+                      aspect="aspect-[16/9]"
+                      className="mb-4 rounded-md"
                     />
                   )}
                   <p className="text-gray-700 mb-2">{getPreview(body)}</p>
