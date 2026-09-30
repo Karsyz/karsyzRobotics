@@ -18,9 +18,13 @@ function FeatureScriptVideo({ className = '' }) {
       </p>
       {/* TODO(Matt): one or two sentences on what helixParting does. */}
       <TodoNote>add a sentence or two on what the helixParting FeatureScript does.</TodoNote>
-      <div className="mt-4 w-full max-w-3xl overflow-hidden rounded-lg shadow-sm ring-1 ring-gray-900/5">
+      {/* Padding-top 56.25% keeps a native 16:9 box at every width, so the embed never collapses. */}
+      <div
+        className="relative mt-4 w-full max-w-3xl overflow-hidden rounded-lg bg-black shadow-sm ring-1 ring-gray-900/5"
+        style={{ paddingTop: '56.25%', minHeight: '180px' }}
+      >
         <iframe
-          className="aspect-video w-full"
+          className="absolute inset-0 h-full w-full"
           src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}`}
           title="helixParting: custom Onshape FeatureScript"
           loading="lazy"
