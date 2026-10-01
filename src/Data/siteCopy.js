@@ -27,6 +27,12 @@ export const caseStudies = {
           // 878x718 render on a full-frame grey background: cover, centred.
         },
         {
+          src: '/images/portfolio/bcpFuelUnitTop.webp',
+          alt: 'Close-up of the machined billet top with fuel fittings and electrical connector, Border City Performance',
+          // CAD render on white: contain on a white tile so nothing is cut off.
+          fit: 'contain',
+        },
+        {
           src: '/images/portfolio/bcpFuelPumpBracket.webp',
           alt: 'Formed sheet metal fuel pump bracket, Border City Performance',
           // CAD render on white: contain on a white tile so nothing is cut off.
