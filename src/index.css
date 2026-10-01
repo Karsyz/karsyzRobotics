@@ -24,3 +24,14 @@
   }
 
   
+/* "Click to enlarge" badge on portfolio tiles (EnlargeableTile): always shown
+   on touch screens; on mouse devices it appears on hover or keyboard focus. */
+@media (hover: hover) and (pointer: fine) {
+  .tile-hint {
+    opacity: 0;
+  }
+  .group:hover .tile-hint,
+  .group:focus-visible .tile-hint {
+    opacity: 1;
+  }
+}

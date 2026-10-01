@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import CTA from '../Components/CTA';
+import { useState } from 'react';
 import Seo from '../Components/Seo';
 import CaseStudies from '../Components/CaseStudies';
 import FeatureScriptVideo from '../Components/FeatureScriptVideo';
-import ImageTile from '../Components/ImageTile';
+import EnlargeableTile from '../Components/EnlargeableTile';
+import Lightbox from '../Components/Lightbox';
+import PortfolioCTA from '../Components/PortfolioCTA';
 import { v4 as uuidv4 } from 'uuid';
 
 // Images: every tile is 4:3 and fills its grid cell (see ImageTile).
@@ -11,14 +12,32 @@ import { v4 as uuidv4 } from 'uuid';
 // are shown whole on a white tile so no part or dimension is cut off. The rest
 // (renders with a full-frame background) use the default cover fit.
 //
-// Order per approved copy (2026-09-29): industrial work first (weldments,
-// structural steel, sheet metal, fixtures, case studies), hobby pieces last.
+// Order (approved 2026-09-30): fixtures and case studies first, then weldments,
+// sheet metal, structural and misc steel, flat patterns; the FeatureScript video
+// near the bottom and the Misc row (incl. the former 3D Printed row and the
+// hobby-type pieces) last.
 const portfolioSections = [
   {
     id: uuidv4().slice(0, 8),
+    heading: 'Jigs, Fixtures, Molds, Tools',
+    description: 'Fixture, jig and mold designs for production parts.',
+    images: [
+      {
+        imgSrc: '/images/portfolio/2.webp',
+        imgAlt: 'Mold cavity with flow channels, 3D model',
+      },
+      {
+        imgSrc: '/images/portfolio/image-4.webp',
+        imgAlt: 'Deburring fixture 3D model',
+        position: '40% 50%',
+      },
+    ],
+  },
+  { id: 'case-studies', component: 'caseStudies' },
+  {
+    id: uuidv4().slice(0, 8),
     heading: 'Weldments and Frames',
-    description:
-      'Design and detailing of welded structures and support frames for mobile trailers, tables, and enclosures, including complex assemblies that need to be accurate for structural integrity and fit-up during fabrication.',
+    description: 'Welded frames for trailers, tables and an ice fishing hut, with fabrication drawings.',
     images: [
       {
         imgSrc: '/images/portfolio/trailerFrame.webp',
@@ -44,37 +63,8 @@ const portfolioSections = [
   },
   {
     id: uuidv4().slice(0, 8),
-    heading: 'Structural Steel',
-    description:
-      'Custom fabrication drawings and detailing for large-scale structural steel projects, including beams, rolled sections, and material lists for buildings and outdoor structures like pergolas.',
-    images: [
-      {
-        imgSrc: '/images/portfolio/progress1.webp',
-        imgAlt: 'Steel pergola frame 3D model',
-        fit: 'contain',
-      },
-      {
-        imgSrc: '/images/portfolio/rolledBeamDetails.webp',
-        imgAlt: 'Fabrication drawing of a rolled (curved) steel beam for a pergola',
-        fit: 'contain',
-      },
-      {
-        imgSrc: '/images/portfolio/bigBeamDrawing.webp',
-        imgAlt: 'Fabrication drawing of a steel pergola beam',
-        fit: 'contain',
-      },
-      {
-        imgSrc: '/images/portfolio/materialList.webp',
-        imgAlt: 'Material list for a steel pergola',
-        fit: 'contain',
-      },
-    ],
-  },
-  {
-    id: uuidv4().slice(0, 8),
     heading: 'Sheet Metal Parts',
-    description:
-      'Precision sheet metal designs for manufacturing components like enclosures, brackets, and custom hardware, optimized for bending, cutting, and CNC fabrication processes.',
+    description: 'Brackets, shrouds, trays, stands and other formed sheet metal parts.',
     images: [
       {
         imgSrc: '/images/portfolio/sample.webp',
@@ -124,28 +114,35 @@ const portfolioSections = [
   },
   {
     id: uuidv4().slice(0, 8),
-    heading: 'Jigs, Fixtures, Molds, Tools',
-    description:
-      'Custom tooling, jigs, and mold components designed for production and part-to-part consistency, including precision fixturing and mold flow considerations.',
+    heading: 'Structural Steel',
+    description: 'Fabrication drawings, beam details and a material list for a steel pergola with rolled beams.',
     images: [
       {
-        imgSrc: '/images/portfolio/2.webp',
-        imgAlt: 'Mold cavity with flow channels, 3D model',
+        imgSrc: '/images/portfolio/progress1.webp',
+        imgAlt: 'Steel pergola frame 3D model',
+        fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/image-4.webp',
-        imgAlt: 'Deburring fixture 3D model',
-        position: '40% 50%',
+        imgSrc: '/images/portfolio/rolledBeamDetails.webp',
+        imgAlt: 'Fabrication drawing of a rolled (curved) steel beam for a pergola',
+        fit: 'contain',
+      },
+      {
+        imgSrc: '/images/portfolio/bigBeamDrawing.webp',
+        imgAlt: 'Fabrication drawing of a steel pergola beam',
+        fit: 'contain',
+      },
+      {
+        imgSrc: '/images/portfolio/materialList.webp',
+        imgAlt: 'Material list for a steel pergola',
+        fit: 'contain',
       },
     ],
   },
-  { id: 'featurescript', component: 'featureScript' },
-  { id: 'case-studies', component: 'caseStudies' },
   {
     id: uuidv4().slice(0, 8),
     heading: 'Misc. Steel: Stairs, Handrails, Gates, Fences, etc.',
-    description:
-      'Concept development and fabrication-ready detailing for architectural and safety components such as custom stairs, guardrails, handrails, gates, and other miscellaneous steelwork.',
+    description: 'Stairs, guardrails and handrails, from concept render to fabrication drawing.',
     images: [
       {
         imgSrc: '/images/portfolio/boatRailConcept.webp',
@@ -176,14 +173,8 @@ const portfolioSections = [
   {
     id: uuidv4().slice(0, 8),
     heading: 'Flat Designs',
-    description:
-      'Flat pattern designs for laser and waterjet cutting, including decorative signs, fuse strips, and flat-pack assemblies. Designed for efficient nesting and accurate downstream fabrication.',
+    description: 'Flat patterns for laser and waterjet cutting: a fuse strip, a sign bracket and a flat-pack fire pit.',
     images: [
-      {
-        imgSrc: '/images/portfolio/3DVerify.webp',
-        imgAlt: 'Laser-cut medal hanger with runner silhouettes',
-        fit: 'contain',
-      },
       {
         imgSrc: '/images/portfolio/3.webp',
         imgAlt: 'Battery fuse strip flat pattern with dimensions',
@@ -201,28 +192,11 @@ const portfolioSections = [
       },
     ],
   },
-  {
-    id: uuidv4().slice(0, 8),
-    heading: '3D Printed Designs',
-    description:
-      'Functional and decorative 3D printed components for product customization, repairs, and prototyping, including replacement parts.',
-    images: [
-      {
-        imgSrc: '/images/portfolio/111.webp',
-        imgAlt: '3D printed replacement headband part for Shure headphones',
-        fit: 'contain',
-      },
-      {
-        imgSrc: '/images/portfolio/printedHandle.webp',
-        imgAlt: '3D printed handle with arched grip',
-      },
-    ],
-  },
+  { id: 'featurescript', component: 'featureScript' },
   {
     id: uuidv4().slice(0, 8),
     heading: 'Misc Parts and Assemblies',
-    description:
-      'A variety of mechanical designs and detailed assemblies, ranging from consumer products to industrial components, including energy systems, sports equipment, and automated tooling parts.',
+    description: 'Other mechanical parts and assemblies, including 3D printed parts.',
     images: [
       {
         imgSrc: '/images/portfolio/10.webp',
@@ -230,13 +204,27 @@ const portfolioSections = [
         fit: 'contain',
       },
       {
+        imgSrc: '/images/portfolio/roboBroom3.webp',
+        imgAlt: 'Mechanical linkage assembly on aluminum extrusion',
+        fit: 'contain',
+      },
+      {
+        imgSrc: '/images/portfolio/foldingStandAssembly.webp',
+        imgAlt: 'Folding sheet metal stand assembly with cam-lever clamps and rubber pads',
+      },
+      {
         imgSrc: '/images/portfolio/7.webp',
         imgAlt: 'Electric car charging cable support clamp',
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/roboBroom3.webp',
-        imgAlt: 'Mechanical linkage assembly on aluminum extrusion',
+        imgSrc: '/images/portfolio/frontFrame.webp',
+        imgAlt: 'Tubular bicycle frame 3D model',
+        fit: 'contain',
+      },
+      {
+        imgSrc: '/images/portfolio/111.webp',
+        imgAlt: '3D printed replacement headband part for Shure headphones',
         fit: 'contain',
       },
       {
@@ -249,6 +237,20 @@ const portfolioSections = [
         imgAlt: 'Large custom exhaust tip with a diamond-pattern cutout sleeve',
       },
       {
+        imgSrc: '/images/portfolio/3DVerify.webp',
+        imgAlt: 'Laser-cut medal hanger with runner silhouettes',
+        fit: 'contain',
+      },
+    ],
+  },
+];
+
+// Trimmed from the Misc row (2026-09-30) to keep it to the strongest pieces.
+// Not rendered; the image files stay in public/images/portfolio. Move an entry
+// back into the Misc row above to show it again.
+// eslint-disable-next-line no-unused-vars
+const trimmedMiscImages = [
+      {
         imgSrc: '/images/portfolio/1box.webp',
         imgAlt: 'Billet humidor with a scroll-pattern lid',
         fit: 'contain',
@@ -259,52 +261,20 @@ const portfolioSections = [
         fit: 'contain',
       },
       {
-        imgSrc: '/images/portfolio/frontFrame.webp',
-        imgAlt: 'Tubular bicycle frame 3D model',
-        fit: 'contain',
+        imgSrc: '/images/portfolio/printedHandle.webp',
+        imgAlt: '3D printed handle with arched grip',
       },
-      {
-        imgSrc: '/images/portfolio/foldingStandAssembly.webp',
-        imgAlt: 'Folding sheet metal stand assembly with cam-lever clamps and rubber pads',
-      },
-    ],
-  },
 ];
 
 function Portfolio() {
-  const [modalImages, setModalImages] = useState(portfolioSections[0].images);
-  const [modalImageIndex, setModalImageIndex] = useState(null);
+  // Lightbox state: the image list of the row that was clicked ({ src, alt })
+  // and the open index (null = closed).
+  const [lightboxImages, setLightboxImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  useEffect(() => {
-    const handleEsc = (event) => {
-      if (event.key === 'Escape' && modalImageIndex !== null) {
-        setModalImageIndex(null);
-      }
-    };
-
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, [modalImageIndex]);
-
-  const openImageModal = (images, index) => {
-    setModalImages(images);
-    setModalImageIndex(index);
-  };
-
-  const closeImageModal = () => setModalImageIndex(null);
-
-  const goToPrevious = (e) => {
-    e.stopPropagation(); // Prevent closing modal when clicking arrow
-    setModalImageIndex((prevIndex) =>
-      prevIndex === 0 ? modalImages.length - 1 : prevIndex - 1
-    );
-  };
-
-  const goToNext = (e) => {
-    e.stopPropagation(); // Prevent closing modal when clicking arrow
-    setModalImageIndex((prevIndex) =>
-      prevIndex === modalImages.length - 1 ? 0 : prevIndex + 1
-    );
+  const openLightbox = (images, index) => {
+    setLightboxImages(images);
+    setLightboxIndex(index);
   };
 
   return (
@@ -340,11 +310,20 @@ function Portfolio() {
           <div className="container mx-auto w-full">
             {portfolioSections.map(({ id, component, heading, description, images }) => {
               if (component === 'caseStudies') {
-                return <CaseStudies key={id} className="mt-16 w-full" />;
+                return (
+                  <CaseStudies
+                    key={id}
+                    className="mt-16 w-full"
+                    onImageClick={(imgs, ind) =>
+                      openLightbox(imgs.map(({ src, alt }) => ({ src, alt })), ind)
+                    }
+                  />
+                );
               }
               if (component === 'featureScript') {
-                return <FeatureScriptVideo key={id} className="mt-10 w-full" />;
+                return <FeatureScriptVideo key={id} className="mt-16 w-full" />;
               }
+              const lightboxList = images.map(({ imgSrc, imgAlt }) => ({ src: imgSrc, alt: imgAlt }));
               return (
                 <div key={id} id={id} className="mt-10 w-full">
                   <h2 className="text-2xl font-semibold">{heading}</h2>
@@ -353,19 +332,16 @@ function Portfolio() {
                   ) : (
                     <div className="mb-5" />
                   )}
-                  <div
-                    key={id}
-                    className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-                  >
+                  <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {images.map(({ imgSrc, imgAlt, fit, position }, ind) => (
-                      <button
-                        key={ind}
-                        type="button"
-                        onClick={() => openImageModal(images, ind)}
-                        className="block w-full overflow-hidden rounded-lg shadow-md ring-1 ring-gray-900/5 transition duration-300 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-600"
-                      >
-                        <ImageTile src={imgSrc} alt={imgAlt} fit={fit} position={position} />
-                      </button>
+                      <EnlargeableTile
+                        key={imgSrc}
+                        src={imgSrc}
+                        alt={imgAlt}
+                        fit={fit}
+                        position={position}
+                        onClick={() => openLightbox(lightboxList, ind)}
+                      />
                     ))}
                   </div>
                 </div>
@@ -373,88 +349,15 @@ function Portfolio() {
             })}
           </div>
         </section>
-
-        {/* Modal with Navigation */}
-        {modalImageIndex !== null && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-            onClick={closeImageModal}
-          >
-            {/* Close Button */}
-            <button
-              onClick={closeImageModal}
-              className="absolute top-5 right-5 bg-red-500 text-white p-2 rounded-full hover:bg-gray-600 transition duration-300"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
-            <div className="relative flex items-center justify-center m-8 w-full">
-              {/* Previous Arrow */}
-              <button
-                onClick={goToPrevious}
-                className="absolute left-4 text-white p-2 hover:text-gray-300 transition duration-300"
-              >
-                <svg
-                  className="w-10 h-10"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-
-              {/* Image */}
-              <img
-                src={modalImages[modalImageIndex].imgSrc}
-                alt={modalImages[modalImageIndex].imgAlt}
-                className="max-h-[85vh] max-w-full rounded-lg bg-white object-contain shadow-lg"
-              />
-
-              {/* Next Arrow */}
-              <button
-                onClick={goToNext}
-                className="absolute right-4 text-white p-2 hover:text-gray-300 transition duration-300"
-              >
-                <svg
-                  className="w-10 h-10"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        )}
       </div>
-      <CTA />
+
+      <Lightbox
+        images={lightboxImages}
+        index={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onIndexChange={setLightboxIndex}
+      />
+      <PortfolioCTA />
     </div>
   );
 }
