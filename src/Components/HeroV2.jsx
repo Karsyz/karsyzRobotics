@@ -5,10 +5,10 @@ import ImageTile from './ImageTile';
 // All four are CAD renders on white: fit 'contain' on a white tile so the
 // whole part shows and the tile still reads as full.
 const heroImages = [
-  { src: '/images/portfolio/trailerFrame.png', alt: 'Welded trailer frame 3D model', fit: 'contain' },
-  { src: '/images/portfolio/mowerDeck.png', alt: 'Sheet metal mower deck 3D model', fit: 'contain' },
-  { src: '/images/portfolio/centerStringerStair.png', alt: 'Steel center stringer stair 3D model', fit: 'contain' },
-  { src: '/images/portfolio/bcpFuelPumpBracket.png', alt: 'Sheet metal fuel pump bracket 3D model', fit: 'contain' },
+  { src: '/images/portfolio/trailerFrame.webp', alt: 'Welded trailer frame 3D model', fit: 'contain' },
+  { src: '/images/portfolio/mowerDeck.webp', alt: 'Sheet metal mower deck 3D model', fit: 'contain' },
+  { src: '/images/portfolio/centerStringerStair.webp', alt: 'Steel center stringer stair 3D model', fit: 'contain' },
+  { src: '/images/portfolio/bcpFuelPumpBracket.webp', alt: 'Sheet metal fuel pump bracket 3D model', fit: 'contain' },
 ];
 
 export default function HeroV2() {
