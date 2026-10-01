@@ -42,7 +42,7 @@ function CaseStudies({ headingLevel = 'h2', className = '', onImageClick }) {
               <ul className="grid grid-cols-2 gap-4 self-start">
                 {images.map(({ src, alt, fit, position }, ind) =>
                   onImageClick ? (
-                    <li key={src}>
+                    <li key={src} className={images.length % 2 === 1 && ind === 0 ? 'col-span-2' : undefined}>
                       <EnlargeableTile
                         src={src}
                         alt={alt}
@@ -53,7 +53,10 @@ function CaseStudies({ headingLevel = 'h2', className = '', onImageClick }) {
                       />
                     </li>
                   ) : (
-                    <li key={src} className="overflow-hidden rounded-lg ring-1 ring-gray-900/5">
+                    <li
+                      key={src}
+                      className={`overflow-hidden rounded-lg ring-1 ring-gray-900/5${images.length % 2 === 1 && ind === 0 ? ' col-span-2' : ''}`}
+                    >
                       <ImageTile src={src} alt={alt} fit={fit} position={position} />
                     </li>
                   )
