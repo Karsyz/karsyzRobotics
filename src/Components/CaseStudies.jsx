@@ -1,9 +1,14 @@
 import TodoNote from './TodoNote';
 import ImageTile from './ImageTile';
+import EnlargeableTile from './EnlargeableTile';
 import { caseStudies } from '../Data/siteCopy';
 
-/** Case studies from the approved site copy. */
-function CaseStudies({ headingLevel = 'h2', className = '' }) {
+/**
+ * Case studies from the approved site copy.
+ * Pass `onImageClick(images, index)` (images as [{ src, alt }]) to make the
+ * photos open in a lightbox; without it they render as plain tiles.
+ */
+function CaseStudies({ headingLevel = 'h2', className = '', onImageClick }) {
   const Heading = headingLevel;
   const ItemHeading = headingLevel === 'h2' ? 'h3' : 'h4';
   return (
@@ -35,11 +40,24 @@ function CaseStudies({ headingLevel = 'h2', className = '' }) {
               // self-start: tiles keep their 4:3 ratio instead of stretching
               // to the height of the text column.
               <ul className="grid grid-cols-2 gap-4 self-start">
-                {images.map(({ src, alt, fit, position }) => (
-                  <li key={src} className="overflow-hidden rounded-lg ring-1 ring-gray-900/5">
-                    <ImageTile src={src} alt={alt} fit={fit} position={position} />
-                  </li>
-                ))}
+                {images.map(({ src, alt, fit, position }, ind) =>
+                  onImageClick ? (
+                    <li key={src}>
+                      <EnlargeableTile
+                        src={src}
+                        alt={alt}
+                        fit={fit}
+                        position={position}
+                        compactHint
+                        onClick={() => onImageClick(images, ind)}
+                      />
+                    </li>
+                  ) : (
+                    <li key={src} className="overflow-hidden rounded-lg ring-1 ring-gray-900/5">
+                      <ImageTile src={src} alt={alt} fit={fit} position={position} />
+                    </li>
+                  )
+                )}
               </ul>
             ) : (
               imageTodo && (

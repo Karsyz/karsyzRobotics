@@ -13,9 +13,8 @@ function FeatureScriptVideo({ className = '' }) {
         Custom Onshape FeatureScript
       </h2>
       <p className="mb-5 lg:max-w-[700px]">
-        A short film showing helixParting, a custom FeatureScript I wrote for
-        Onshape. It creates a helix or an ellipse around any 3D curve from the
-        parameters you set, then builds a cutting plane along it.
+        helixParting, a custom Onshape FeatureScript I wrote: it builds a helix
+        or ellipse around any 3D curve, then a cutting plane along it.
       </p>
       {/* Padding-top 56.25% keeps a native 16:9 box at every width, so the embed never collapses. */}
       <div

@@ -1,13 +1,13 @@
 export const freebies = [
   {
     id: 1,
-    name: 'Pampered Chef Replacement Plunger',
-    headline: 'Replacement Plunger for Pampered Chef Mixer and Dispenser',
+    name: 'Mixer Replacement Plunger',
+    headline: 'Replacement Plunger for a Kitchen Mixer and Dispenser',
     description:
-      'This is a 3D printed replacement plunger designed for the Pampered Chef Mixer and Dispenser. The original plunger is known to fail after just a couple of years of use, and this model aims to provide a durable, cost-effective solution.',
+      'This is a 3D printed replacement plunger designed for a kitchen mixer and dispenser. The original plunger is known to fail after just a couple of years of use, and this model aims to provide a durable, cost-effective solution.',
     imgSrc: '/images/freebies/resized/f1.png',
-    imgAlt: 'Pampered Chef Replacement Plunger',
-    fileName: 'pampered_chef_plunger.stl',
+    imgAlt: '3D printed mixer plunger',
+    fileName: 'mixer_plunger.stl',
     affHref: 'https://amzn.to/3XO5cef',
   },
   {
