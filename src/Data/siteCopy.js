@@ -22,10 +22,9 @@ export const caseStudies = {
       // Paired by filename ("bcp...") and the BCP logo visible in both renders.
       images: [
         {
-          src: '/images/portfolio/mechDesignStuff.webp',
+          src: '/images/portfolio/bcpFuelUnitAssembly.webp',
           alt: 'Fuel sending unit assembly with machined billet top and formed sheet metal bracket, Border City Performance',
-          // Square render in a 4:3 tile: bias the crop upward so the billet top stays whole.
-          position: '50% 15%',
+          // 878x718 render on a full-frame grey background: cover, centred.
         },
         {
           src: '/images/portfolio/bcpFuelPumpBracket.webp',
