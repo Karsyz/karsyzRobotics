@@ -25,11 +25,12 @@ const portfolioSections = [
       {
         imgSrc: '/images/portfolio/2.webp',
         imgAlt: 'Mold cavity with flow channels, 3D model',
+        fit: 'contain',
       },
       {
         imgSrc: '/images/portfolio/image-4.webp',
         imgAlt: 'Deburring fixture 3D model',
-        position: '40% 50%',
+        fit: 'contain',
       },
     ],
   },

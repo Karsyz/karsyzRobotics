@@ -106,7 +106,7 @@ export const fixturesTooling = {
   images: [
     // Full-frame render (no white background): cover. Subject sits left of
     // centre, so bias the crop that way.
-    { src: '/images/portfolio/image-4.webp', alt: 'Deburring fixture', position: '40% 50%' },
+    { src: '/images/portfolio/image-4.webp', alt: 'Deburring fixture', fit: 'contain' },
   ],
   imageTodo:
     'add the labelled "concept design" welding fixture and QC fixture images here.',
